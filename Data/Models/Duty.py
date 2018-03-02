@@ -2,9 +2,9 @@
 #-*- coding: utf-8 -*-
 
 class Duty:
-    def __init__(self):
-        self.name = None
-        self.label = None
+    def __init__(self, name, label):
+        self.name = name
+        self.label = label
 
     def getName(self, ):
         pass
