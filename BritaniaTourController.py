@@ -9,8 +9,8 @@ class BritaniaTourController:
         self.gui = None
 
     def createSystemGUI(self, ):
-        employeeDuties = {"names": ["CustomerRegistration", "CustomerLookup"],
-                          "labels": ["Register a new customer", "Find a customer"]}
+        employeeDuties = {"cntrlr": ["CustomerRegistration", "CustomerLookup", "TripLookup"],
+                          "labels": ["Register a new customer", "Find a customer", "Find a trip"]}
         self.gui = BritaniaTourGUI(self, employeeDuties)
 
     def getEmployeeDuties(self, ):
