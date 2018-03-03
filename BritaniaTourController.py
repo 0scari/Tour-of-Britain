@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 from BritaniaTourGUI import BritaniaTourGUI
+import importlib # module for importing other modules using string type name
 
 class BritaniaTourController:
     def __init__(self, user):
@@ -16,6 +17,13 @@ class BritaniaTourController:
     def getEmployeeDuties(self, ):
         pass
 
-    def createDutyUI(self, dutyControllerName):
-        pass
+    def initDutyController(self, dutyControllerName):
+
+        dutyControllerName += "Controller"
+
+        cntrlrModule = importlib.import_module('BusinessLogic.'+dutyControllerName)
+        cntrlrClass = getattr(cntrlrModule, dutyControllerName)
+        dutyContrlr = cntrlrClass("Repository")
+
+        return dutyContrlr
 

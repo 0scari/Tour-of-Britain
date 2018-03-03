@@ -4,29 +4,48 @@ from tkinter import *
 
 class BritaniaTourGUI:
     def __init__(self, sysController, duties):
-        self.dutyUIs = None
+        self.dutyUIs = {}
         self.window = Tk()
         self.tabFrame = None
         self.menuFrame = None
         self.activeDutyUI = None
-        self.height = 610
-        self.width  = 1000
+        self.__height = 610
+        self.__width  = 1000
+        self.__newTabButton = None
         self.sysController = sysController
 
-        self.menuFrame = Frame(self.window, bg="red", height=self.height, width=self.width * 0.2)
-        self.menuFrame.pack_propagate(False)
-        self.menuFrame.pack(side=LEFT)
-
         self.__setUpWindow()
+
+        self.__setUpMenuFrame()
+        self.__setUpTabFrame()
         self.displayMenuOptions(duties)
+
+        self.__setDutyUIs(duties)
 
         self.window.mainloop()
 
+    def __setDutyUIs(self, duties):
+        for i in range(len(duties["cntrlr"])):
+            self.dutyUIs[duties["cntrlr"][i]] = []
+
     def __setUpWindow(self):
-        self.window.geometry("%sx%s"%(self.width, self.height))
+        self.window.geometry("%sx%s" % (self.__width, self.__height))
         self.window.configure(bg='white')
         self.window.title('Tour of Britain')
         self.window.resizable(width=FALSE, height=FALSE)
+
+    def __setUpMenuFrame(self):
+        self.menuFrame = Frame(self.window, bg="red", height=self.__height, width=self.__width * 0.2)
+        self.menuFrame.pack_propagate(False)
+        self.menuFrame.pack(side=LEFT)
+
+    def __setUpTabFrame(self):
+        self.tabFrame = Frame(self.window, bg="#7fc7ff", height=self.__height * 0.05, width=self.__width * 0.8)
+        self.tabFrame.pack_propagate(False)
+        self.tabFrame.pack(side=TOP)
+
+        self.__newTabButton = Button(self.tabFrame, text="+",  \
+                                     command=lambda: print(self.activeDutyUI)).pack(side=RIGHT)
 
     def displayMenuOptions(self, duties):
 
@@ -38,6 +57,13 @@ class BritaniaTourGUI:
 
     def displayDutyUI(self, dutyControllerName):
         print(dutyControllerName)
+
+        if not len(self.dutyUIs[dutyControllerName]):
+            dutyContrlr = self.sysController.initDutyController(dutyControllerName)
+            self.dutyUIs[dutyControllerName] = dutyContrlr.initDutyUI(self.window)
+
+
+        self.activeDutyUI = dutyControllerName
 
     def refreshTabPanel(self, dutyControllerName):
         pass
