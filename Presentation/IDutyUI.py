@@ -4,10 +4,8 @@ from abc import ABC, abstractmethod
 
 class IDutyUI(ABC):
     @abstractmethod
-    def __init__(self, dutyController, window):
-        self.dutyController = dutyController
-        self.frame = None
-        self.dataWidgets = {}
+    def __init__(self, dutyController, window = None):
+        pass
 
     @abstractmethod
     def setUpWidgets(self, ):

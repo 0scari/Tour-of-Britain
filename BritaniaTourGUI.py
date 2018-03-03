@@ -60,7 +60,7 @@ class BritaniaTourGUI:
 
         if not len(self.dutyUIs[dutyControllerName]):
             dutyContrlr = self.sysController.initDutyController(dutyControllerName)
-            self.dutyUIs[dutyControllerName] = dutyContrlr.initDutyUI(self.window)
+            self.dutyUIs[dutyControllerName].append(dutyContrlr.initDutyUI(self.window))
 
 
         self.activeDutyUI = dutyControllerName

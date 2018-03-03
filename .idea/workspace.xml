@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a7800e3-03f7-43b1-bd8c-d71d3be25d2e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/CustomerRegistrationController.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/BritaniaTourController.py" afterPath="$PROJECT_DIR$/BritaniaTourController.py" />
       <change beforePath="$PROJECT_DIR$/BritaniaTourGUI.py" afterPath="$PROJECT_DIR$/BritaniaTourGUI.py" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/CustomerRegistrationController.py" afterPath="$PROJECT_DIR$/BusinessLogic/CustomerRegistrationController.py" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/IDutyController.py" afterPath="$PROJECT_DIR$/BusinessLogic/IDutyController.py" />
       <change beforePath="$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py" />
       <change beforePath="$PROJECT_DIR$/Presentation/IDutyUI.py" afterPath="$PROJECT_DIR$/Presentation/IDutyUI.py" />
@@ -34,34 +31,29 @@
     <splitter split-orientation="horizontal" split-proportion="0.5559105">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="BritaniaTourGUI.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BritaniaTourGUI.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="426">
-                  <caret line="62" column="59" lean-forward="false" selection-start-line="62" selection-start-column="59" selection-end-line="62" selection-end-column="59" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CustomerRegistrationUI.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+                <state relative-caret-position="501">
+                  <caret line="52" column="27" lean-forward="true" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
                   <folding>
-                    <marker date="1520088922425" expanded="true" signature="146:163" ph="..." />
+                    <element signature="e#660#749#0" expanded="false" />
+                    <element signature="e#788#993#0" expanded="false" />
+                    <element signature="e#1035#1212#0" expanded="false" />
+                    <element signature="e#1253#1599#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IDutyUI.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
+          <file leaf-file-name="CustomerRegistrationUI.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-                  <folding />
+                <state relative-caret-position="361">
+                  <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="20" />
+                  <folding>
+                    <element signature="e#41#81#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -96,7 +88,7 @@
             <entry file="file://$PROJECT_DIR$/BusinessLogic/IDutyController.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="300">
-                  <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+                  <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
                   <folding>
                     <element signature="e#41#57#0" expanded="true" />
                   </folding>
@@ -138,12 +130,12 @@
         <option value="$PROJECT_DIR$/Data/Models/Role.py" />
         <option value="$PROJECT_DIR$/BritaniaTour.py" />
         <option value="$PROJECT_DIR$/CustomerRegistrationController.py" />
-        <option value="$PROJECT_DIR$/Presentation/IDutyUI.py" />
-        <option value="$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py" />
         <option value="$PROJECT_DIR$/BritaniaTourController.py" />
-        <option value="$PROJECT_DIR$/BritaniaTourGUI.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/CustomerRegistrationController.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/IDutyController.py" />
+        <option value="$PROJECT_DIR$/Presentation/IDutyUI.py" />
+        <option value="$PROJECT_DIR$/BritaniaTourGUI.py" />
+        <option value="$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py" />
       </list>
     </option>
   </component>
@@ -320,7 +312,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1687966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1687966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17678382" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -373,7 +365,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#660#749#0" expanded="false" />
+            <element signature="e#788#993#0" expanded="false" />
+            <element signature="e#1035#1212#0" expanded="false" />
+            <element signature="e#1253#1599#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -527,24 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding>
-            <marker date="1520088922425" expanded="true" signature="146:163" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BritaniaTourController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -552,14 +531,6 @@
           <folding>
             <element signature="e#41#84#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="62" column="59" lean-forward="false" selection-start-line="62" selection-start-column="59" selection-end-line="62" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -574,9 +545,40 @@
     <entry file="file://$PROJECT_DIR$/BusinessLogic/IDutyController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
           <folding>
             <element signature="e#41#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="52" column="27" lean-forward="true" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+          <folding>
+            <element signature="e#660#749#0" expanded="false" />
+            <element signature="e#788#993#0" expanded="false" />
+            <element signature="e#1035#1212#0" expanded="false" />
+            <element signature="e#1253#1599#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/CustomerRegistrationUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="20" />
+          <folding>
+            <element signature="e#41#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
