@@ -49,17 +49,17 @@ class BritaniaTourGUI:
         self.tabFrame.pack(side=TOP)
 
         self.__newTabButton = Button(self.tabFrame, text="+",  \
-                                     command=lambda: print("New Tab")).pack(side=RIGHT)
+                                     command=lambda: self.__addDutyUI_Tab()).pack(side=RIGHT)
 
     def displayMenuOptions(self, duties):
         for i in range(len(duties["cntrlr"])):
             Button(self.menuFrame, background='green', text = duties["labels"][i], \
                    command=lambda cntrlr = duties["cntrlr"][i]: \
-                       self.displayDutyUI(cntrlr)).pack(fill=X, side=TOP, padx=5, pady=3)
+                       self.displayDutyUIs(cntrlr)).pack(fill=X, side=TOP, padx=5, pady=3)
 
-    def displayDutyUI(self, dutyControllerName):
+    def displayDutyUIs(self, dutyControllerName):
         print(dutyControllerName)
-        if not len(self.dutyUIs[dutyControllerName]):
+        if not self.dutyUIs[dutyControllerName]:
             dutyContrlr = self.sysController.initDutyController(dutyControllerName)
             self.activeDutyUI = dutyContrlr.initDutyUI(self.window)
             self.dutyUIs[dutyControllerName].append(self.activeDutyUI)
@@ -87,4 +87,12 @@ class BritaniaTourGUI:
     def startGui(self):
         self.window.mainloop()
 
-
+    def __addDutyUI_Tab(self):
+        dutyName = self.activeDutyUI.getDutyName()
+        print("Duty name", dutyName)
+        newDutyUI = self.activeDutyUI.replicate(self.window)
+        self.dutyUIs[dutyName].append(newDutyUI)
+        Button(self.tabFrame, text=str(len(self.dutyUIs[dutyName]) -1), \
+            command=lambda dutyUI = newDutyUI:
+                self.__setActiveDutyUI(dutyUI)). \
+            pack(side=LEFT)

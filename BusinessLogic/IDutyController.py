@@ -19,3 +19,4 @@ class IDutyController(ABC):
         module = importlib.import_module('Presentation.' + dutyUI_Name)
         UI_Class = getattr(module, dutyUI_Name)
         return UI_Class(cls, window)
+    

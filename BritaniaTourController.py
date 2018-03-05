@@ -18,13 +18,11 @@ class BritaniaTourController:
         pass
 
     def initDutyController(self, dutyControllerName):
-
         dutyControllerName += "Controller"
         try:
             cntrlrModule = importlib.import_module('BusinessLogic.'+dutyControllerName)
             cntrlrClass = getattr(cntrlrModule, dutyControllerName)
             dutyContrlr = cntrlrClass("Repository")
+            return dutyContrlr
         except ModuleNotFoundError:
             self.gui.raiseErrorMessg("Module not found", "Module '" + dutyControllerName[:-10] + "' was not identified")
-        return dutyContrlr
-

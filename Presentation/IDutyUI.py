@@ -1,11 +1,15 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
+from tkinter import *
+
 
 class IDutyUI(ABC):
     @abstractmethod
     def __init__(self, dutyController, window = None):
         self.dataWidgets = {}
+        self.frame = None
+        self.dutyController = None
 
     @abstractmethod
     def setUpWidgets(self, ):
@@ -19,9 +23,12 @@ class IDutyUI(ABC):
         else:
             self.dataWidgets[key][name] = widget
 
-    @abstractmethod
+    @classmethod
+    def getDutyName(cls):
+        return cls.__name__[:-2]
+
     def hide(self, ):
-        pass
+        self.frame.pack_forget()
 
     def _createDataWidgetKey(self, key):
         """Polymorphic method"""
@@ -30,19 +37,16 @@ class IDutyUI(ABC):
         else:
             self.dataWidgets[key] = {}
 
-    @abstractmethod
     def appear(self, ):
-        pass
+        self.frame.pack_propagate(False)
+        self.frame.pack(side=BOTTOM)
 
-    @abstractmethod
     def close(self, ):
         pass
 
-    @abstractmethod
     def replicate(self, window):
-        pass
+        return self.dutyController.initDutyUI(window)
 
-    @abstractmethod
     def getWidgetData(self, key):
         pass
 
