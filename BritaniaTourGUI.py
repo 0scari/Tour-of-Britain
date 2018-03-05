@@ -1,6 +1,8 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 from tkinter import *
+from tkinter import messagebox
+
 
 class BritaniaTourGUI:
     def __init__(self, sysController, duties):
@@ -22,7 +24,9 @@ class BritaniaTourGUI:
 
         self.__setDutyUIs(duties)
 
-        self.window.mainloop()
+    def returnSelf(self):
+        print("dbg")
+        return self
 
     def __setDutyUIs(self, duties):
         for i in range(len(duties["cntrlr"])):
@@ -45,29 +49,42 @@ class BritaniaTourGUI:
         self.tabFrame.pack(side=TOP)
 
         self.__newTabButton = Button(self.tabFrame, text="+",  \
-                                     command=lambda: print(self.activeDutyUI)).pack(side=RIGHT)
+                                     command=lambda: print("New Tab")).pack(side=RIGHT)
 
     def displayMenuOptions(self, duties):
-
         for i in range(len(duties["cntrlr"])):
             Button(self.menuFrame, background='green', text = duties["labels"][i], \
                    command=lambda cntrlr = duties["cntrlr"][i]: \
                        self.displayDutyUI(cntrlr)).pack(fill=X, side=TOP, padx=5, pady=3)
 
-
     def displayDutyUI(self, dutyControllerName):
         print(dutyControllerName)
-
         if not len(self.dutyUIs[dutyControllerName]):
             dutyContrlr = self.sysController.initDutyController(dutyControllerName)
-            self.dutyUIs[dutyControllerName].append(dutyContrlr.initDutyUI(self.window))
-
-
-        self.activeDutyUI = dutyControllerName
+            self.activeDutyUI = dutyContrlr.initDutyUI(self.window)
+            self.dutyUIs[dutyControllerName].append(self.activeDutyUI)
+            self.refreshTabPanel(dutyControllerName)
+        else:
+            self.__setActiveDutyUI(self.dutyUIs[dutyControllerName][0])
 
     def refreshTabPanel(self, dutyControllerName):
-        pass
+        self.tabFrame.destroy()
+        self.__setUpTabFrame()
+        for i in range(len(self.dutyUIs[dutyControllerName])):
+            Button(self.tabFrame, text=str(i), \
+                command=lambda uiIndx=i:
+                    self.__setActiveDutyUI(self.dutyUIs[dutyControllerName][uiIndx])).\
+                pack(side=LEFT)
 
-    def setActiveDutyUI(self, IDutyUI):
-        pass
+    def __setActiveDutyUI(self, dutyUI):
+        self.activeDutyUI.hide()
+        self.activeDutyUI = dutyUI
+        self.activeDutyUI.appear()
+
+    def raiseErrorMessg(self, header, body):
+        messagebox.showerror(header, body)
+
+    def startGui(self):
+        self.window.mainloop()
+
 

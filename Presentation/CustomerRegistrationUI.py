@@ -15,7 +15,7 @@ class CustomerRegistrationUI(IDutyUI):
 
         self.frame = Frame(window, bg="yellow", height=self.height , width=self.width)
         self.frame.pack_propagate(False)
-        self.frame.pack(side=TOP)
+        self.frame.pack(side=BOTTOM)
 
         self.setUpWidgets()
 
