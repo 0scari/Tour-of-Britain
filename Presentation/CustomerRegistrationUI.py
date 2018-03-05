@@ -7,9 +7,8 @@ from tkinter import *
 class CustomerRegistrationUI(IDutyUI):
     def __init__(self, dutyController, window):
         super().__init__(dutyController)
-
-        self.dataWidgets = {}
         self.dutyController = dutyController
+
 
         self.height = window.winfo_height() * 0.95
         self.width  = window.winfo_width() * 0.8
@@ -23,19 +22,32 @@ class CustomerRegistrationUI(IDutyUI):
     def registerCustomer(self, ):
         pass
 
+
+
     def setUpWidgets(self):
-        labelContainer = Frame(self.frame, bg="brown")
+        inputFrame = Frame(self.frame)
 
-            #Frame(self.frame, bg="green").pack(side=TOP, fill=X, pady=(self.height * 0.1, 0))
-        Label(labelContainer, text="Name").pack(side=TOP)
-        Label(labelContainer, text="Surname").pack(side=TOP)
-        Label(labelContainer, text="Date of birth").pack(side=TOP)
+        Label(inputFrame, text="Name").grid(row=0, column=0)
+        Label(inputFrame, text="Surname").grid(row=1, column=0)
+        Label(inputFrame, text="Date of birth").grid(row=2, column=0)
+        Label(inputFrame, text="Email").grid(row=3, column=0)
+        Label(inputFrame, text="Address").grid(row=4, column=0)
 
-        labelContainer.pack(side=LEFT, padx=(self.width *0.2, 0))
-        #
-        # Entry(self.frame).pack(side=RIGHT)
-        # Entry(self.frame).pack(side=RIGHT)
-        # Entry(self.frame).pack(side=RIGHT)
+        self._createDataWidgetKey("customerDetails")
+        dataWidget = Entry(inputFrame).grid(row=0, column=1)
+        self._addDataWidget("name","customerDetails", dataWidget)
+        dataWidget = Entry(inputFrame).grid(row=1, column=1)
+        self._addDataWidget("surname", "customerDetails", dataWidget)
+        dataWidget = Entry(inputFrame).grid(row=2, column=1)
+        self._addDataWidget("dob", "customerDetails", dataWidget)
+        dataWidget = Entry(inputFrame).grid(row=3, column=1)
+        self._addDataWidget("email", "customerDetails", dataWidget)
+        dataWidget = Entry(inputFrame).grid(row=4, column=1)
+        self._addDataWidget("address", "customerDetails", dataWidget)
+        Button(inputFrame, text="Register",
+               command=lambda: print("Registering Customer")).grid(row=5, column=1)
+
+        inputFrame.pack(side=LEFT, padx=(self.width *0.35, 5))
 
     def hide(self, ):
         pass
