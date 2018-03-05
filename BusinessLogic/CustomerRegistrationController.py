@@ -7,8 +7,9 @@ class CustomerRegistrationController(IDutyController):
         super().__init__()
         self.customerRepo = customerRepo
 
-    def registerCustomer(self, customerDetails):
-        pass
+    def registerCustomerr(self, customerDetails):
+        for i in customerDetails:
+            print(i + ": " + customerDetails[i])
 
     def checkIfCustomerExists(self, customerDetails):
         pass

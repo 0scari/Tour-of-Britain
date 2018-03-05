@@ -17,7 +17,9 @@ class CustomerRegistrationUI(IDutyUI):
         self.setUpWidgets()
 
     def registerCustomer(self, ):
-        pass
+        customerDetails = self.getWidgetData("customerDetails")
+        # TODO WTH??????
+        self.dutyController.registerCustomerr(None, customerDetails)
 
     def setUpWidgets(self):
         inputFrame = Frame(self.frame)
@@ -29,17 +31,22 @@ class CustomerRegistrationUI(IDutyUI):
         Label(inputFrame, text="Address").grid(row=4, column=0)
 
         self._createDataWidgetKey("customerDetails")
-        dataWidget = Entry(inputFrame).grid(row=0, column=1)
+        dataWidget = Entry(inputFrame)
+        dataWidget.grid(row=0, column=1)
         self._addDataWidget("name","customerDetails", dataWidget)
-        dataWidget = Entry(inputFrame).grid(row=1, column=1)
+        dataWidget = Entry(inputFrame)
+        dataWidget.grid(row=1, column=1)
         self._addDataWidget("surname", "customerDetails", dataWidget)
-        dataWidget = Entry(inputFrame).grid(row=2, column=1)
+        dataWidget = Entry(inputFrame)
+        dataWidget.grid(row=2, column=1)
         self._addDataWidget("dob", "customerDetails", dataWidget)
-        dataWidget = Entry(inputFrame).grid(row=3, column=1)
+        dataWidget = Entry(inputFrame)
+        dataWidget.grid(row=3, column=1)
         self._addDataWidget("email", "customerDetails", dataWidget)
-        dataWidget = Entry(inputFrame).grid(row=4, column=1)
+        dataWidget = Entry(inputFrame)
+        dataWidget.grid(row=4, column=1)
         self._addDataWidget("address", "customerDetails", dataWidget)
         Button(inputFrame, text="Register",
-               command=lambda: print("Registering Customer")).grid(row=5, column=1)
+               command=lambda: self.registerCustomer()).grid(row=5, column=1)
 
         inputFrame.pack(side=LEFT, padx=(self.width *0.35, 5))

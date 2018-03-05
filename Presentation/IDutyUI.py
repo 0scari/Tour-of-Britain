@@ -48,5 +48,12 @@ class IDutyUI(ABC):
         return self.dutyController.initDutyUI(window)
 
     def getWidgetData(self, key):
-        pass
+        if key not in self.dataWidgets:
+            raise ValueError
+        outputData = {}
+        print(len(self.dataWidgets))
+        print(len(self.dataWidgets[key]))
+        for fieldName, dataWidget in self.dataWidgets[key].items():
+            outputData[fieldName] = dataWidget.get()
+        return outputData
 
