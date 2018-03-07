@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 from tkinter import *
 from tkinter import messagebox
+from GUI_NotificationHandler import GUI_NotificationHandler
 
 
 class BritaniaTourGUI:
@@ -23,6 +24,9 @@ class BritaniaTourGUI:
         self.displayMenuOptions(duties)
 
         self.__setDutyUIs(duties)
+
+    def __del__(self):
+        GUI_NotificationHandler.unsetGUI()
 
     def returnSelf(self):
         print("dbg")
@@ -83,6 +87,12 @@ class BritaniaTourGUI:
 
     def raiseErrorMessg(self, header, body):
         messagebox.showerror(header, body)
+
+    def raiseWarningMessg(self, header, body):
+        messagebox.showwarning(header, body)
+
+    def raiseInfoMessg(self, header, body):
+        messagebox.showinfo(header, body)
 
     def startGui(self):
         self.window.mainloop()

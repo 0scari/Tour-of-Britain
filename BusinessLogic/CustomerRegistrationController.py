@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from BusinessLogic.IDutyController import IDutyController
+from GUI_NotificationHandler import GUI_NotificationHandler
 
 class CustomerRegistrationController(IDutyController):
     def __init__(self, customerRepo):
@@ -9,12 +10,11 @@ class CustomerRegistrationController(IDutyController):
 
     def registerCustomerr(self, customerDetails):
         if self.validateInput(customerDetails) == True:
-            print("Input valid")
+            GUI_NotificationHandler.raiseInfoMessg("Success", "Customer registered successfully")
             for i in customerDetails:
                 print(i + ": " + customerDetails[i])
         else:
-            print("Input invalid")
-
+            GUI_NotificationHandler.raiseErrorMessg("Error", "Customer details invalid")
 
     def checkIfCustomerExists(self, customerDetails):
         pass
@@ -55,6 +55,7 @@ class CustomerRegistrationController(IDutyController):
                 return False
         else:
             return False
+
 
         if self.__is_int(input["dobDD"]):
             if int(input["dobDD"]) not in range(0, 31):

@@ -2,11 +2,13 @@
 #-*- coding: utf-8 -*-
 from BritaniaTourGUI import BritaniaTourGUI
 import importlib # module for importing other modules using string type name
+from GUI_NotificationHandler import GUI_NotificationHandler
 
 class BritaniaTourController:
     def __init__(self, user):
         self.user = user
         self.gui = self.setGui()
+        GUI_NotificationHandler.setGui(self.gui)
         self.gui.startGui()
 
     def setGui(self, ):
