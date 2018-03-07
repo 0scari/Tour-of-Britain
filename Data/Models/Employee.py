@@ -13,3 +13,6 @@ class Employee:
     def getRoleDuties(self, ):
         pass
 
+    def getId(self):
+        return self.id
+

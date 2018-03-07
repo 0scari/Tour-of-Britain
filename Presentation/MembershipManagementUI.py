@@ -4,7 +4,7 @@ from Presentation.IDutyUI import IDutyUI
 from tkinter import *
 
 
-class CustomerRegistrationUI(IDutyUI):
+class MembershipManagementUI(IDutyUI):
     def __init__(self, dutyController, window):
         super().__init__(dutyController)
         self.dutyController = dutyController
@@ -18,7 +18,7 @@ class CustomerRegistrationUI(IDutyUI):
 
     def registerCustomer(self, ):
         customerDetails = self.getWidgetData("customerDetails")
-        self.dutyController.registerCustomerr( customerDetails)
+        self.dutyController.registerCustomer(customerDetails)
 
     def setUpWidgets(self):
         inputFrame = Frame(self.frame)

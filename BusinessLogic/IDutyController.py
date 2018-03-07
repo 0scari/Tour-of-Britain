@@ -9,6 +9,10 @@ class IDutyController(ABC):
     def validateInput(self, input):
         pass
 
+    @abstractmethod
+    def constructDataModel(self, data):
+        pass
+
     def initDutyUI(self, window):
         # get class name substring without final "Controller" part"
         # e.g. authController => auth

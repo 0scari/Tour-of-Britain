@@ -5,19 +5,30 @@ import importlib # module for importing other modules using string type name
 from GUI_NotificationHandler import GUI_NotificationHandler
 
 class BritaniaTourController:
+    # TODO is it ok to do it static???
+    __user = None
+
     def __init__(self, user):
-        self.user = user
+        BritaniaTourController.__user = user
         self.gui = self.setGui()
         GUI_NotificationHandler.setGui(self.gui)
         self.gui.startGui()
 
     def setGui(self, ):
-        employeeDuties = {"cntrlr": ["CustomerRegistration", "CustomerLookup", "TripLookup"],
-                          "labels": ["Register a new customer", "Find a customer", "Find a trip"]}
+        employeeDuties = {"cntrlr": ["MembershipManagement", "CustomerLookup", "TripLookup"],
+                          "labels": ["Membership Management", "Find a customer", "Find a trip"]}
         return BritaniaTourGUI(self, employeeDuties)
 
     def getEmployeeDuties(self, ):
         pass
+
+    @staticmethod
+    def getUserId():
+        if BritaniaTourController.__user:
+            return BritaniaTourController.__user.getId()
+        else:
+            GUI_NotificationHandler.raiseErrorMessg("Error", "User data corrupt")
+
 
     def initDutyController(self, dutyControllerName):
         dutyControllerName += "Controller"

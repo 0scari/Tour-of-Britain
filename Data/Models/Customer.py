@@ -2,16 +2,15 @@
 #-*- coding: utf-8 -*-
 
 class Customer:
+
     def __init__(self):
         self.id = None
         self.name = None
+        self.surname = None
         self.dob = None
         self.email = None
         self.address = None
         self.createdBy = None
-
-    def setId(self, id):
-        pass
 
     def getId(self, ):
         pass
@@ -20,31 +19,37 @@ class Customer:
         pass
 
     def setName(self, name):
-        pass
+        self.name = name
 
     def getName(self, ):
         pass
 
-    def setDob(self, ):
+    def setSurname(self, surname):
+        self.surname = surname
+
+    def getSurname(self, ):
         pass
+
+    def setDob(self, dd, mm, yyyy):
+        self.dob = dd + '/' + mm + '/' + yyyy
 
     def getDob(self, ):
-        pass
+        return  self.dob
 
-    def setEmail(self, ):
-        pass
+    def setEmail(self, email):
+        self.email = email
 
     def getEmail(self, ):
         pass
 
-    def setAddress(self, ):
-        pass
+    def setAddress(self, address):
+        self.address = address
 
     def getAddress(self, ):
         pass
 
-    def setCreatedBy(self, ):
-        pass
+    def setCreatedBy(self, userId):
+        self.createdBy = userId
 
     def getCreatedBy(self, ):
         pass

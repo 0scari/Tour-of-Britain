@@ -2,19 +2,33 @@
 # -*- coding: utf-8 -*-
 from BusinessLogic.IDutyController import IDutyController
 from GUI_NotificationHandler import GUI_NotificationHandler
+from BritaniaTourController import BritaniaTourController
+from Data.Models.Customer import Customer
 
-class CustomerRegistrationController(IDutyController):
+class MembershipManagementController(IDutyController):
     def __init__(self, customerRepo):
         super().__init__()
         self.customerRepo = customerRepo
 
-    def registerCustomerr(self, customerDetails):
+    def registerCustomer(self, customerDetails):
         if self.validateInput(customerDetails) == True:
             GUI_NotificationHandler.raiseInfoMessg("Success", "Customer registered successfully")
-            for i in customerDetails:
-                print(i + ": " + customerDetails[i])
+            customer = self.constructDataModel(customerDetails)
+            print(customer.getDob())
         else:
             GUI_NotificationHandler.raiseErrorMessg("Error", "Customer details invalid")
+
+    def constructDataModel(self, data):
+        customer = Customer()
+        customer.setName(data["name"])
+        customer.setSurname(data["surname"])
+        customer.setDob(data["dobDD"],
+                        data["dobMM"],
+                        data["dobYYYY"])
+        customer.setEmail(data["email"])
+        customer.setAddress(data["address"])
+        customer.setCreatedBy(BritaniaTourController.getUserId())
+        return customer
 
     def checkIfCustomerExists(self, customerDetails):
         pass
@@ -38,6 +52,8 @@ class CustomerRegistrationController(IDutyController):
         else:
             return False
 
+        print("DBG")
+
         if isinstance(input["surname"], str):
             if len(input["surname"]) not in range(2,255):
                 return False
@@ -55,6 +71,7 @@ class CustomerRegistrationController(IDutyController):
                 return False
         else:
             return False
+        print("DBG1")
 
 
         if self.__is_int(input["dobDD"]):
@@ -68,6 +85,7 @@ class CustomerRegistrationController(IDutyController):
                 return False
         else:
             return False
+        print("DBG2")
 
         if self.__is_int(input["dobYYYY"]):
             if int(input["dobYYYY"]) not in range(1900, 2018):
