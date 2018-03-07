@@ -18,8 +18,7 @@ class CustomerRegistrationUI(IDutyUI):
 
     def registerCustomer(self, ):
         customerDetails = self.getWidgetData("customerDetails")
-        # TODO WTH??????
-        self.dutyController.registerCustomerr(None, customerDetails)
+        self.dutyController.registerCustomerr( customerDetails)
 
     def setUpWidgets(self):
         inputFrame = Frame(self.frame)
@@ -37,9 +36,26 @@ class CustomerRegistrationUI(IDutyUI):
         dataWidget = Entry(inputFrame)
         dataWidget.grid(row=1, column=1)
         self._addDataWidget("surname", "customerDetails", dataWidget)
-        dataWidget = Entry(inputFrame)
-        dataWidget.grid(row=2, column=1)
-        self._addDataWidget("dob", "customerDetails", dataWidget)
+
+        dobFrame = Frame(inputFrame, bg="blue")
+        dobFrame.grid(row=2, column=1, columnspan=1, sticky=N+S+E+W)
+        dobFrame.grid_propagate(False)
+
+        dataWidget = Entry(dobFrame)
+        dataWidget.grid(row=0, column=0, pady=(1,0))
+        self._addDataWidget("dobDD", "customerDetails", dataWidget)
+        dataWidget = Entry(dobFrame)
+        dataWidget.grid(row=0, column=1, pady=(0,0))
+        self._addDataWidget("dobMM", "customerDetails", dataWidget)
+        dataWidget = Entry(dobFrame)
+        dataWidget.grid(row=0, column=2, pady=(0,0))
+        self._addDataWidget("dobYYYY", "customerDetails", dataWidget)
+
+        dobFrame.grid_columnconfigure(0, weight=1)
+        dobFrame.grid_columnconfigure(1, weight=1)
+        dobFrame.grid_columnconfigure(2, weight=1)
+
+
         dataWidget = Entry(inputFrame)
         dataWidget.grid(row=3, column=1)
         self._addDataWidget("email", "customerDetails", dataWidget)

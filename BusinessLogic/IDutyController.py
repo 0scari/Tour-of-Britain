@@ -9,13 +9,12 @@ class IDutyController(ABC):
     def validateInput(self, input):
         pass
 
-    @classmethod  # Late binding method
-    def initDutyUI(cls, window):
+    def initDutyUI(self, window):
         # get class name substring without final "Controller" part"
         # e.g. authController => auth
-        dutyName = cls.__name__[:-10]
+        dutyName = self.__class__.__name__[:-10]
         dutyUI_Name = dutyName + "UI"
 
         module = importlib.import_module('Presentation.' + dutyUI_Name)
         UI_Class = getattr(module, dutyUI_Name)
-        return UI_Class(cls, window)
+        return UI_Class(self, window)

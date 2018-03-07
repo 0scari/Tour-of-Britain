@@ -23,9 +23,8 @@ class IDutyUI(ABC):
         else:
             self.dataWidgets[key][name] = widget
 
-    @classmethod
-    def getDutyName(cls):
-        return cls.__name__[:-2]
+    def getDutyName(self):
+        return self.__class__.__name__[:-2]
 
     def hide(self, ):
         self.frame.pack_forget()
