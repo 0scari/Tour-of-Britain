@@ -62,7 +62,13 @@ class MembershipManagementUI(IDutyUI):
         dataWidget = Entry(inputFrame)
         dataWidget.grid(row=4, column=1)
         self._addDataWidget("address", "customerDetails", dataWidget)
-        Button(inputFrame, text="Register",
-               command=lambda: self.registerCustomer()).grid(row=5, column=1)
+
+        var = IntVar(None, 1)
+        Radiobutton(inputFrame, text="Find customer", variable=var, value=1).grid(row=5, column=1, sticky=W)
+        Radiobutton(inputFrame, text="Register customer", variable=var, value=2).grid(row=6, column=1, sticky=W)
+        var.set(1)
+
+        Button(inputFrame, text="Submit",
+               command=lambda: self.registerCustomer()).grid(row=7, column=1)
 
         inputFrame.pack(side=LEFT, padx=(self.width *0.35, 5))

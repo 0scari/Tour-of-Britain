@@ -6,19 +6,19 @@ from BritaniaTourController import BritaniaTourController
 from Data.Models.Customer import Customer
 
 class MembershipManagementController(IDutyController):
-    def __init__(self, customerRepo):
+    def __init__(self, repository):
         super().__init__()
-        self.customerRepo = customerRepo
+        self.repository = repository
 
     def registerCustomer(self, customerDetails):
         if self.validateInput(customerDetails) == True:
             GUI_NotificationHandler.raiseInfoMessg("Success", "Customer registered successfully")
-            customer = self.constructDataModel(customerDetails)
-            print(customer.getDob())
+            customer = self._constructDataModel(customerDetails)
+            self.repository.write(customer)
         else:
             GUI_NotificationHandler.raiseErrorMessg("Error", "Customer details invalid")
 
-    def constructDataModel(self, data):
+    def _constructDataModel(self, data):
         customer = Customer()
         customer.setName(data["name"])
         customer.setSurname(data["surname"])

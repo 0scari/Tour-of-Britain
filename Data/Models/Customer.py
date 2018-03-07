@@ -13,22 +13,19 @@ class Customer:
         self.createdBy = None
 
     def getId(self, ):
-        pass
-
-    def create(self, ):
-        pass
+        return self.id
 
     def setName(self, name):
         self.name = name
 
     def getName(self, ):
-        pass
+        return self.name
 
     def setSurname(self, surname):
         self.surname = surname
 
     def getSurname(self, ):
-        pass
+        return self.surname
 
     def setDob(self, dd, mm, yyyy):
         self.dob = dd + '/' + mm + '/' + yyyy
@@ -40,17 +37,17 @@ class Customer:
         self.email = email
 
     def getEmail(self, ):
-        pass
+        return self.email
 
     def setAddress(self, address):
         self.address = address
 
     def getAddress(self, ):
-        pass
+        return self.address
 
     def setCreatedBy(self, userId):
         self.createdBy = userId
 
     def getCreatedBy(self, ):
-        pass
+        return self.createdBy
 

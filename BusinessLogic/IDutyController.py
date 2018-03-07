@@ -10,7 +10,7 @@ class IDutyController(ABC):
         pass
 
     @abstractmethod
-    def constructDataModel(self, data):
+    def _constructDataModel(self, data):
         pass
 
     def initDutyUI(self, window):

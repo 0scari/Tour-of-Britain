@@ -3,10 +3,12 @@
 from BritaniaTourGUI import BritaniaTourGUI
 import importlib # module for importing other modules using string type name
 from GUI_NotificationHandler import GUI_NotificationHandler
+import sqlite3 as sqlite
 
 class BritaniaTourController:
     # TODO is it ok to do it static???
     __user = None
+    conn = None # Temporary hack
 
     def __init__(self, user):
         BritaniaTourController.__user = user
@@ -30,12 +32,21 @@ class BritaniaTourController:
             GUI_NotificationHandler.raiseErrorMessg("Error", "User data corrupt")
 
 
-    def initDutyController(self, dutyControllerName):
-        dutyControllerName += "Controller"
+    def initDutyController(self, dutyName):
+        dutyControllerName = dutyName + "Controller"
         try:
+            # Controller
             cntrlrModule = importlib.import_module('BusinessLogic.'+dutyControllerName)
-            cntrlrClass = getattr(cntrlrModule, dutyControllerName)
-            dutyContrlr = cntrlrClass("Repository")
-            return dutyContrlr
-        except ModuleNotFoundError:
-            self.gui.raiseErrorMessg("Module not found", "Module '" + dutyControllerName[:-10] + "' was not identified")
+            cntrlrClass  = getattr(cntrlrModule, dutyControllerName)
+            # Repository
+            BritaniaTourController.conn = sqlite.connect("database")
+            dbCursor = BritaniaTourController.conn.cursor()
+            repoModule = importlib.import_module('Data.RepositoryImplementations.' + dutyName + "Repository")
+            repoClass = getattr(repoModule, dutyName + "Repository")
+            repo = repoClass(dbCursor)
+            return cntrlrClass(repo)
+        except Exception as e:
+             self.gui.raiseErrorMessg("Error", str(e))
+             # close
+
+    # def dynamicLoading():

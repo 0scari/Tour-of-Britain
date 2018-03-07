@@ -9,7 +9,7 @@ class IDutyUI(ABC):
     def __init__(self, dutyController, window = None):
         self.dataWidgets = {}
         self.frame = None
-        self.dutyController = None
+        self.dutyController = dutyController
 
     @abstractmethod
     def setUpWidgets(self, ):
