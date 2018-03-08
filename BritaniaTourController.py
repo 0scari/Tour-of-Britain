@@ -33,6 +33,11 @@ class BritaniaTourController:
 
 
     def initDutyController(self, dutyName):
+        '''
+        Factory method
+        @param dutyName:
+        @return:
+        '''
         dutyControllerName = dutyName + "Controller"
         try:
             # Controller
