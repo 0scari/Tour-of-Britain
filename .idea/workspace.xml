@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a7800e3-03f7-43b1-bd8c-d71d3be25d2e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" afterPath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/InternalErrorException.py" afterPath="$PROJECT_DIR$/Exceptions/InternalErrorException.py" />
       <change beforePath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
-      <change beforePath="$PROJECT_DIR$/Presentation/IDutyUI.py" afterPath="$PROJECT_DIR$/Presentation/IDutyUI.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -113,11 +113,42 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CustomerManagementController.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="139">
+                  <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="false" />
+                    <element signature="e#515#570#0" expanded="false" />
+                    <element signature="e#629#887#0" expanded="false" />
+                    <element signature="e#938#1332#0" expanded="false" />
+                    <element signature="e#1396#1400#0" expanded="false" />
+                    <element signature="e#1456#1460#0" expanded="false" />
+                    <element signature="e#1517#1863#0" expanded="false" />
+                    <element signature="e#1534#1596#0" expanded="false" />
+                    <element signature="e#2939#3262#0" expanded="false" />
+                    <element signature="e#3779#3884#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="InternalErrorException.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Exceptions/InternalErrorException.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="702">
-                  <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+                <state relative-caret-position="178">
+                  <caret line="75" column="34" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
                   <folding>
                     <element signature="e#41#81#0" expanded="true" />
                   </folding>
@@ -183,13 +214,13 @@
         <option value="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py" />
         <option value="$PROJECT_DIR$/Exceptions/ValidationException.py" />
         <option value="$PROJECT_DIR$/Presentation/MembershipManagementUI.py" />
-        <option value="$PROJECT_DIR$/Exceptions/InternalErrorException.py" />
         <option value="$PROJECT_DIR$/AuthenticationController.py" />
         <option value="$PROJECT_DIR$/SystemController.py" />
         <option value="$PROJECT_DIR$/Exceptions/DataValidationException.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/IUseCaseController.py" />
-        <option value="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
         <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
+        <option value="$PROJECT_DIR$/Exceptions/InternalErrorException.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
       </list>
     </option>
   </component>
@@ -369,11 +400,11 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.326713" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18956336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18956336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17678382" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326713" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -438,16 +469,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/IUseCaseController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding>
-            <element signature="e#41#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -461,10 +482,8 @@
             <element signature="e#1456#1460#0" expanded="false" />
             <element signature="e#1517#1863#0" expanded="false" />
             <element signature="e#1534#1596#0" expanded="false" />
-            <element signature="e#1912#3710#0" expanded="false" />
-            <element signature="e#2178#2276#0" expanded="false" />
-            <element signature="e#2911#3234#0" expanded="false" />
-            <element signature="e#3751#3856#0" expanded="false" />
+            <element signature="e#2939#3262#0" expanded="false" />
+            <element signature="e#3779#3884#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -532,10 +551,8 @@
             <element signature="e#1456#1460#0" expanded="false" />
             <element signature="e#1517#1863#0" expanded="false" />
             <element signature="e#1534#1596#0" expanded="false" />
-            <element signature="e#1912#3710#0" expanded="false" />
-            <element signature="e#2178#2276#0" expanded="false" />
-            <element signature="e#2911#3234#0" expanded="false" />
-            <element signature="e#3751#3856#0" expanded="false" />
+            <element signature="e#2939#3262#0" expanded="false" />
+            <element signature="e#3779#3884#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -586,10 +603,8 @@
             <element signature="e#1456#1460#0" expanded="false" />
             <element signature="e#1517#1863#0" expanded="false" />
             <element signature="e#1534#1596#0" expanded="false" />
-            <element signature="e#1912#3710#0" expanded="false" />
-            <element signature="e#2178#2276#0" expanded="false" />
-            <element signature="e#2911#3234#0" expanded="false" />
-            <element signature="e#3751#3856#0" expanded="false" />
+            <element signature="e#2939#3262#0" expanded="false" />
+            <element signature="e#3779#3884#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -819,14 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exceptions/InternalErrorException.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -866,27 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#515#570#0" expanded="false" />
-            <element signature="e#629#887#0" expanded="false" />
-            <element signature="e#938#1332#0" expanded="false" />
-            <element signature="e#1396#1400#0" expanded="false" />
-            <element signature="e#1456#1460#0" expanded="false" />
-            <element signature="e#1517#1863#0" expanded="false" />
-            <element signature="e#1534#1596#0" expanded="false" />
-            <element signature="e#1912#3710#0" expanded="false" />
-            <element signature="e#2178#2276#0" expanded="false" />
-            <element signature="e#2911#3234#0" expanded="false" />
-            <element signature="e#3751#3856#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -903,12 +889,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/tkinter/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="178">
+          <caret line="75" column="34" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
           <folding>
             <element signature="e#41#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exceptions/InternalErrorException.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#515#570#0" expanded="false" />
+            <element signature="e#629#887#0" expanded="false" />
+            <element signature="e#938#1332#0" expanded="false" />
+            <element signature="e#1396#1400#0" expanded="false" />
+            <element signature="e#1456#1460#0" expanded="false" />
+            <element signature="e#1517#1863#0" expanded="false" />
+            <element signature="e#1534#1596#0" expanded="false" />
+            <element signature="e#2939#3262#0" expanded="false" />
+            <element signature="e#3779#3884#0" expanded="false" />
           </folding>
         </state>
       </provider>

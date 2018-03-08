@@ -78,14 +78,16 @@ class CustomerManagementUI(IDutyUI):
         var = IntVar()
         var.set(None)
         Radiobutton(inputFrame, text="Find customer", variable=var, value=1, \
-                    command=lambda: [refLabel.config(state=DISABLED),
-                                     refEntry.config(state=DISABLED)]).grid(row=7, column=1, sticky=W)
-        Radiobutton(inputFrame, text="Register customer", variable=var, value=2, \
                     command=lambda: [refLabel.config(state=NORMAL),
-                                     refEntry.config(state=NORMAL)]).grid(row=8, column=1, sticky=W)
+                                     refEntry.config(state=NORMAL)]).grid(row=7, column=1, sticky=W)
+        Radiobutton(inputFrame, text="Register customer", variable=var, value=2, \
+                    command=lambda: [refLabel.config(state=DISABLED),
+                                     refEntry.config(state=DISABLED)]).grid(row=8, column=1, sticky=W)
 
         Button(inputFrame, text="Submit",
-               command=lambda opt = var: self.__submitActionCallback(opt)).grid(row=9, column=1)
+               command=lambda : self.__submitActionCallback(var.get())).grid(row=9, column=1)
+
+        print(str(var))
 
         inputFrame.pack(side=LEFT, padx=(self.width *0.35, 5))
 

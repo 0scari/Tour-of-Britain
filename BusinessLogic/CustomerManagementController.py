@@ -52,10 +52,11 @@ class CustomerManagementController(IUseCaseController):
 
     def _inputValidation(self, input):
         import datetime
-        validFieldNames = ["name", "surname", "dobDD", "email", "address", "dobMM", "dobYYYY"]
+        validFieldNames = ["ref", "name", "surname", "dobDD",
+                           "email", "address", "dobMM", "dobYYYY"]
 
         if len(input) != len(validFieldNames):
-            raise InternalErrorException("Field wrong field amount")
+            raise InternalErrorException("Wrong field amount")
 
         for fn in input:
             if fn not in validFieldNames:
