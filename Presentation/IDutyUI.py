@@ -9,7 +9,7 @@ class IDutyUI(ABC):
     def __init__(self, dutyController, window = None):
         self.dataWidgets = {}
         self.frame = None
-        self.dutyController = dutyController
+        self.__useCaseController = dutyController
 
     @abstractmethod
     def setUpWidgets(self, ):
@@ -44,7 +44,7 @@ class IDutyUI(ABC):
         pass
 
     def replicate(self, window):
-        return self.dutyController.initDutyUI(window)
+        return self.__useCaseController.initDutyUI(window)
 
     def getWidgetData(self, key):
         if key not in self.dataWidgets:

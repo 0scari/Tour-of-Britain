@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a7800e3-03f7-43b1-bd8c-d71d3be25d2e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/AuthenticationController.py" afterPath="$PROJECT_DIR$/AuthenticationController.py" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" afterPath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/IUseCaseController.py" afterPath="$PROJECT_DIR$/BusinessLogic/IUseCaseController.py" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MembershipManagementUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
-      <change beforePath="$PROJECT_DIR$/SystemController.py" afterPath="$PROJECT_DIR$/SystemController.py" />
-      <change beforePath="$PROJECT_DIR$/database" afterPath="$PROJECT_DIR$/database" />
+      <change beforePath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
+      <change beforePath="$PROJECT_DIR$/Presentation/IDutyUI.py" afterPath="$PROJECT_DIR$/Presentation/IDutyUI.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,24 +52,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CustomerManagementController.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="49" column="9" lean-forward="false" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#42#105#0" expanded="true" />
-                    <element signature="e#938#1332#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SystemController.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SystemController.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/SystemController.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                <state relative-caret-position="750">
+                  <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -133,11 +116,21 @@
           <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+                <state relative-caret-position="702">
+                  <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
                   <folding>
                     <element signature="e#41#81#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IDutyUI.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -193,10 +186,10 @@
         <option value="$PROJECT_DIR$/Exceptions/InternalErrorException.py" />
         <option value="$PROJECT_DIR$/AuthenticationController.py" />
         <option value="$PROJECT_DIR$/SystemController.py" />
-        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
         <option value="$PROJECT_DIR$/Exceptions/DataValidationException.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/IUseCaseController.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
+        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
       </list>
     </option>
   </component>
@@ -436,7 +429,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
@@ -460,8 +453,18 @@
         <state relative-caret-position="135">
           <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
           <folding>
-            <element signature="e#42#105#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#515#570#0" expanded="false" />
+            <element signature="e#629#887#0" expanded="false" />
             <element signature="e#938#1332#0" expanded="false" />
+            <element signature="e#1396#1400#0" expanded="false" />
+            <element signature="e#1456#1460#0" expanded="false" />
+            <element signature="e#1517#1863#0" expanded="false" />
+            <element signature="e#1534#1596#0" expanded="false" />
+            <element signature="e#1912#3710#0" expanded="false" />
+            <element signature="e#2178#2276#0" expanded="false" />
+            <element signature="e#2911#3234#0" expanded="false" />
+            <element signature="e#3751#3856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -521,8 +524,18 @@
         <state relative-caret-position="135">
           <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
           <folding>
-            <element signature="e#42#105#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#515#570#0" expanded="false" />
+            <element signature="e#629#887#0" expanded="false" />
             <element signature="e#938#1332#0" expanded="false" />
+            <element signature="e#1396#1400#0" expanded="false" />
+            <element signature="e#1456#1460#0" expanded="false" />
+            <element signature="e#1517#1863#0" expanded="false" />
+            <element signature="e#1534#1596#0" expanded="false" />
+            <element signature="e#1912#3710#0" expanded="false" />
+            <element signature="e#2178#2276#0" expanded="false" />
+            <element signature="e#2911#3234#0" expanded="false" />
+            <element signature="e#3751#3856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,8 +578,18 @@
         <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#42#105#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#515#570#0" expanded="false" />
+            <element signature="e#629#887#0" expanded="false" />
             <element signature="e#938#1332#0" expanded="false" />
+            <element signature="e#1396#1400#0" expanded="false" />
+            <element signature="e#1456#1460#0" expanded="false" />
+            <element signature="e#1517#1863#0" expanded="false" />
+            <element signature="e#1534#1596#0" expanded="false" />
+            <element signature="e#1912#3710#0" expanded="false" />
+            <element signature="e#2178#2276#0" expanded="false" />
+            <element signature="e#2911#3234#0" expanded="false" />
+            <element signature="e#3751#3856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -705,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/Models/Customer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -824,16 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <element signature="e#41#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Exceptions/DataValidationException.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -860,21 +866,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SystemController.py">
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#515#570#0" expanded="false" />
+            <element signature="e#629#887#0" expanded="false" />
+            <element signature="e#938#1332#0" expanded="false" />
+            <element signature="e#1396#1400#0" expanded="false" />
+            <element signature="e#1456#1460#0" expanded="false" />
+            <element signature="e#1517#1863#0" expanded="false" />
+            <element signature="e#1534#1596#0" expanded="false" />
+            <element signature="e#1912#3710#0" expanded="false" />
+            <element signature="e#2178#2276#0" expanded="false" />
+            <element signature="e#2911#3234#0" expanded="false" />
+            <element signature="e#3751#3856#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
+    <entry file="file://$PROJECT_DIR$/SystemController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="49" column="9" lean-forward="false" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+        <state relative-caret-position="750">
+          <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <element signature="e#42#105#0" expanded="true" />
-            <element signature="e#938#1332#0" expanded="false" />
+            <element signature="e#41#81#0" expanded="true" />
           </folding>
         </state>
       </provider>

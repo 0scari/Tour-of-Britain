@@ -47,7 +47,7 @@ class CustomerManagementController(IUseCaseController):
             GUI_NotificationHandler.raiseErrorMessg("Validation Error", err)
         except InternalErrorException as err:
             GUI_NotificationHandler.raiseErrorMessg("Internal Error", err)
-         
+
         return False
 
     def _inputValidation(self, input):
