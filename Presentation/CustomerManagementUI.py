@@ -4,7 +4,7 @@ from Presentation.IDutyUI import IDutyUI
 from tkinter import *
 
 
-class MembershipManagementUI(IDutyUI):
+class CustomerManagementUI(IDutyUI):
     def __init__(self, dutyController, window):
         super().__init__(dutyController)
         self.dutyController = dutyController
@@ -23,8 +23,8 @@ class MembershipManagementUI(IDutyUI):
     def setUpWidgets(self):
         inputFrame = Frame(self.frame)
 
-        Label(inputFrame, text="Name").grid(row=0, column=0)
-        Label(inputFrame, text="Surname").grid(row=1, column=0)
+        Label(inputFrame, text="First name").grid(row=0, column=0)
+        Label(inputFrame, text="Second name").grid(row=1, column=0)
         Label(inputFrame, text="Date of birth").grid(row=2, column=0)
         Label(inputFrame, text="Email").grid(row=3, column=0)
         Label(inputFrame, text="Address").grid(row=4, column=0)

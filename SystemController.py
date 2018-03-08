@@ -17,8 +17,8 @@ class SystemController:
         self.gui.startGui()
 
     def setGui(self, ):
-        employeeDuties = {"cntrlr": ["MembershipManagement", "CustomerLookup", "TripLookup"],
-                          "labels": ["Membership Management", "Find a customer", "Find a trip"]}
+        employeeDuties = {"cntrlr": ["CustomerManagement", "MembershipManagement", "BookingReservation"],
+                          "labels": ["Customer Management", "Membership Management", "Bookings and Reservations"]}
         return BritaniaTourGUI(self, employeeDuties)
 
     def getEmployeeDuties(self, ):

@@ -4,6 +4,10 @@ from BusinessLogic.IUseCaseController import IUseCaseController
 from GUI_NotificationHandler import GUI_NotificationHandler
 from SystemController import SystemController
 from Data.Models.Customer import Customer
+from Exceptions.DataValidationException import DataValidationException
+from Exceptions.InternalErrorException import InternalErrorException
+import re as regex
+
 
 class CustomerManagementController(IUseCaseController):
     def __init__(self, repository):
@@ -11,12 +15,11 @@ class CustomerManagementController(IUseCaseController):
         self.repository = repository
 
     def registerCustomer(self, customerDetails):
-        if self.validateInput(customerDetails) == True:
-            GUI_NotificationHandler.raiseInfoMessg("Success", "Customer registered successfully")
-            customer = self._constructDataModel(customerDetails)
-            self.repository.write(customer)
-        else:
-            GUI_NotificationHandler.raiseErrorMessg("Error", "Customer details invalid")
+        if not self._validateInput(customerDetails):
+            return
+        GUI_NotificationHandler.raiseInfoMessg("Success", "Customer registered successfully")
+        customer = self._constructDataModel(customerDetails)
+        self.repository.write(customer)
 
     def _constructDataModel(self, data):
         customer = Customer()
@@ -36,68 +39,65 @@ class CustomerManagementController(IUseCaseController):
     def storeCustomer(self, customerDetails):
         pass
 
-    def validateInput(self, input):
+    def _validateInput(self, customerDetails):
+        try:
+            self._inputValidation(customerDetails)
+            return True
+        except DataValidationException as err:
+            GUI_NotificationHandler.raiseErrorMessg("Validation Error", err)
+        except InternalErrorException as err:
+            GUI_NotificationHandler.raiseErrorMessg("Internal Error", err)
+         
+        return False
+
+    def _inputValidation(self, input):
+        import datetime
         validFieldNames = ["name", "surname", "dobDD", "email", "address", "dobMM", "dobYYYY"]
 
         if len(input) != len(validFieldNames):
-            return False
+            raise InternalErrorException("Field wrong field amount")
 
         for fn in input:
             if fn not in validFieldNames:
-                return False
+                raise InternalErrorException("Field not recognised")
 
-        if isinstance(input["name"], str):
-            if len(input["name"]) not in range(2,255):
-                return False
-        else:
-            return False
+        if len(input["name"]) not in range(2, 255):
+            raise DataValidationException("First Name too short")
+        if regex.search(r'\d', input["name"]):
+            raise DataValidationException("First Name must be alphabetic")
 
-        print("DBG")
+        if len(input["surname"]) not in range(2, 255):
+            raise DataValidationException("Last Name too short")
+        if regex.search(r'\d', input["surname"]):
+            raise DataValidationException("First Name must be alphabetic")
 
-        if isinstance(input["surname"], str):
-            if len(input["surname"]) not in range(2,255):
-                return False
-        else:
-            return False
-
-        if isinstance(input["email"], str):
-            if len(input["email"]) not in range(5,255):
-                return False
-        else:
-            return False
-
-        if isinstance(input["address"], str):
-            if len(input["address"]) not in range(10,255):
-                return False
-        else:
-            return False
-        print("DBG1")
-
-
-        if self.__is_int(input["dobDD"]):
-            if int(input["dobDD"]) not in range(0, 31):
-                return False
-        else:
-            return False
-
-        if self.__is_int(input["dobMM"]):
-            if int(input["dobMM"]) not in range(1, 12):
-                return False
-        else:
-            return False
-        print("DBG2")
-
-        if self.__is_int(input["dobYYYY"]):
+        if self.__is_int(input["dobDD"]) \
+         and self.__is_int(input["dobMM"]) \
+         and self.__is_int(input["dobYYYY"]):
             if int(input["dobYYYY"]) not in range(1900, 2018):
-                return False
+                raise DataValidationException("Invalid year")
+            try:
+                datetime.date(int(input["dobYYYY"]), int(input["dobMM"]), int(input["dobDD"]))
+
+            except ValueError:
+                raise DataValidationException("Non-existent date")
         else:
-            return False
+            raise DataValidationException("Inappropriate date format")
+
+        validEmail = \
+            regex.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$',
+                        input["email"])
+        if not validEmail:
+            raise DataValidationException("Bad email format")
+
+        if len(input["address"]) not in range(10, 255):
+            raise DataValidationException("Address too short")
 
         return True
 
     def __is_int(self, input):
-      try:
-        num = int(input)
-      except ValueError:
-        return False
-      return True
+        try:
+            num = int(input)
+        except ValueError:
+            return False
+        return True

@@ -11,7 +11,7 @@ class AuthenticationController:
         user = Employee()
         role = Role()
         role.setName("Operator")
-        duty1 = Duty("MembershipManagement", "Membership Management")
+        duty1 = Duty("CustomerManagement", "Membership Management")
         duty2 = Duty("CustomerLookup", "Find a customer")
         duty3 = Duty("TripLookup", "Find a trip")
         duty4 = Duty("TripBooking", "Book a trip")
