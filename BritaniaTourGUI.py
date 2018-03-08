@@ -83,7 +83,7 @@ class BritaniaTourGUI:
     def __setActiveDutyUI(self, dutyUI):
         self.activeDutyUI.hide()
         self.activeDutyUI = dutyUI
-        self.activeDutyUI.appear()
+        self.activeDutyUI.appear(BOTTOM)
 
     def raiseErrorMessg(self, header, body):
         messagebox.showerror(header, body)

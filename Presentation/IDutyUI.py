@@ -36,9 +36,9 @@ class IDutyUI(ABC):
         else:
             self.dataWidgets[key] = {}
 
-    def appear(self, ):
+    def appear(self, pos):
         self.frame.pack_propagate(False)
-        self.frame.pack(side=BOTTOM)
+        self.frame.pack(side=pos)
 
     def close(self, ):
         pass
