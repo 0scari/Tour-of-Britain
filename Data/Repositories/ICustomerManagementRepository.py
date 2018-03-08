@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
 
-class IMembershipManagementRepository:
+class ICustomerManagementRepository:
     @abstractmethod
     def __init__(self, connection):
         self._connection = connection
@@ -14,4 +14,3 @@ class IMembershipManagementRepository:
     @abstractmethod
     def read(self, criteria):
         pass
-

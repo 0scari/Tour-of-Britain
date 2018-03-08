@@ -1,9 +1,9 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-from Data.Repositories.IMembershipManagementRepository import IMembershipManagementRepository
-from BritaniaTourController import BritaniaTourController
+from Data.Repositories.ICustomerManagementRepository import ICustomerManagementRepository
+from SystemController import SystemController
 
-class MembershipManagementRepository(IMembershipManagementRepository):
+class CustomerManagementRepository(ICustomerManagementRepository):
     def __init__(self, connection):
         super().__init__(connection)
 
@@ -24,7 +24,7 @@ class MembershipManagementRepository(IMembershipManagementRepository):
             print(row)
 
         # Save (commit) the changes
-            BritaniaTourController.conn.commit()
+            SystemController.conn.commit()
 
     def read(self, criteria):
         pass

@@ -1,11 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from BusinessLogic.IDutyController import IDutyController
+from BusinessLogic.IUseCaseController import IUseCaseController
 from GUI_NotificationHandler import GUI_NotificationHandler
-from BritaniaTourController import BritaniaTourController
+from SystemController import SystemController
 from Data.Models.Customer import Customer
 
-class MembershipManagementController(IDutyController):
+class CustomerManagementController(IUseCaseController):
     def __init__(self, repository):
         super().__init__()
         self.repository = repository
@@ -27,7 +27,7 @@ class MembershipManagementController(IDutyController):
                         data["dobYYYY"])
         customer.setEmail(data["email"])
         customer.setAddress(data["address"])
-        customer.setCreatedBy(BritaniaTourController.getUserId())
+        customer.setCreatedBy(SystemController.getUserId())
         return customer
 
     def checkIfCustomerExists(self, customerDetails):

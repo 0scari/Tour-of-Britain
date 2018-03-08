@@ -5,13 +5,13 @@ import importlib # module for importing other modules using string type name
 from GUI_NotificationHandler import GUI_NotificationHandler
 import sqlite3 as sqlite
 
-class BritaniaTourController:
+class SystemController:
     # TODO is it ok to do it static???
     __user = None
     conn = None # Temporary hack
 
     def __init__(self, user):
-        BritaniaTourController.__user = user
+        SystemController.__user = user
         self.gui = self.setGui()
         GUI_NotificationHandler.setGui(self.gui)
         self.gui.startGui()
@@ -26,8 +26,8 @@ class BritaniaTourController:
 
     @staticmethod
     def getUserId():
-        if BritaniaTourController.__user:
-            return BritaniaTourController.__user.getId()
+        if SystemController.__user:
+            return SystemController.__user.getId()
         else:
             GUI_NotificationHandler.raiseErrorMessg("Error", "User data corrupt")
 
@@ -35,6 +35,7 @@ class BritaniaTourController:
     def initDutyController(self, dutyName):
         '''
         Factory method
+        @type  
         @param dutyName:
         @return:
         '''
@@ -44,10 +45,10 @@ class BritaniaTourController:
             cntrlrModule = importlib.import_module('BusinessLogic.'+dutyControllerName)
             cntrlrClass  = getattr(cntrlrModule, dutyControllerName)
             # Repository
-            BritaniaTourController.conn = sqlite.connect("database")
-            dbCursor = BritaniaTourController.conn.cursor()
+            SystemController.conn = sqlite.connect("database")
+            dbCursor   = SystemController.conn.cursor()
             repoModule = importlib.import_module('Data.RepositoryImplementations.' + dutyName + "Repository")
-            repoClass = getattr(repoModule, dutyName + "Repository")
+            repoClass  = getattr(repoModule, dutyName + "Repository")
             repo = repoClass(dbCursor)
             return cntrlrClass(repo)
         except Exception as e:

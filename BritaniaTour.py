@@ -2,13 +2,13 @@
 #-*- coding: utf-8 -*-
 import sqlite3 as sql
 from AuthenticationController import AuthenticationController
-from BritaniaTourController import BritaniaTourController
+from SystemController import SystemController
 
 
 class BritaniaTour:
     def __init__(self):
         user = AuthenticationController.login()
-        BritaniaTourController(user)
+        SystemController(user)
 
 
 if __name__ == "__main__":
