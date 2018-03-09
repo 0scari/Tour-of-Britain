@@ -40,10 +40,18 @@ class CustomerManagementController(IUseCaseController):
 
     def findCustomers(self, customerDetails):
         customerDetails = {k: v for k, v in customerDetails.items() if len(v) > 0}
+        if not len(customerDetails):
+            GUI_NotificationHandler.raiseWarningMessg("Warning", "No search criteria was given")
+            return None
         if not self._validateInput(customerDetails, False):
-            return
-        customer = self._constructDataModel(customerDetails)
-        return self.repository.readCustomers(customer.getData())
+            return None
+        customerModel = self._constructDataModel(customerDetails)
+        customers = self.repository.readCustomers(customerModel.getData())
+        if len(customers) > 0:
+            return customers
+        else:
+            GUI_NotificationHandler.raiseWarningMessg("Warning", "No customer matches the search criteria")
+            return None
 
     def storeCustomer(self, customerDetails):
         pass
@@ -73,13 +81,13 @@ class CustomerManagementController(IUseCaseController):
 
         if "name" in input:
             if len(input["name"]) not in range(2, 255):
-                raise DataValidationException("First Name too short")
+                raise DataValidationException("First Name invalid")
             if regex.search(r'\d', input["name"]):
                 raise DataValidationException("First Name must be alphabetic")
 
         if "surname" in input:
             if len(input["surname"]) not in range(2, 255):
-                raise DataValidationException("Last Name too short")
+                raise DataValidationException("Last Name invalid")
             if regex.search(r'\d', input["surname"]):
                 raise DataValidationException("First Name must be alphabetic")
 
@@ -105,11 +113,11 @@ class CustomerManagementController(IUseCaseController):
                 regex.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$',
                             input["email"])
             if not validEmail:
-                raise DataValidationException("Bad email format")
+                raise DataValidationException("Email invalid")
 
         if "address" in input:
             if len(input["address"]) not in range(10, 255):
-                raise DataValidationException("Address too short")
+                raise DataValidationException("Address invalid")
 
         return True
 
