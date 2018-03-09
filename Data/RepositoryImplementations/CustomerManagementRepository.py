@@ -47,8 +47,20 @@ class CustomerManagementRepository(ICustomerManagementRepository):
         for row in self._connection:
             output.append(dict(zip(columNames, row)))
 
-        # print(output)
         return output
 
-    # def read(self, conditions):
-    #     pass
+    def update(self, customer):
+        try:
+            self._connection.execute('''
+            UPDATE Customers SET name=?, surname=?, dob=?, email=?, address=?
+            WHERE id=?;''', (customer.getName(),
+                             customer.getSurname(),
+                             customer.getDob(),
+                             customer.getEmail(),
+                             customer.getAddress(),
+                             customer.getId()))
+            SystemController.conn.commit()  # Save (commit) the changes
+            return True
+        except ValueError as err:
+            GUI_NotificationHandler.raiseWarningMessg("DB connection failure", err)
+            return False

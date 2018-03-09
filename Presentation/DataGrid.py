@@ -8,7 +8,7 @@ class DataGrid:
         self.__frame  = VerticalScrolledFrame(parent, height)
         self.__dataSet   = []
         self.__labels = None
-        self.__updateCallback = None
+        self.__updateRecordCallback = None
 
     def setDataSet(self, dataSet):
         for object in dataSet:
@@ -21,7 +21,7 @@ class DataGrid:
 
     def setUpdateCallback(self, callback):
         if callable(callback):
-            self.__updateCallback = callback
+            self.__updateRecordCallback = callback
         else:
             # Exception to programmer
             raise Exception("DataGrid: update callback not callable")
@@ -53,13 +53,18 @@ class DataGrid:
             bttn.grid(row=i+1, column=len(data) + 1)
 
     def __editRecordCallback(self, event,  button, entries):
-        print(button["text"])
         if button["text"] == "edit":
             button.config(text="done")
             for key in entries:
-                if key != "id":
+                if key != "id" and key != "createdBy":
                     entries[key].config(state=NORMAL)
-        else: # TODO Uodating goes here
+        else:
             button.config(text="edit")
+            data = {}
             for key in entries:
+                data[key] = entries[key].get()
                 entries[key].config(state=DISABLED)
+            self.__updateRecordCallback(data)
+
+    def destruct(self):
+        self.__frame.destruct()

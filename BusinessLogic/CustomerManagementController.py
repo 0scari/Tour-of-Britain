@@ -22,13 +22,17 @@ class CustomerManagementController(IUseCaseController):
         self.repository.write(customer)
 
     def updateCustomer(self, customerDetails):
-        pass
-        # validFieldNames = ["ref", "name", "surname", "dobDD",
-        #                    "email", "address"]
-        # customerDetails = dict(zip(columNames, row)
+        splitDob = dict(zip(["dobDD", "dobMM", "dobYYYY"], customerDetails["dob"].split("/")))
+        del customerDetails["dob"] # delete atomic dob element
+        customerDetails = {**splitDob, **customerDetails} # merge dictionaries
+        print(customerDetails)
+        if not self._validateInput(customerDetails, False):
+            return
+        customer = self._constructDataModel(customerDetails)
+        if self.repository.update(customer):
+            GUI_NotificationHandler.raiseInfoMessg("Success", "Customer was updated successfully")
 
     def _constructDataModel(self, data):
-        print(data)
         customer = Customer()
         if "id" in data:
             customer.setId(data["id"])
@@ -48,6 +52,8 @@ class CustomerManagementController(IUseCaseController):
             customer.setAddress(data["address"])
         if "employee_id" in data:
             customer.setCreatedBy(data["employee_id"])
+        if "createdBy" in data:
+            customer.setCreatedBy(data["createdBy"])
         return customer
 
     def findCustomers(self, customerDetails):
@@ -84,15 +90,12 @@ class CustomerManagementController(IUseCaseController):
 
     def _inputValidation(self, input, fullValidation):
         import datetime
-        validFieldNames = ["ref", "name", "surname", "dobDD",
-                           "email", "address", "dobMM", "dobYYYY"]
-
-        if len(input) != len(validFieldNames) and fullValidation:
-            raise InternalErrorException("Wrong field amount")
+        validFieldNames = ["ref", "name", "surname", "dobDD", "createdBy",
+                           "email", "address", "dobMM", "dobYYYY", "id"]
 
         for fn in input:
             if fn not in validFieldNames:
-                raise InternalErrorException("Field not recognised")
+                raise InternalErrorException("Field "+fn+"not recognised")
 
         if "name" in input:
             if len(input["name"]) not in range(2, 255):
@@ -104,7 +107,7 @@ class CustomerManagementController(IUseCaseController):
             if len(input["surname"]) not in range(2, 255):
                 raise DataValidationException("Last Name invalid")
             if regex.search(r'\d', input["surname"]):
-                raise DataValidationException("First Name must be alphabetic")
+                raise DataValidationException("Last Name must be alphabetic")
 
         if "dobDD" in input or "dobMM" in input or "dobYYYY" in input:
             try:

@@ -18,6 +18,7 @@ class CustomerManagementUI(IDutyUI):
         self.appear(BOTTOM)
         self.__inputFrame = Frame(self.frame)
         self.setUpWidgets()
+        self.__dataGrid = None
 
     def registerCustomer(self, ):
         customerDetails = self.getWidgetData("customerDetails")
@@ -106,10 +107,13 @@ class CustomerManagementUI(IDutyUI):
             #     "Address": "Susan",
             #     "Created by:": "Susan"}]
             if customers:
+                if self.__dataGrid:
+                    self.__dataGrid.destruct()
+                    return
                 self.__inputFrame.place(rely=0.45, anchor=S)
-                dataGrid = DataGrid(self.frame, self.height * 0.5).setDataSet(customers)
-                dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)
-                dataGrid.pack(BOTTOM)
+                self.__dataGrid = DataGrid(self.frame, self.height * 0.5).setDataSet(customers)
+                self.__dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)
+                self.__dataGrid.pack(BOTTOM)
         elif opt == 2: # REGISTER CUSTOMERS
             self.__useCaseController.registerCustomer(self.getWidgetData("customerDetails"))
         else:
