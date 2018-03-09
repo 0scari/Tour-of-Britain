@@ -18,14 +18,27 @@ class CustomerManagementRepository(ICustomerManagementRepository):
               customer.getAddress()))
 
         self._connection.execute('''
-        SELECT * FROM Customers;''')
+        SELECT id FROM Customers;''')
+        SystemController.conn.commit()  # Save (commit) the changes
+        return(self._connection[0])     # return the id
 
-        for row in self._connection:
+
+    def read(self, conditions):
+
+        conds = []
+        for cond in conditions:
+            conds.append(cond + "=" + "?")
+
+        condition= ' AND '.join(conds)
+
+        print(condition)
+
+        query = "SELECT * FROM Customers WHERE " + condition
+        print(query)
+        values = list(conditions.values())
+        self._connection.execute(query, tuple(values))
+
+        for row in self._connection:  # return the id
             print(row)
 
-        # Save (commit) the changes
-            SystemController.conn.commit()
-
-    def read(self, criteria):
-        pass
 

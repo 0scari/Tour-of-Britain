@@ -39,7 +39,7 @@ class DataGrid:
         print(button["text"])
         if button["text"] == "edit":
             button.config(text="done")
-            for entry in entries:
+            for entry in entries[1:]:
                 entry.config(state=NORMAL)
         else:
             button.config(text="edit")

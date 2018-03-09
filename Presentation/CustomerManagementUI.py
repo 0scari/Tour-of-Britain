@@ -74,7 +74,7 @@ class CustomerManagementUI(IDutyUI):
         self._addDataWidget("address", "customerDetails", dataWidget)
 
         var = IntVar()
-        var.set(None)
+        var.set(0)
         Radiobutton(self.__inputFrame, text="Find customer", variable=var, value=1, \
                     command=lambda: [refLabel.config(state=NORMAL),
                                      refEntry.config(state=NORMAL)]).grid(row=7, column=1, sticky=W)
@@ -90,27 +90,25 @@ class CustomerManagementUI(IDutyUI):
         self.__inputFrame.place(relx=0.5, rely=0.5, anchor=CENTER)
 
     def __submitActionCallback(self, opt, ):
-        if opt == 1:
-            self.__inputFrame.place(rely=0.45, anchor=S)
-            data = [{"Reference nr." : "Hue",
-                "First name": "Bob",
-                "Second name": "Bob",
-                "Date of birth": "Bob",
-                "Email": "Bob",
-                "Address": "Bob",
-                "Created by:": "Bob"}, {"Reference nr." : "Susan",
-                "First name": "Susan",
-                "Second name": "Susan",
-                "Date of birth": "Susan",
-                "Email": "Susan",
-                "Address": "Susan",
-                "Created by:": "Susan"}]
-            dataGrid = DataGrid(self.frame, self.height * 0.5).setData(data)
-            dataGrid.pack(side=BOTTOM)
-
-                #place(relx=0.5, rely=0.5, anchor=N)
-        elif opt == 2:
+        if opt == 1: # FIND CUSTOMERS
+            self.__useCaseController.findCustomers(self.getWidgetData("customerDetails"))
+            # self.__inputFrame.place(rely=0.45, anchor=S)
+            # data = [{"Reference nr." : "Hue",
+            #     "First name": "Bob",
+            #     "Second name": "Bob",
+            #     "Date of birth": "Bob",
+            #     "Email": "Bob",
+            #     "Address": "Bob",
+            #     "Created by:": "Bob"}, {"Reference nr." : "Susan",
+            #     "First name": "Susan",
+            #     "Second name": "Susan",
+            #     "Date of birth": "Susan",
+            #     "Email": "Susan",
+            #     "Address": "Susan",
+            #     "Created by:": "Susan"}]
+            # dataGrid = DataGrid(self.frame, self.height * 0.5).setData(data)
+            # dataGrid.pack(side=BOTTOM)
+        elif opt == 2: # REGISTER CUSTOMERS
             self.__useCaseController.registerCustomer(self.getWidgetData("customerDetails"))
         else:
             GUI_NotificationHandler.raiseWarningMessg("Warning", "Option not selected")
-

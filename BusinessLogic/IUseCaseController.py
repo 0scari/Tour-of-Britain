@@ -6,11 +6,11 @@ from abc import ABC, abstractmethod
 
 class IUseCaseController(ABC):
     @abstractmethod
-    def _validateInput(self, input):
+    def _validateInput(self, input, fullValidation = True):
         pass
 
     @abstractmethod
-    def _inputValidation(self, input):
+    def _inputValidation(self, input, fullValidation):
         pass
 
     @abstractmethod

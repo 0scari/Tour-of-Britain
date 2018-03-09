@@ -51,6 +51,22 @@ class Customer:
     def getCreatedBy(self, ):
         return self.createdBy
 
+    def getData(self):
+        output = {}
+        if self.id:
+            output["id"] = self.id
+        if self.name:
+            output["name"] = self.name
+        if self.surname:
+            output["surname"] = self.surname
+        if self.dob:
+            output["dob"] = self.dob
+        if self.email:
+            output["email"] = self.email
+        if self.address:
+            output["address"] = self.address
+        return output
+
     def dataToDict(self):
         return {"Reference nr." : self.id,
                 "First name": self.name,
