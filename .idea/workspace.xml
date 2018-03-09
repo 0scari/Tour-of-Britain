@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1a7800e3-03f7-43b1-bd8c-d71d3be25d2e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/BritaniaTourGUI.py" afterPath="$PROJECT_DIR$/BritaniaTourGUI.py" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/Customer.py" afterPath="$PROJECT_DIR$/Data/Models/Customer.py" />
       <change beforePath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
-      <change beforePath="$PROJECT_DIR$/Presentation/IDutyUI.py" afterPath="$PROJECT_DIR$/Presentation/IDutyUI.py" />
-      <change beforePath="$PROJECT_DIR$/database" afterPath="$PROJECT_DIR$/database" />
+      <change beforePath="$PROJECT_DIR$/Presentation/DataGrid.py" afterPath="$PROJECT_DIR$/Presentation/DataGrid.py" />
+      <change beforePath="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" afterPath="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,11 +89,35 @@
           <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="604">
-                  <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+                <state relative-caret-position="717">
+                  <caret line="106" column="40" lean-forward="false" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
                   <folding>
                     <element signature="e#41#81#0" expanded="true" />
+                    <element signature="e#4133#4377#0" expanded="false" />
+                    <element signature="e#4379#4637#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="VerticalScrollableFrame.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-17">
+                  <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#0#21#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Customer.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Data/Models/Customer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="837">
+                  <caret line="60" column="45" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="60" selection-end-column="45" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -142,21 +166,11 @@
           <file leaf-file-name="DataGrid.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Presentation/DataGrid.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="627">
-                  <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                <state relative-caret-position="480">
+                  <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-            <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/tkinter/__init__.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="9360">
-                  <caret line="2916" column="45" lean-forward="false" selection-start-line="2916" selection-start-column="38" selection-end-line="2916" selection-end-column="45" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -169,18 +183,6 @@
                   <folding>
                     <marker date="1520548477957" expanded="true" signature="395:485" ph="INSERT INTO Customers... " />
                     <marker date="1520548477957" expanded="true" signature="710:733" ph="SELECT * FRO... Customers" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="VerticalScrollableFrame.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-                  <folding>
-                    <element signature="e#0#21#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -210,9 +212,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>inputFrame</find>
-      <find>not re</find>
       <find>config</find>
       <find>config(</find>
+      <find>not re</find>
     </findStrings>
     <replaceStrings>
       <replace>self.__inputFrame</replace>
@@ -243,7 +245,6 @@
         <option value="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerRepoImplementation.py" />
         <option value="$PROJECT_DIR$/Data/Repositories/ICustomerRepository.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/MembershipManagementController.py" />
-        <option value="$PROJECT_DIR$/Data/Models/Customer.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8baefa60-d316-4f14-8232-5f03410a0eed/console_1.sql" />
         <option value="$PROJECT_DIR$/Data/RepositoryImplementations/MembershipManagementRepository.py" />
         <option value="$PROJECT_DIR$/Data/Repositories/IMembershipManagementRepository.py" />
@@ -261,10 +262,11 @@
         <option value="$PROJECT_DIR$/Presentation/IDutyUI.py" />
         <option value="$PROJECT_DIR$/BritaniaTourGUI.py" />
         <option value="$PROJECT_DIR$/VerticalScrollableFrame.py" />
-        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
-        <option value="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" />
         <option value="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py" />
+        <option value="$PROJECT_DIR$/Data/Models/Customer.py" />
+        <option value="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" />
         <option value="$PROJECT_DIR$/Presentation/DataGrid.py" />
+        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
       </list>
     </option>
   </component>
@@ -274,7 +276,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="-306" />
     <option name="y" value="-1080" />
     <option name="width" value="1920" />
@@ -439,7 +441,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-306" y="-1080" width="1920" height="1080" extended-state="0" />
+    <frame x="-306" y="-1080" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -507,8 +509,13 @@
           <line>23</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Presentation/DataGrid.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -526,6 +533,8 @@
           <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
             <element signature="e#41#81#0" expanded="true" />
+            <element signature="e#4133#4377#0" expanded="false" />
+            <element signature="e#4379#4637#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -579,6 +588,8 @@
           <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="20" />
           <folding>
             <element signature="e#41#81#0" expanded="true" />
+            <element signature="e#4133#4377#0" expanded="false" />
+            <element signature="e#4379#4637#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -747,13 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Models/Customer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8baefa60-d316-4f14-8232-5f03410a0eed/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -898,6 +902,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9360">
+          <caret line="2916" column="45" lean-forward="false" selection-start-line="2916" selection-start-column="38" selection-end-line="2916" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -918,16 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -939,30 +941,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
+    <entry file="file://$PROJECT_DIR$/Data/Models/Customer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="e#41#81#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="837">
+          <caret line="60" column="45" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="60" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/tkinter/__init__.py">
+    <entry file="file://$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9360">
-          <caret line="2916" column="45" lean-forward="false" selection-start-line="2916" selection-start-column="38" selection-end-line="2916" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="-17">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Presentation/DataGrid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="106" column="40" lean-forward="false" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
+          <folding>
+            <element signature="e#41#81#0" expanded="true" />
+            <element signature="e#4133#4377#0" expanded="false" />
+            <element signature="e#4379#4637#0" expanded="false" />
           </folding>
         </state>
       </provider>

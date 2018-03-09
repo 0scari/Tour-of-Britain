@@ -29,7 +29,7 @@ class VerticalScrolledFrame(Frame):
         interior_id = canvas.create_window(0, 0, window=interior,
                                            anchor=NW)
 
-        canvas.config(height=h)
+        canvas.config(height=height)
         # track changes to the canvas and frame width and sync them,
         # also updating the scrollbar
         def _configure_interior(event):

@@ -3,7 +3,7 @@
 from Presentation.IDutyUI import IDutyUI
 from tkinter import *
 from GUI_NotificationHandler import GUI_NotificationHandler
-from Presentation.VerticalScrollableFrame import VerticalScrolledFrame
+from Presentation.DataGrid import DataGrid
 
 
 class CustomerManagementUI(IDutyUI):
@@ -92,44 +92,21 @@ class CustomerManagementUI(IDutyUI):
     def __submitActionCallback(self, opt, ):
         if opt == 1:
             self.__inputFrame.place(rely=0.45, anchor=S)
-            outputFrame = VerticalScrolledFrame(self.frame, self.height * 0.5)
-
-            refLabel = Label(outputFrame.interior, text="Reference nr.")
-            refLabel.grid(row=0, column=0)
-            Label(outputFrame.interior, text="First name").grid(row=0, column=1)
-            Label(outputFrame.interior, text="Second name").grid(row=0, column=2)
-            Label(outputFrame.interior, text="Date of birth").grid(row=0, column=3)
-            Label(outputFrame.interior, text="Email").grid(row=0, column=4)
-            Label(outputFrame.interior, text="Address").grid(row=0, column=5)
-
-            for i in range(1,50):
-
-                dataWidget = Entry(outputFrame.interior)
-                dataWidget.grid(row=i, column=0)
-                dataWidget = Entry(outputFrame.interior)
-                dataWidget.grid(row=i, column=1)
-                dataWidget = Entry(outputFrame.interior)
-                dataWidget.grid(row=i, column=2)
-                dataWidget = Entry(outputFrame.interior)
-                dataWidget.grid(row=i, column=3)
-                dataWidget = Entry(outputFrame.interior)
-                dataWidget.grid(row=i, column=4)
-                dataWidget = Entry(outputFrame.interior)
-                dataWidget.grid(row=i, column=5)
-                Button(outputFrame.interior, text="edit").grid(row=i, column=6)
-
-            outputFrame.interior.grid_columnconfigure(0, weight=1)
-            outputFrame.interior.grid_columnconfigure(1, weight=1)
-            outputFrame.interior.grid_columnconfigure(2, weight=1)
-            outputFrame.interior.grid_columnconfigure(3, weight=1)
-            outputFrame.interior.grid_columnconfigure(4, weight=1)
-            outputFrame.interior.grid_columnconfigure(5, weight=1)
-            # outputFrame.interior.grid_columnconfigure(6, weight=1)
-
-
-            #Frame(self.frame, bg="green", height=self.height * 0.5, width=self.width)
-
-            outputFrame.pack(side=BOTTOM)
+            data = [{"Reference nr." : "Hue",
+                "First name": "Bob",
+                "Second name": "Bob",
+                "Date of birth": "Bob",
+                "Email": "Bob",
+                "Address": "Bob",
+                "Created by:": "Bob"}, {"Reference nr." : "Susan",
+                "First name": "Susan",
+                "Second name": "Susan",
+                "Date of birth": "Susan",
+                "Email": "Susan",
+                "Address": "Susan",
+                "Created by:": "Susan"}]
+            dataGrid = DataGrid(self.frame, self.height * 0.5).setData(data)
+            dataGrid.pack(side=BOTTOM)
 
                 #place(relx=0.5, rely=0.5, anchor=N)
         elif opt == 2:

@@ -51,3 +51,12 @@ class Customer:
     def getCreatedBy(self, ):
         return self.createdBy
 
+    def dataToDict(self):
+        return {"Reference nr." : self.id,
+                "First name": self.name,
+                "Second name": self.surname,
+                "Date of birth": self.dob,
+                "Email": self.email,
+                "Address": self.email,
+                "Created by:": self.createdBy}
+
