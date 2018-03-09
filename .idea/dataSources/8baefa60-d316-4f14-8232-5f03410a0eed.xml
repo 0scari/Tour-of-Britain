@@ -47,37 +47,53 @@
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="15" parent="6" name="sqlite_autoindex_Customers_1">
+    <index id="15" parent="6" name="sqlite_autoindex_Customers_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>name
+surname
+dob</ColNames>
+      <ColumnCollations>
+
+</ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="16" parent="6" name="sqlite_autoindex_Customers_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="16" parent="6">
+    <key id="17" parent="6">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="17" parent="6">
+    <key id="18" parent="6" name="unq">
+      <ColNames>name
+surname
+dob</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Customers_2</UnderlyingIndexName>
+    </key>
+    <key id="19" parent="6">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_Customers_1</UnderlyingIndexName>
     </key>
-    <column id="18" parent="7" name="type">
+    <column id="20" parent="7" name="type">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="19" parent="7" name="name">
+    <column id="21" parent="7" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="20" parent="7" name="tbl_name">
+    <column id="22" parent="7" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="21" parent="7" name="rootpage">
+    <column id="23" parent="7" name="rootpage">
       <Position>4</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="22" parent="7" name="sql">
+    <column id="24" parent="7" name="sql">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </column>

@@ -3,6 +3,7 @@
 from Data.Repositories.ICustomerManagementRepository import ICustomerManagementRepository
 from SystemController import SystemController
 from GUI_NotificationHandler import GUI_NotificationHandler
+import sqlite3
 
 class CustomerManagementRepository(ICustomerManagementRepository):
     def __init__(self, connection):
@@ -25,8 +26,14 @@ class CustomerManagementRepository(ICustomerManagementRepository):
             SystemController.conn.commit()  # Save (commit) the changes
             GUI_NotificationHandler.raiseInfoMessg("Registration Success",
                                                    "Customer reference: " + str(ref))    # return the id
+            return True
         except ValueError as err:
             GUI_NotificationHandler.raiseWarningMessg("DB connection failure", err)
+            return False
+        except sqlite3.IntegrityError:
+            GUI_NotificationHandler.raiseWarningMessg("Operation Failed",
+                                                      "Customer with the specified details already exists")
+            return False
 
     def readCustomers(self, conditions):
         conds = []
@@ -64,3 +71,6 @@ class CustomerManagementRepository(ICustomerManagementRepository):
         except ValueError as err:
             GUI_NotificationHandler.raiseWarningMessg("DB connection failure", err)
             return False
+        except sqlite3.IntegrityError:
+            GUI_NotificationHandler.raiseWarningMessg("Operation Failed",
+                                                      "Customer with the specified details already exists")

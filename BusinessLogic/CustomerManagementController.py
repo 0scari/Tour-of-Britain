@@ -16,7 +16,6 @@ class CustomerManagementController(IUseCaseController):
     def registerCustomer(self, customerDetails):
         if not self._validateInput(customerDetails):
             return
-        GUI_NotificationHandler.raiseInfoMessg("Success", "Customer registered successfully")
         customer = self._constructDataModel(customerDetails)
         customer.setCreatedBy(SystemController.getUserId())
         self.repository.write(customer)
