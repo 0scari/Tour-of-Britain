@@ -2,29 +2,33 @@
 #-*- coding: utf-8 -*-
 from Data.Repositories.ICustomerManagementRepository import ICustomerManagementRepository
 from SystemController import SystemController
+from GUI_NotificationHandler import GUI_NotificationHandler
 
 class CustomerManagementRepository(ICustomerManagementRepository):
     def __init__(self, connection):
         super().__init__(connection)
 
     def write(self, customer):
-        self._connection.execute('''
-        INSERT INTO Customers(name, surname, dob, email, address)
-          VALUES (?, ?, ?, ?, ?);
-        ''', (customer.getName(),
-              customer.getSurname(),
-              customer.getDob(),
-              customer.getEmail(),
-              customer.getAddress()))
+        try:
+            self._connection.execute('''
+            INSERT INTO Customers(name, surname, dob, email, address, employee_id)
+              VALUES (?, ?, ?, ?, ?, ?);
+            ''', (customer.getName(),
+                  customer.getSurname(),
+                  customer.getDob(),
+                  customer.getEmail(),
+                  customer.getAddress(),
+                  customer.getCreatedBy()))
 
-        self._connection.execute('''
-        SELECT id FROM Customers;''')
-        SystemController.conn.commit()  # Save (commit) the changes
-        return(self._connection[0])     # return the id
+            ref = self.readCustomers({"email": customer.getEmail()})[0]["id"]
 
+            SystemController.conn.commit()  # Save (commit) the changes
+            GUI_NotificationHandler.raiseInfoMessg("Registration Success",
+                                                   "Customer reference: " + str(ref))    # return the id
+        except ValueError as err:
+            GUI_NotificationHandler.raiseWarningMessg("DB connection failure", err)
 
-    def read(self, conditions):
-
+    def readCustomers(self, conditions):
         conds = []
         for cond in conditions:
             conds.append(cond + "=" + "?")
@@ -38,7 +42,12 @@ class CustomerManagementRepository(ICustomerManagementRepository):
         values = list(conditions.values())
         self._connection.execute(query, tuple(values))
 
-        for row in self._connection:  # return the id
-            print(row)
+        output = []
+        columNames = list(map(lambda x: x[0], self._connection.description))
+        for row in self._connection:
+            output.append(dict(zip(columNames, row)))
 
+        return output
 
+    # def read(self, conditions):
+    #     pass

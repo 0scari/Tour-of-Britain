@@ -12,5 +12,5 @@ class ICustomerManagementRepository:
         pass
 
     @abstractmethod
-    def read(self, criteria):
+    def read(self, conditions):
         pass

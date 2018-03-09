@@ -67,6 +67,8 @@ class Customer:
             output["address"] = self.address
         return output
 
+
+
     def dataToDict(self):
         return {"Reference nr." : self.id,
                 "First name": self.name,

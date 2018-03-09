@@ -43,7 +43,7 @@ class CustomerManagementController(IUseCaseController):
         if not self._validateInput(customerDetails, False):
             return
         customer = self._constructDataModel(customerDetails)
-        return self.repository.read(customer.getData())
+        return self.repository.readCustomers(customer.getData())
 
     def storeCustomer(self, customerDetails):
         pass

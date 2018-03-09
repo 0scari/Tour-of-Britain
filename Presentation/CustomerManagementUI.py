@@ -91,7 +91,7 @@ class CustomerManagementUI(IDutyUI):
 
     def __submitActionCallback(self, opt, ):
         if opt == 1: # FIND CUSTOMERS
-            self.__useCaseController.findCustomers(self.getWidgetData("customerDetails"))
+            customers = self.__useCaseController.findCustomers(self.getWidgetData("customerDetails"))
             # self.__inputFrame.place(rely=0.45, anchor=S)
             # data = [{"Reference nr." : "Hue",
             #     "First name": "Bob",
@@ -106,8 +106,8 @@ class CustomerManagementUI(IDutyUI):
             #     "Email": "Susan",
             #     "Address": "Susan",
             #     "Created by:": "Susan"}]
-            # dataGrid = DataGrid(self.frame, self.height * 0.5).setData(data)
-            # dataGrid.pack(side=BOTTOM)
+            dataGrid = DataGrid(self.frame, self.height * 0.5).setData(customers)
+            dataGrid.pack(side=BOTTOM)
         elif opt == 2: # REGISTER CUSTOMERS
             self.__useCaseController.registerCustomer(self.getWidgetData("customerDetails"))
         else:
