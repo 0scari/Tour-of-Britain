@@ -107,8 +107,9 @@ class CustomerManagementUI(IDutyUI):
             #     "Created by:": "Susan"}]
             if customers:
                 self.__inputFrame.place(rely=0.45, anchor=S)
-                dataGrid = DataGrid(self.frame, self.height * 0.5).setData(customers)
-                dataGrid.pack(side=BOTTOM)
+                dataGrid = DataGrid(self.frame, self.height * 0.5).setDataSet(customers)
+                dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)
+                dataGrid.pack(BOTTOM)
         elif opt == 2: # REGISTER CUSTOMERS
             self.__useCaseController.registerCustomer(self.getWidgetData("customerDetails"))
         else:

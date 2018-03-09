@@ -8,7 +8,6 @@ from Exceptions.DataValidationException import DataValidationException
 from Exceptions.InternalErrorException import InternalErrorException
 import re as regex
 
-
 class CustomerManagementController(IUseCaseController):
     def __init__(self, repository):
         super().__init__()
@@ -22,8 +21,17 @@ class CustomerManagementController(IUseCaseController):
         customer.setCreatedBy(SystemController.getUserId())
         self.repository.write(customer)
 
+    def updateCustomer(self, customerDetails):
+        pass
+        # validFieldNames = ["ref", "name", "surname", "dobDD",
+        #                    "email", "address"]
+        # customerDetails = dict(zip(columNames, row)
+
     def _constructDataModel(self, data):
+        print(data)
         customer = Customer()
+        if "id" in data:
+            customer.setId(data["id"])
         if "name" in data:
             customer.setName(data["name"])
         if "surname" in data:
@@ -32,10 +40,14 @@ class CustomerManagementController(IUseCaseController):
             customer.setDob(data["dobDD"],
                             data["dobMM"],
                             data["dobYYYY"])
+        if "dob" in data:
+            customer.setDob(data["dob"])
         if "email" in data:
             customer.setEmail(data["email"])
         if "address" in data:
             customer.setAddress(data["address"])
+        if "employee_id" in data:
+            customer.setCreatedBy(data["employee_id"])
         return customer
 
     def findCustomers(self, customerDetails):
@@ -47,8 +59,11 @@ class CustomerManagementController(IUseCaseController):
             return None
         customerModel = self._constructDataModel(customerDetails)
         customers = self.repository.readCustomers(customerModel.getData())
+        customerModels = []
+        for customer in customers:
+            customerModels.append(self._constructDataModel(customer))
         if len(customers) > 0:
-            return customers
+            return customerModels
         else:
             GUI_NotificationHandler.raiseWarningMessg("Warning", "No customer matches the search criteria")
             return None

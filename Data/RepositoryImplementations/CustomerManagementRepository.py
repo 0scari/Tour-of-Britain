@@ -47,6 +47,7 @@ class CustomerManagementRepository(ICustomerManagementRepository):
         for row in self._connection:
             output.append(dict(zip(columNames, row)))
 
+        # print(output)
         return output
 
     # def read(self, conditions):

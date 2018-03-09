@@ -1,7 +1,8 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
+from Data.Models.AbstractBaseDataModel import AbstractBaseDataModel as ABDM
 
-class Customer:
+class Customer(ABDM):
 
     def __init__(self):
         self.id = None
@@ -15,6 +16,9 @@ class Customer:
     def getId(self, ):
         return self.id
 
+    def setId(self, id):
+        self.id = id
+
     def setName(self, name):
         self.name = name
 
@@ -27,8 +31,11 @@ class Customer:
     def getSurname(self, ):
         return self.surname
 
-    def setDob(self, dd, mm, yyyy):
-        self.dob = dd + '/' + mm + '/' + yyyy
+    def setDob(self, dd, mm = False, yyyy = False):
+        if mm and yyyy:
+            self.dob = dd + '/' + mm + '/' + yyyy
+        else:
+            self.dob = dd
 
     def getDob(self, ):
         return  self.dob
@@ -65,9 +72,9 @@ class Customer:
             output["email"] = self.email
         if self.address:
             output["address"] = self.address
+        if self.createdBy:
+            output["createdBy"] = self.createdBy
         return output
-
-
 
     def dataToDict(self):
         return {"Reference nr." : self.id,
