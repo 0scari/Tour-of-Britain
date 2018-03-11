@@ -43,17 +43,25 @@ class BritaniaTourGUI:
         self.window.resizable(width=FALSE, height=FALSE)
 
     def __setUpMenuFrame(self):
-        self.menuFrame = Frame(self.window, bg="red", height=self.__height, width=self.__width * 0.2)
+        self.menuFrame = Frame(self.window, bg="#F0F0F0", height=self.__height, width=self.__width * 0.2)
         self.menuFrame.pack_propagate(False)
         self.menuFrame.pack(side=LEFT)
 
     def __setUpTabFrame(self):
-        self.tabFrame = Frame(self.window, bg="#7fc7ff", height=self.__height * 0.05, width=self.__width * 0.8)
+        self.tabFrame = Frame(self.window, bg="#DEDEDE", height=self.__height * 0.05, width=self.__width * 0.8)
         self.tabFrame.pack_propagate(False)
         self.tabFrame.pack(side=TOP)
 
-        self.__newTabButton = Button(self.tabFrame, text="+",  \
-                                     command=lambda: self.__addDutyUI_Tab()).pack(side=RIGHT)
+        # self.__newTabButton = Button(self.tabFrame, text="+",  \
+        #                              command=lambda: self.__addDutyUI_Tab()).pack(side=RIGHT)
+
+        imgPath = r"newTabx29.gif"
+        photo = PhotoImage(file=imgPath)
+        label = Label(self.tabFrame, image=photo, width=29, height=29,)
+        label.pack(side=RIGHT)
+        label.config(bg='systemTransparent')
+        label.image = photo  # keep a reference!
+        label.bind("<Button-1>", lambda event: self.__addDutyUI_Tab())
 
     def displayMenuOptions(self, duties):
         for i in range(len(duties["cntrlr"])):

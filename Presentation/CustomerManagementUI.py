@@ -14,7 +14,7 @@ class CustomerManagementUI(IDutyUI):
         self.height = window.winfo_height() * 0.95
         self.width  = window.winfo_width() * 0.8
 
-        self.frame = Frame(window, bg="yellow", height=self.height , width=self.width)
+        self.frame = Frame(window, height=self.height , width=self.width)
         self.appear(BOTTOM)
         self.__inputFrame = Frame(self.frame)
         self.setUpWidgets()
@@ -26,13 +26,13 @@ class CustomerManagementUI(IDutyUI):
 
     def setUpWidgets(self):
         refLabel = Label(self.__inputFrame, text="Reference nr.")
-        refLabel.grid(row=0, column=0)
-        Label(self.__inputFrame, text="First name").grid(row=1, column=0)
-        Label(self.__inputFrame, text="Second name").grid(row=2, column=0)
-        Label(self.__inputFrame, text="Date of birth").grid(row=3, column=0)
-        Label(self.__inputFrame, text="Email").grid(row=4, column=0)
-        Label(self.__inputFrame, text="Address").grid(row=5, column=0)
-        Label(self.__inputFrame, text="Please choose an option:").grid(row=7, column=0)
+        refLabel.grid(row=0, column=0, sticky=W)
+        Label(self.__inputFrame, text="First name").grid(row=1, column=0, sticky=W)
+        Label(self.__inputFrame, text="Second name").grid(row=2, column=0, sticky=W)
+        Label(self.__inputFrame, text="Date of birth").grid(row=3, column=0, sticky=W)
+        Label(self.__inputFrame, text="Email").grid(row=4, column=0, sticky=W)
+        Label(self.__inputFrame, text="Address").grid(row=5, column=0, sticky=W)
+        Label(self.__inputFrame, text="Please choose an option:").grid(row=7, column=0, sticky=W)
         Label(self.__inputFrame, text="").grid(row=6, column=0)
         Label(self.__inputFrame, text="").grid(row=7, column=1)
 
@@ -50,7 +50,7 @@ class CustomerManagementUI(IDutyUI):
         dataWidget.grid(row=2, column=1)
         self._addDataWidget("surname", "customerDetails", dataWidget)
 
-        dobFrame = Frame(self.__inputFrame, bg="blue")
+        dobFrame = Frame(self.__inputFrame)
         dobFrame.grid(row=3, column=1, columnspan=1, sticky=N+S+E+W)
         dobFrame.grid_propagate(False)
         dataWidget = Entry(dobFrame)
