@@ -4,10 +4,10 @@ from tkinter import ttk
 # http://tkinter.unpythonic.net/wiki/VerticalScrolledFrame
 
 class VerticalScrolledFrame(Frame):
-    """A pure Tkinter scrollable frame that actually works!
-    * Use the 'interior' attribute to place widgets inside the scrollable frame
+    """A pure Tkinter scrollable _mainFrame that actually works!
+    * Use the 'interior' attribute to place widgets inside the scrollable _mainFrame
     * Construct and pack/place/grid normally
-    * This frame only allows vertical scrolling
+    * This _mainFrame only allows vertical scrolling
     """
     def __init__(self, parent, height = None, width = None, *args, **kw):
         Frame.__init__(self, parent, *args, **kw)
@@ -24,26 +24,26 @@ class VerticalScrolledFrame(Frame):
         self.__canvas.xview_moveto(0)
         self.__canvas.yview_moveto(0)
 
-        # create a frame inside the self.__canvas which will be scrolled with it
+        # create a _mainFrame inside the self.__canvas which will be scrolled with it
         self.interior = interior = Frame(self.__canvas)
         interior_id = self.__canvas.create_window(0, 0, window=interior,
                                            anchor=NW)
 
         self.__canvas.config(height=height)
-        # track changes to the self.__canvas and frame width and sync them,
+        # track changes to the self.__canvas and _mainFrame width and sync them,
         # also updating the scrollbar
         def _configure_interior(event):
-            # update the scrollbars to match the size of the inner frame
+            # update the scrollbars to match the size of the inner _mainFrame
             size = (interior.winfo_reqwidth(), interior.winfo_reqheight())
             self.__canvas.config(scrollregion="0 0 %s %s" % size)
             if interior.winfo_reqwidth() != self.__canvas.winfo_width():
-                # update the self.__canvas's width to fit the inner frame
+                # update the self.__canvas's width to fit the inner _mainFrame
                 self.__canvas.config(width=interior.winfo_reqwidth())
         interior.bind('<Configure>', _configure_interior)
 
         def _configure_canvas(event):
             if interior.winfo_reqwidth() != self.__canvas.winfo_width():
-                # update the inner frame's width to fill the self.__canvas
+                # update the inner _mainFrame's width to fill the self.__canvas
                 self.__canvas.itemconfigure(interior_id, width=self.__canvas.winfo_width())
         self.__canvas.bind('<Configure>', _configure_canvas)
         

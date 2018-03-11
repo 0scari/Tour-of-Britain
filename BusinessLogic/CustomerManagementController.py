@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from BusinessLogic.IUseCaseController import IUseCaseController
+from BusinessLogic.AbstractUseCaseController import AbstractUseCaseController
 from GUI_NotificationHandler import GUI_NotificationHandler
 from SystemController import SystemController
 from Data.Models.Customer import Customer
@@ -8,7 +8,7 @@ from Exceptions.DataValidationException import DataValidationException
 from Exceptions.InternalErrorException import InternalErrorException
 import re as regex
 
-class CustomerManagementController(IUseCaseController):
+class CustomerManagementController(AbstractUseCaseController):
     def __init__(self, repository):
         super().__init__()
         self.repository = repository

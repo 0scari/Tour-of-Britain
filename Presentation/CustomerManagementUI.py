@@ -1,22 +1,22 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-from Presentation.IDutyUI import IDutyUI
+from Presentation.AbstractUseCaseUI import AbstractUseCaseUI
 from tkinter import *
 from GUI_NotificationHandler import GUI_NotificationHandler
 from Presentation.DataGrid import DataGrid
 
 
-class CustomerManagementUI(IDutyUI):
+class CustomerManagementUI(AbstractUseCaseUI):
     def __init__(self, UseCaseController, window):
         super().__init__(UseCaseController)
         self.__useCaseController = UseCaseController
-
         self.height = window.winfo_height() * 0.95
         self.width  = window.winfo_width() * 0.8
-
-        self.frame = Frame(window, height=self.height , width=self.width)
+        self._mainFrame = Frame(window, height=self.height, width=self.width)
+        print(type(self._mainFrame))
         self.appear(BOTTOM)
-        self.__inputFrame = Frame(self.frame)
+        self.__inputFrame = Frame(self._mainFrame)
+        self.__inputFrame.place(relx=0.5, rely=0.5, anchor=CENTER)
         self.setUpWidgets()
         self.__dataGrid = None
 
@@ -25,6 +25,7 @@ class CustomerManagementUI(IDutyUI):
         self.__useCaseController.registerCustomer(customerDetails)
 
     def setUpWidgets(self):
+
         refLabel = Label(self.__inputFrame, text="Reference nr.")
         refLabel.grid(row=0, column=0, sticky=W)
         Label(self.__inputFrame, text="First name").grid(row=1, column=0, sticky=W)
@@ -88,7 +89,6 @@ class CustomerManagementUI(IDutyUI):
 
         print(str(var))
 
-        self.__inputFrame.place(relx=0.5, rely=0.5, anchor=CENTER)
 
     def __submitActionCallback(self, opt, ):
         if opt == 1: # FIND CUSTOMERS
@@ -111,7 +111,7 @@ class CustomerManagementUI(IDutyUI):
                     self.__dataGrid.destruct()
                     return
                 self.__inputFrame.place(rely=0.45, anchor=S)
-                self.__dataGrid = DataGrid(self.frame, self.height * 0.5).setDataSet(customers)
+                self.__dataGrid = DataGrid(self._mainFrame, self.height * 0.5).setDataSet(customers)
                 self.__dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)
                 self.__dataGrid.pack(BOTTOM)
         elif opt == 2: # REGISTER CUSTOMERS

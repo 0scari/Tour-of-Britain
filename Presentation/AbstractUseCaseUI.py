@@ -4,12 +4,12 @@ from abc import ABC, abstractmethod
 from tkinter import *
 
 
-class IDutyUI(ABC):
+class AbstractUseCaseUI(ABC):
     @abstractmethod
     def __init__(self, dutyController, window = None):
         self.dataWidgets = {}
-        self.frame = None
-        self.__useCaseController = dutyController
+        self._mainFrame = None
+        self._useCaseController = dutyController
 
     @abstractmethod
     def setUpWidgets(self, ):
@@ -27,7 +27,7 @@ class IDutyUI(ABC):
         return self.__class__.__name__[:-2]
 
     def hide(self, ):
-        self.frame.pack_forget()
+        self._mainFrame.pack_forget()
 
     def _createDataWidgetKey(self, key):
         """Polymorphic method"""
@@ -37,14 +37,14 @@ class IDutyUI(ABC):
             self.dataWidgets[key] = {}
 
     def appear(self, pos):
-        self.frame.pack_propagate(False)
-        self.frame.pack(side=pos)
+        self._mainFrame.pack_propagate(False)
+        self._mainFrame.pack(side=pos)
 
     def close(self, ):
         pass
 
     def replicate(self, window):
-        return self.__useCaseController.initDutyUI(window)
+        return self._useCaseController.initDutyUI(window)
 
     def getWidgetData(self, key):
         if key not in self.dataWidgets:

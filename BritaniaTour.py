@@ -5,7 +5,7 @@ from AuthenticationController import AuthenticationController
 from SystemController import SystemController
 
 # TODO - PSC: ajust theme, data input fields alignment, DataGrid conflicts
-# TODO - add The title to the Customer Management frame (mind replacment when searching for customer)
+# TODO - add The title to the Customer Management _mainFrame (mind replacment when searching for customer)
 # TODO - search by id
 # TODO - implement tab closing
 

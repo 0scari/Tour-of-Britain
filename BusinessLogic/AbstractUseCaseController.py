@@ -4,7 +4,7 @@ import importlib
 from abc import ABC, abstractmethod
 
 
-class IUseCaseController(ABC):
+class AbstractUseCaseController(ABC):
     @abstractmethod
     def _validateInput(self, input, fullValidation = True):
         pass

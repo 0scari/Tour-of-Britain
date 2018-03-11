@@ -4,11 +4,11 @@
     <list default="true" id="1a7800e3-03f7-43b1-bd8c-d71d3be25d2e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/BritaniaTour.py" afterPath="$PROJECT_DIR$/BritaniaTour.py" />
-      <change beforePath="$PROJECT_DIR$/BritaniaTourGUI.py" afterPath="$PROJECT_DIR$/BritaniaTourGUI.py" />
-      <change beforePath="$PROJECT_DIR$/Data/Models/AbstractBaseDataModel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Data/Models/Customer.py" afterPath="$PROJECT_DIR$/Data/Models/Customer.py" />
-      <change beforePath="$PROJECT_DIR$/Presentation/DataGrid.py" afterPath="$PROJECT_DIR$/Presentation/DataGrid.py" />
-      <change beforePath="$PROJECT_DIR$/SystemController.py" afterPath="$PROJECT_DIR$/SystemController.py" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" afterPath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/IUseCaseController.py" afterPath="$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py" />
+      <change beforePath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
+      <change beforePath="$PROJECT_DIR$/Presentation/IDutyUI.py" afterPath="$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py" />
+      <change beforePath="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" afterPath="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,7 +49,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BritaniaTourGUI.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BritaniaTourGUI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
@@ -86,15 +86,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AbstractUseCaseUI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="59" column="52" lean-forward="true" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+            <state relative-caret-position="207">
+              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
               <folding>
-                <element signature="e#41#81#0" expanded="true" />
-                <element signature="e#4261#4296#0" expanded="false" />
+                <element signature="e#41#101#0" expanded="true" />
+                <element signature="e#4336#4371#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractUseCaseController.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,12 +188,14 @@
         <option value="$PROJECT_DIR$/Data/SQL/CreateCustomersTable.sql" />
         <option value="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
-        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
         <option value="$PROJECT_DIR$/Data/Models/Customer.py" />
         <option value="$PROJECT_DIR$/SystemController.py" />
         <option value="$PROJECT_DIR$/Presentation/DataGrid.py" />
         <option value="$PROJECT_DIR$/BritaniaTour.py" />
         <option value="$PROJECT_DIR$/BritaniaTourGUI.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py" />
+        <option value="$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py" />
+        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
       </list>
     </option>
   </component>
@@ -446,31 +468,31 @@
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <element signature="e#514#569#0" expanded="false" />
-            <element signature="e#1503#2355#0" expanded="false" />
-            <element signature="e#1820#1938#0" expanded="false" />
-            <element signature="e#2411#3212#0" expanded="false" />
-            <element signature="e#2535#2643#0" expanded="false" />
-            <element signature="e#3093#3212#0" expanded="false" />
-            <element signature="e#3268#3272#0" expanded="false" />
-            <element signature="e#3352#3714#0" expanded="false" />
-            <element signature="e#3369#3447#0" expanded="false" />
-            <element signature="e#3779#5980#0" expanded="false" />
-            <element signature="e#3821#3942#0" expanded="false" />
-            <element signature="e#3981#4085#0" expanded="false" />
-            <element signature="e#4127#4368#0" expanded="false" />
-            <element signature="e#4413#4658#0" expanded="false" />
-            <element signature="e#4743#5506#0" expanded="false" />
-            <element signature="e#4764#5390#0" expanded="false" />
-            <element signature="e#4926#5289#0" expanded="false" />
-            <element signature="e#5549#5802#0" expanded="false" />
-            <element signature="e#5847#5959#0" expanded="false" />
-            <element signature="e#6021#6126#0" expanded="false" />
+            <element signature="e#535#590#0" expanded="false" />
+            <element signature="e#1524#2376#0" expanded="false" />
+            <element signature="e#1841#1959#0" expanded="false" />
+            <element signature="e#2432#3233#0" expanded="false" />
+            <element signature="e#2556#2664#0" expanded="false" />
+            <element signature="e#3114#3233#0" expanded="false" />
+            <element signature="e#3289#3293#0" expanded="false" />
+            <element signature="e#3373#3735#0" expanded="false" />
+            <element signature="e#3390#3468#0" expanded="false" />
+            <element signature="e#3800#6001#0" expanded="false" />
+            <element signature="e#3842#3963#0" expanded="false" />
+            <element signature="e#4002#4106#0" expanded="false" />
+            <element signature="e#4148#4389#0" expanded="false" />
+            <element signature="e#4434#4679#0" expanded="false" />
+            <element signature="e#4764#5527#0" expanded="false" />
+            <element signature="e#4785#5411#0" expanded="false" />
+            <element signature="e#4947#5310#0" expanded="false" />
+            <element signature="e#5570#5823#0" expanded="false" />
+            <element signature="e#5868#5980#0" expanded="false" />
+            <element signature="e#6042#6147#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/IUseCaseController.py">
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
@@ -732,14 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/IDutyUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -827,35 +841,27 @@
           <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <element signature="e#514#569#0" expanded="false" />
-            <element signature="e#1503#2355#0" expanded="false" />
-            <element signature="e#1820#1938#0" expanded="false" />
-            <element signature="e#2411#3212#0" expanded="false" />
-            <element signature="e#2535#2643#0" expanded="false" />
-            <element signature="e#3093#3212#0" expanded="false" />
-            <element signature="e#3268#3272#0" expanded="false" />
-            <element signature="e#3352#3714#0" expanded="false" />
-            <element signature="e#3369#3447#0" expanded="false" />
-            <element signature="e#3779#5980#0" expanded="false" />
-            <element signature="e#3821#3942#0" expanded="false" />
-            <element signature="e#3981#4085#0" expanded="false" />
-            <element signature="e#4127#4368#0" expanded="false" />
-            <element signature="e#4413#4658#0" expanded="false" />
-            <element signature="e#4743#5506#0" expanded="false" />
-            <element signature="e#4764#5390#0" expanded="false" />
-            <element signature="e#4926#5289#0" expanded="false" />
-            <element signature="e#5549#5802#0" expanded="false" />
-            <element signature="e#5847#5959#0" expanded="false" />
-            <element signature="e#6021#6126#0" expanded="false" />
+            <element signature="e#535#590#0" expanded="false" />
+            <element signature="e#1524#2376#0" expanded="false" />
+            <element signature="e#1841#1959#0" expanded="false" />
+            <element signature="e#2432#3233#0" expanded="false" />
+            <element signature="e#2556#2664#0" expanded="false" />
+            <element signature="e#3114#3233#0" expanded="false" />
+            <element signature="e#3289#3293#0" expanded="false" />
+            <element signature="e#3373#3735#0" expanded="false" />
+            <element signature="e#3390#3468#0" expanded="false" />
+            <element signature="e#3800#6001#0" expanded="false" />
+            <element signature="e#3842#3963#0" expanded="false" />
+            <element signature="e#4002#4106#0" expanded="false" />
+            <element signature="e#4148#4389#0" expanded="false" />
+            <element signature="e#4434#4679#0" expanded="false" />
+            <element signature="e#4764#5527#0" expanded="false" />
+            <element signature="e#4785#5411#0" expanded="false" />
+            <element signature="e#4947#5310#0" expanded="false" />
+            <element signature="e#5570#5823#0" expanded="false" />
+            <element signature="e#5868#5980#0" expanded="false" />
+            <element signature="e#6042#6147#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/IUseCaseController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,17 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="59" column="52" lean-forward="true" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
-          <folding>
-            <element signature="e#41#81#0" expanded="true" />
-            <element signature="e#4261#4296#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CustomerRegistrationController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -948,6 +943,33 @@
             <element signature="e#4177#4210#0" expanded="false" />
             <element signature="e#4244#4266#0" expanded="false" />
             <element signature="e#4307#4713#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="e#41#101#0" expanded="true" />
+            <element signature="e#4336#4371#0" expanded="false" />
           </folding>
         </state>
       </provider>
