@@ -51,8 +51,8 @@ class SystemController:
             repoClass  = getattr(repoModule, dutyName + "Repository")
             repo = repoClass(dbCursor)
             return cntrlrClass(repo)
-        except Exception as e:
-             self.gui.raiseErrorMessg("Error", str(e))
-             # close
+        except ModuleNotFoundError as err:
+            self.gui.raiseWarningMessg("Please note!", "Work on this functionality is in prgress...")
+            return False
 
     # def dynamicLoading():

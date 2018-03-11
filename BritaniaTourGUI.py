@@ -7,7 +7,7 @@ from GUI_NotificationHandler import GUI_NotificationHandler
 
 class BritaniaTourGUI:
     def __init__(self, sysController, duties):
-        self.dutyUIs = {}
+        self.__useCaseUIs = {}
         self.window = Tk()
         self.tabFrame = None
         self.menuFrame = None
@@ -34,7 +34,7 @@ class BritaniaTourGUI:
 
     def __setDutyUIs(self, duties):
         for i in range(len(duties["cntrlr"])):
-            self.dutyUIs[duties["cntrlr"][i]] = []
+            self.__useCaseUIs[duties["cntrlr"][i]] = []
 
     def __setUpWindow(self):
         self.window.geometry("%sx%s" % (self.__width, self.__height))
@@ -51,44 +51,50 @@ class BritaniaTourGUI:
         self.tabFrame = Frame(self.window, bg="#DEDEDE", height=self.__height * 0.05, width=self.__width * 0.8)
         self.tabFrame.pack_propagate(False)
         self.tabFrame.pack(side=TOP)
-
-        # self.__newTabButton = Button(self.tabFrame, text="+",  \
-        #                              command=lambda: self.__addDutyUI_Tab()).pack(side=RIGHT)
-
-        imgPath = r"newTabx29.gif"
-        photo = PhotoImage(file=imgPath)
+        # set up label with picture
+        photo = PhotoImage(file=r"newTabx29.gif")
         label = Label(self.tabFrame, image=photo, width=29, height=29,)
         label.pack(side=RIGHT)
         label.config(bg='systemTransparent')
         label.image = photo  # keep a reference!
+        # set up on-click event
         label.bind("<Button-1>", lambda event: self.__addDutyUI_Tab())
 
     def displayMenuOptions(self, duties):
+        # set up label with picture
+        photo = PhotoImage(file=r"menuText200x55.gif")
+        label = Label(self.menuFrame, image=photo, width=200, height=55,)
+        label.pack(side=TOP, fill=X, pady=0)
+        label.config(bg='systemTransparent')
+        label.image = photo  # keep a reference!
         for i in range(len(duties["cntrlr"])):
             Button(self.menuFrame, background='green', text = duties["labels"][i], \
                    command=lambda cntrlr = duties["cntrlr"][i]: \
-                       self.displayDutyUIs(cntrlr)).pack(fill=X, side=TOP, padx=5, pady=3)
+                       self.__displayUseCaseUIs(cntrlr)).pack(fill=X, side=TOP, padx=5, pady=3)
 
-    def displayDutyUIs(self, dutyControllerName):
-        print(dutyControllerName)
-        if not self.dutyUIs[dutyControllerName]:
-            dutyContrlr = self.sysController.initDutyController(dutyControllerName)
-            self.activeDutyUI = dutyContrlr.initDutyUI(self.window)
-            self.dutyUIs[dutyControllerName].append(self.activeDutyUI)
-            self.refreshTabPanel(dutyControllerName)
-        else:
-            self.__setActiveDutyUI(self.dutyUIs[dutyControllerName][0])
+    def __displayUseCaseUIs(self, useCaseControllerName):
+        # if an entry in the list of the Use Case UIs with the given controller name exists
+        if len(self.__useCaseUIs[useCaseControllerName]) == 0:
+            dutyContrlr = self.sysController.initDutyController(useCaseControllerName)
+            if dutyContrlr:
+                self.activeDutyUI = dutyContrlr.initDutyUI(self.window)
+                self.__useCaseUIs[useCaseControllerName].append(self.activeDutyUI)
+                self.refreshTabPanel(useCaseControllerName)
+        else: # Else, pick the first one
+            # TODO set as the active tab
+            self.__setActiveUseCaseUI(self.__useCaseUIs[useCaseControllerName][0])
+
 
     def refreshTabPanel(self, dutyControllerName):
         self.tabFrame.destroy()
         self.__setUpTabFrame()
-        for i in range(len(self.dutyUIs[dutyControllerName])):
+        for i in range(len(self.__useCaseUIs[dutyControllerName])):
             Button(self.tabFrame, text=str(i), \
-                command=lambda uiIndx=i:
-                    self.__setActiveDutyUI(self.dutyUIs[dutyControllerName][uiIndx])).\
+                   command=lambda uiIndx=i:
+                    self.__setActiveUseCaseUI(self.__useCaseUIs[dutyControllerName][uiIndx])).\
                 pack(side=LEFT)
 
-    def __setActiveDutyUI(self, dutyUI):
+    def __setActiveUseCaseUI(self, dutyUI):
         self.activeDutyUI.hide()
         self.activeDutyUI = dutyUI
         self.activeDutyUI.appear(BOTTOM)
@@ -109,8 +115,8 @@ class BritaniaTourGUI:
         dutyName = self.activeDutyUI.getDutyName()
         print("Duty name", dutyName)
         newDutyUI = self.activeDutyUI.replicate(self.window)
-        self.dutyUIs[dutyName].append(newDutyUI)
-        Button(self.tabFrame, text=str(len(self.dutyUIs[dutyName]) -1), \
-            command=lambda dutyUI = newDutyUI:
-                self.__setActiveDutyUI(dutyUI)). \
+        self.__useCaseUIs[dutyName].append(newDutyUI)
+        Button(self.tabFrame, text=str(len(self.__useCaseUIs[dutyName]) - 1), \
+               command=lambda dutyUI = newDutyUI:
+                self.__setActiveUseCaseUI(dutyUI)). \
             pack(side=LEFT)

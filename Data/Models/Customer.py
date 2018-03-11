@@ -1,8 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-from Data.Models.AbstractBaseDataModel import AbstractBaseDataModel as ABDM
 
-class Customer(ABDM):
+class Customer():
 
     def __init__(self):
         self.id = None

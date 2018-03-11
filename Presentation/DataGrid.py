@@ -1,6 +1,5 @@
 from tkinter import *
 from Presentation.VerticalScrollableFrame import VerticalScrolledFrame
-from Data.Models.AbstractBaseDataModel import AbstractBaseDataModel
 
 
 class DataGrid:
@@ -12,8 +11,6 @@ class DataGrid:
 
     def setDataSet(self, dataSet):
         for object in dataSet:
-            if not isinstance(object, AbstractBaseDataModel):
-                raise Exception("DataGrid: received data not AbstractBaseDAtaModel")
             self.__dataSet.append(object)
         self.__labels = list(dataSet[0].dataToDict()) # get dict keys representing field labels
         self.__prepGrid()
