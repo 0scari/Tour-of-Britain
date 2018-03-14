@@ -92,7 +92,7 @@ class CustomerManagementUI(AbstractUseCaseUI):
                     # self.__dataGrid = None
                     return
                 self.__titleLabel.pack_forget()
-                self.__inputFrame.place(rely=0.45, anchor=S)
+                self.__inputFrame.place(rely=0.48, anchor=S)
                 self.__dataGrid = DataGrid(self._mainFrame, self._height * 0.5).setDataSet(customers)
                 self.__dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)
                 self.__dataGrid.pack(BOTTOM)

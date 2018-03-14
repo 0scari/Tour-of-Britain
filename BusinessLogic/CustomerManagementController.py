@@ -22,7 +22,7 @@ class CustomerManagementController(AbstractUseCaseController):
 
     def updateCustomer(self, customerDetails):
         splitDob = dict(zip(["dobDD", "dobMM", "dobYYYY"], customerDetails["dob"].split("/")))
-        del customerDetails["dob"] # delete atomic dob element
+        del customerDetails["dob"] # delete atomic __dob element
         customerDetails = {**splitDob, **customerDetails} # merge dictionaries
         print(customerDetails)
         if not self._validateInput(customerDetails, False):
@@ -49,6 +49,8 @@ class CustomerManagementController(AbstractUseCaseController):
             customer.setEmail(data["email"])
         if "address" in data:
             customer.setAddress(data["address"])
+        if "ref" in data:
+            customer.setId(data["ref"])
         if "employee_id" in data:
             customer.setCreatedBy(data["employee_id"])
         if "createdBy" in data:

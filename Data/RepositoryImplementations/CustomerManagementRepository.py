@@ -1,11 +1,11 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-from Data.Repositories.ICustomerManagementRepository import ICustomerManagementRepository
+from Data.Repositories.AbstractCustomerManagementRepository import AbstractCustomerManagementRepository
 from SystemController import SystemController
 from GUI_NotificationHandler import GUI_NotificationHandler
 import sqlite3
 
-class CustomerManagementRepository(ICustomerManagementRepository):
+class CustomerManagementRepository(AbstractCustomerManagementRepository):
     def __init__(self, connection):
         super().__init__(connection)
 
@@ -24,15 +24,15 @@ class CustomerManagementRepository(ICustomerManagementRepository):
             ref = self.readCustomers({"email": customer.getEmail()})[0]["id"]
 
             SystemController.conn.commit()  # Save (commit) the changes
-            GUI_NotificationHandler.raiseInfoMessg("Registration Success",
-                                                   "Customer reference: " + str(ref))    # return the id
+            GUI_NotificationHandler.raiseInfoMessg(
+                "Registration Success", "Customer reference: " + str(ref))    # return the __id
             return True
         except ValueError as err:
             GUI_NotificationHandler.raiseWarningMessg("DB connection failure", err)
             return False
         except sqlite3.IntegrityError:
-            GUI_NotificationHandler.raiseWarningMessg("Operation Failed",
-                                                      "Customer with the specified details already exists")
+            GUI_NotificationHandler.raiseWarningMessg(
+                "Operation Failed", "Customer with the specified details already exists")
             return False
 
     def readCustomers(self, conditions):
@@ -47,6 +47,7 @@ class CustomerManagementRepository(ICustomerManagementRepository):
         query = "SELECT * FROM Customers WHERE " + condition
         print(query)
         values = list(conditions.values())
+        print(conditions, values)
         self._connection.execute(query, tuple(values))
 
         output = []
@@ -60,12 +61,13 @@ class CustomerManagementRepository(ICustomerManagementRepository):
         try:
             self._connection.execute('''
             UPDATE Customers SET name=?, surname=?, dob=?, email=?, address=?
-            WHERE id=?;''', (customer.getName(),
-                             customer.getSurname(),
-                             customer.getDob(),
-                             customer.getEmail(),
-                             customer.getAddress(),
-                             customer.getId()))
+            WHERE id=?;''',
+                (customer.getName(),
+                 customer.getSurname(),
+                 customer.getDob(),
+                 customer.getEmail(),
+                 customer.getAddress(),
+                 customer.getId()))
             SystemController.conn.commit()  # Save (commit) the changes
             return True
         except ValueError as err:

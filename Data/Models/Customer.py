@@ -5,83 +5,83 @@ from Data.Models.AbstractBaseDataModel import AbsttractBaseDataModel
 class Customer(AbsttractBaseDataModel):
 
     def __init__(self):
-        self.id = None
-        self.name = None
-        self.surname = None
-        self.dob = None
-        self.email = None
-        self.address = None
-        self.createdBy = None
+        self.__id = None
+        self.__name = None
+        self.__surname = None
+        self.__dob = None
+        self.__email = None
+        self.__address = None
+        self.__createdBy = None
 
     def getId(self, ):
-        return self.id
+        return self.__id
 
     def setId(self, id):
-        self.id = id
+        self.__id = id
 
     def setName(self, name):
-        self.name = name
+        self.__name = name
 
     def getName(self, ):
-        return self.name
+        return self.__name
 
     def setSurname(self, surname):
-        self.surname = surname
+        self.__surname = surname
 
     def getSurname(self, ):
-        return self.surname
+        return self.__surname
 
     def setDob(self, dd, mm = False, yyyy = False):
         if mm and yyyy:
-            self.dob = dd + '/' + mm + '/' + yyyy
+            self.__dob = dd + '/' + mm + '/' + yyyy
         else:
-            self.dob = dd
+            self.__dob = dd
 
     def getDob(self, ):
-        return  self.dob
+        return  self.__dob
 
     def setEmail(self, email):
-        self.email = email
+        self.__email = email
 
     def getEmail(self, ):
-        return self.email
+        return self.__email
 
     def setAddress(self, address):
-        self.address = address
+        self.__address = address
 
     def getAddress(self, ):
-        return self.address
+        return self.__address
 
     def setCreatedBy(self, userId):
-        self.createdBy = userId
+        self.__createdBy = userId
 
     def getCreatedBy(self, ):
-        return self.createdBy
+        return self.__createdBy
 
     def getData(self):
         output = {}
-        if self.id:
-            output["id"] = self.id
-        if self.name:
-            output["name"] = self.name
-        if self.surname:
-            output["surname"] = self.surname
-        if self.dob:
-            output["dob"] = self.dob
-        if self.email:
-            output["email"] = self.email
-        if self.address:
-            output["address"] = self.address
-        if self.createdBy:
-            output["createdBy"] = self.createdBy
+        if self.__id:
+            output["id"] = self.__id
+        if self.__name:
+            output["name"] = self.__name
+        if self.__surname:
+            output["surname"] = self.__surname
+        if self.__dob:
+            output["dob"] = self.__dob
+        if self.__email:
+            output["email"] = self.__email
+        if self.__address:
+            output["address"] = self.__address
+        if self.__createdBy:
+            output["createdBy"] = self.__createdBy
         return output
 
     def dataToDict(self):
-        return {"Reference nr." : self.id,
-                "First name": self.name,
-                "Second name": self.surname,
-                "Date of birth": self.dob,
-                "Email": self.email,
-                "Address": self.email,
-                "Created by:": self.createdBy}
+        return {"Reference nr." : self.__id,
+                "First name": self.__name,
+                "Second name": self.__surname,
+                "Date of birth": self.__dob,
+                "Email": self.__email,
+                "Address": self.__email,
+                "Created by:": self.__createdBy}
 

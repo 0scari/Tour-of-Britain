@@ -18,7 +18,7 @@ class AbstractUseCaseController(ABC):
         pass
 
     def initDutyUI(self, window):
-        # get class name substring without final "Controller" part"
+        # get class __name substring without final "Controller" part"
         # e.g. authController => auth
         dutyName = self.__class__.__name__[:-10]
         dutyUI_Name = dutyName + "UI"

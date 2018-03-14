@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 from BritaniaTourGUI import BritaniaTourGUI
-import importlib # module for importing other modules using string type name
+import importlib # module for importing other modules using string type __name
 from GUI_NotificationHandler import GUI_NotificationHandler
 import sqlite3 as sqlite
 

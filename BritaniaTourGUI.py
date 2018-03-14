@@ -8,22 +8,19 @@ from tkinter import ttk
 
 class BritaniaTourGUI(Frame):
     def __init__(self, sysController, duties):
-
-        self.window = Tk()
-        self.window.update()
-        Frame.__init__(self, self.window)
-        self.style =ttk.Style()
-        self.style.theme_use("default")
-
-        self.tabFrame = None
-        self.menuFrame = None
-        self.activeDutyUI = None
+        self.__window = Tk()
+        self.__window.update()
+        Frame.__init__(self, self.__window)
+        self.__style = ttk.Style()
+        self.__style.theme_use("default")
+        self.__tabFrame = None
+        self.__menuFrame = None
+        self.__activeDutyUI = None
         self.__height = 610
         self.__width  = 1000
         self.__newTabButton = None
-        self.sysController = sysController
+        self.__sysController = sysController
         self.__useCaseUIs = {}
-
         self.__setUpWindow()
         self.__setUpMenuFrame()
         self.__setUpTabFrame()
@@ -38,29 +35,29 @@ class BritaniaTourGUI(Frame):
             self.__useCaseUIs[duties["cntrlr"][i]] = []
 
     def __setUpWindow(self):
-        self.window.geometry("%sx%s" % (self.__width, self.__height))
-        self.window.configure(bg='white')
-        self.window.title('Tour of Britain')
-        self.window.resizable(width=FALSE, height=FALSE)
+        self.__window.geometry("%sx%s" % (self.__width, self.__height))
+        self.__window.configure(bg='white')
+        self.__window.title('Tour of Britain')
+        self.__window.resizable(width=FALSE, height=FALSE)
 
     def __setUpMenuFrame(self):
-        self.menuFrame = Frame(self.window, bg="#F0F0F0", height=self.__height, width=self.__width * 0.2)
-        self.menuFrame.pack_propagate(False)
-        self.menuFrame.pack(side=LEFT)
+        self.__menuFrame = Frame(self.__window, bg="#F0F0F0", height=self.__height, width=self.__width * 0.2)
+        self.__menuFrame.pack_propagate(False)
+        self.__menuFrame.pack(side=LEFT)
         # set up label with picture
         photo = PhotoImage(file=r"menuText200x55.gif")
-        label = Label(self.menuFrame, image=photo, width=200, height=38)
+        label = Label(self.__menuFrame, image=photo, width=200, height=38)
         label.pack(side=TOP, fill=X, pady=0)
         label.config(bg='systemTransparent')
         label.image = photo  # keep a reference!
 
     def __setUpTabFrame(self):
-        self.tabFrame = Frame(self.window, bg="#DEDEDE", height=self.__height * 0.05, width=self.__width * 0.8)
-        self.tabFrame.pack_propagate(False)
-        self.tabFrame.pack(side=TOP)
+        self.__tabFrame = Frame(self.__window, bg="#DEDEDE", height=self.__height * 0.05, width=self.__width * 0.8)
+        self.__tabFrame.pack_propagate(False)
+        self.__tabFrame.pack(side=TOP)
         # set up label with picture
         photo = PhotoImage(file=r"newTabx29.gif")
-        label = Label(self.tabFrame, image=photo, width=29, height=29,)
+        label = Label(self.__tabFrame, image=photo, width=29, height=29, )
         label.pack(side=RIGHT)
         label.config(bg='systemTransparent')
         label.image = photo  # keep a reference!
@@ -70,36 +67,43 @@ class BritaniaTourGUI(Frame):
     def __displayMenuOptions(self, duties):
 
         for i in range(len(duties["cntrlr"])):
-            ttk.Button(self.menuFrame, text = duties["labels"][i], \
-                   command=lambda cntrlr = duties["cntrlr"][i]: \
+            ttk.Button(self.__menuFrame, text = duties["labels"][i], \
+                       command=lambda cntrlr = duties["cntrlr"][i]: \
                        self.__displayUseCaseUIs(cntrlr)).pack(fill=X, side=TOP, padx=5, pady=3)
 
     def __displayUseCaseUIs(self, useCaseControllerName):
-        # if an entry in the list of the Use Case UIs with the given controller name exists
+        self.label.pack_forget()
+        # if an entry in the list of the Use Case UIs with the given controller __name exists
         if len(self.__useCaseUIs[useCaseControllerName]) == 0:
-            dutyContrlr = self.sysController.initDutyController(useCaseControllerName)
+            dutyContrlr = self.__sysController.initDutyController(useCaseControllerName)
             if dutyContrlr:
-                self.activeDutyUI = dutyContrlr.initDutyUI(self.window)
-                self.__useCaseUIs[useCaseControllerName].append(self.activeDutyUI)
+                self.__activeDutyUI = dutyContrlr.initDutyUI(self.__window)
+                self.__useCaseUIs[useCaseControllerName].append(self.__activeDutyUI)
                 self.__refreshTabPanel(useCaseControllerName)
         else: # Else, pick the first one
             self.__setActiveUseCaseUI(self.__useCaseUIs[useCaseControllerName][0])
 
     def __refreshTabPanel(self, dutyControllerName):
-        self.tabFrame.destroy()
+        self.__tabFrame.destroy()
         self.__setUpTabFrame()
         for i in range(len(self.__useCaseUIs[dutyControllerName])):
-            ttk.Button(self.tabFrame, command=lambda uiIndx=i:
+            ttk.Button(self.__tabFrame, command=lambda uiIndx=i, text=str(i + 1):
                     self.__setActiveUseCaseUI(self.__useCaseUIs[dutyControllerName][uiIndx])).\
                 pack(side=LEFT)
 
     def __setActiveUseCaseUI(self, dutyUI):
-        self.activeDutyUI.hide()
-        self.activeDutyUI = dutyUI
-        self.activeDutyUI.appear(BOTTOM)
+        self.__activeDutyUI.hide()
+        self.__activeDutyUI = dutyUI
+        self.__activeDutyUI.appear(BOTTOM)
 
     def startGui(self):
-        self.window.mainloop()
+        # set up label with picture
+        photo = PhotoImage(file=r"bus.gif")
+        self.label = Label(self.__window, image=photo, width=500, height=400, )
+        self.label.pack(pady=(50,0))
+        self.label.config(bg='systemTransparent')
+        self.label.image = photo  # keep a reference!
+        self.__window.mainloop()
 
     def raiseErrorMessg(self, header, body):
         messagebox.showerror(header, body)
@@ -110,12 +114,11 @@ class BritaniaTourGUI(Frame):
     def raiseInfoMessg(self, header, body):
         messagebox.showinfo(header, body)
 
-
     def __addDutyUI_Tab(self):
-        dutyName = self.activeDutyUI.getDutyName()
-        newDutyUI = self.activeDutyUI.replicate(self.window)
+        dutyName = self.__activeDutyUI.getDutyName()
+        newDutyUI = self.__activeDutyUI.replicate(self.__window)
         self.__useCaseUIs[dutyName].append(newDutyUI)
-        b = ttk.Button(self.tabFrame, \
-               command=lambda dutyUI = newDutyUI:
+        ttk.Button(self.__tabFrame, \
+                   command=lambda dutyUI = newDutyUI:
                 self.__setActiveUseCaseUI(dutyUI)). \
             pack(side=LEFT)
