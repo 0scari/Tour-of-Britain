@@ -141,3 +141,4 @@ class CustomerManagementController(AbstractUseCaseController):
         except ValueError:
             return False
         return True
+

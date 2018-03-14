@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a7800e3-03f7-43b1-bd8c-d71d3be25d2e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/BritaniaTourGUI.py" afterPath="$PROJECT_DIR$/BritaniaTourGUI.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" afterPath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
+      <change beforePath="$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py" afterPath="$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py" />
       <change beforePath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
+      <change beforePath="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" afterPath="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" />
+      <change beforePath="$PROJECT_DIR$/database" afterPath="$PROJECT_DIR$/database" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,83 +40,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BritaniaTourGUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
+      <file leaf-file-name="AbstractUseCaseUI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="55" column="71" lean-forward="false" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
+            <state relative-caret-position="180">
+              <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
-                <element signature="e#41#62#0" expanded="true" />
-                <element signature="e#266#853#0" expanded="false" />
-                <element signature="e#886#920#0" expanded="false" />
-                <element signature="e#956#988#0" expanded="false" />
-                <element signature="e#1034#1128#0" expanded="false" />
-                <element signature="e#1167#1372#0" expanded="false" />
-                <element signature="e#1939#2509#0" expanded="false" />
-                <element signature="e#2915#3515#0" expanded="false" />
-                <element signature="e#3074#3391#0" expanded="false" />
-                <element signature="e#3193#3391#0" expanded="false" />
-                <element signature="e#3576#3919#0" expanded="false" />
-                <element signature="e#3973#4073#0" expanded="false" />
-                <element signature="e#4128#4162#0" expanded="false" />
-                <element signature="e#4219#4255#0" expanded="false" />
-                <element signature="e#4309#4342#0" expanded="false" />
-                <element signature="e#4376#4398#0" expanded="false" />
-                <element signature="e#4439#4845#0" expanded="false" />
+                <element signature="e#217#322#0" expanded="false" />
+                <element signature="e#383#387#0" expanded="false" />
+                <element signature="e#481#639#0" expanded="false" />
+                <element signature="e#676#711#0" expanded="false" />
+                <element signature="e#741#770#0" expanded="false" />
+                <element signature="e#821#932#0" expanded="false" />
+                <element signature="e#969#1045#0" expanded="false" />
+                <element signature="e#1078#1089#0" expanded="false" />
+                <element signature="e#1132#1181#0" expanded="false" />
+                <element signature="e#1226#1540#0" expanded="false" />
+                <element signature="e#1581#1988#0" expanded="false" />
+                <element signature="e#1891#1915#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractUseCaseUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py">
+      <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractUseCaseController.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerManagementController.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="92" column="42" lean-forward="false" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
-                <element signature="e#535#591#0" expanded="false" />
-                <element signature="e#650#875#0" expanded="false" />
-                <element signature="e#932#1476#0" expanded="false" />
-                <element signature="e#1527#2379#0" expanded="false" />
-                <element signature="e#1844#1962#0" expanded="false" />
-                <element signature="e#2435#3237#0" expanded="false" />
-                <element signature="e#2559#2667#0" expanded="false" />
-                <element signature="e#3118#3237#0" expanded="false" />
-                <element signature="e#3317#3679#0" expanded="false" />
-                <element signature="e#3334#3412#0" expanded="false" />
-                <element signature="e#3744#5942#0" expanded="false" />
-                <element signature="e#3786#3907#0" expanded="false" />
-                <element signature="e#3946#4050#0" expanded="false" />
-                <element signature="e#4092#4333#0" expanded="false" />
-                <element signature="e#4378#4623#0" expanded="false" />
-                <element signature="e#4708#5468#0" expanded="false" />
-                <element signature="e#4729#5352#0" expanded="false" />
-                <element signature="e#4888#5251#0" expanded="false" />
-                <element signature="e#5511#5764#0" expanded="false" />
-                <element signature="e#5809#5921#0" expanded="false" />
-                <element signature="e#5982#6087#0" expanded="false" />
+                <element signature="e#1081#4371#0" expanded="false" />
+                <element signature="e#3833#3932#0" expanded="false" />
+                <element signature="e#4092#4195#0" expanded="false" />
+                <element signature="e#4424#5354#0" expanded="false" />
+                <element signature="e#4466#5114#0" expanded="false" />
+                <element signature="e#4667#4767#0" expanded="false" />
+                <element signature="e#4667#4695#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -192,10 +156,10 @@
         <option value="$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py" />
         <option value="$PROJECT_DIR$/SystemController.py" />
         <option value="$PROJECT_DIR$/BritaniaTour.py" />
-        <option value="$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py" />
         <option value="$PROJECT_DIR$/BritaniaTourGUI.py" />
-        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
         <option value="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
+        <option value="$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py" />
+        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
       </list>
     </option>
   </component>
@@ -234,33 +198,6 @@
             <path>
               <item name="Model" type="b2602c69:ProjectViewProjectNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Model" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="BusinessLogic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Model" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Model" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Model" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Model" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Model" type="b2602c69:ProjectViewProjectNode" />
@@ -380,7 +317,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29321486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29321486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17678382" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599726" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -875,24 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-          <folding>
-            <element signature="e#41#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="61" column="45" lean-forward="false" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -903,8 +822,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="144" column="0" lean-forward="true" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#535#591#0" expanded="false" />
@@ -928,6 +847,45 @@
             <element signature="e#5511#5764#0" expanded="false" />
             <element signature="e#5809#5921#0" expanded="false" />
             <element signature="e#5982#6087#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#217#322#0" expanded="false" />
+            <element signature="e#383#387#0" expanded="false" />
+            <element signature="e#481#639#0" expanded="false" />
+            <element signature="e#676#711#0" expanded="false" />
+            <element signature="e#741#770#0" expanded="false" />
+            <element signature="e#821#932#0" expanded="false" />
+            <element signature="e#969#1045#0" expanded="false" />
+            <element signature="e#1078#1089#0" expanded="false" />
+            <element signature="e#1132#1181#0" expanded="false" />
+            <element signature="e#1226#1540#0" expanded="false" />
+            <element signature="e#1581#1988#0" expanded="false" />
+            <element signature="e#1891#1915#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="92" column="42" lean-forward="false" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#1081#4371#0" expanded="false" />
+            <element signature="e#3833#3932#0" expanded="false" />
+            <element signature="e#4092#4195#0" expanded="false" />
+            <element signature="e#4424#5354#0" expanded="false" />
+            <element signature="e#4466#5114#0" expanded="false" />
+            <element signature="e#4667#4767#0" expanded="false" />
+            <element signature="e#4667#4695#0" expanded="false" />
           </folding>
         </state>
       </provider>

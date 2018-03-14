@@ -7,25 +7,25 @@ from Presentation.DataGrid import DataGrid
 
 
 class CustomerManagementUI(AbstractUseCaseUI):
-    def __init__(self, UseCaseController, window):
-        super().__init__(UseCaseController)
-        self.__useCaseController = UseCaseController
-        self.height = window.winfo_height() * 0.95
-        self.width  = window.winfo_width() * 0.8
-        self._mainFrame = Frame(window, height=self.height, width=self.width)
+    def __init__(self, useCaseController, window):
+        super().__init__(useCaseController)
+        self.__useCaseController = useCaseController
+        self._height = window.winfo_height() * 0.95
+        self._width  = window.winfo_width() * 0.8
+        self._mainFrame = Frame(window, height=self._height, width=self._width)
         self.appear(BOTTOM)
         self.__inputFrame = Frame(self._mainFrame)
         self.__inputFrame.place(relx=0.5, rely=0.5, anchor=CENTER)
         self.__dataGrid = None
         self.__titleLabel = None
         self._setUpCloseBttn()
-        self.setUpWidgets()
+        self._setUpWidgets()
 
     def registerCustomer(self, ):
-        customerDetails = self.getWidgetData("customerDetails")
+        customerDetails = self._getWidgetData("customerDetails")
         self.__useCaseController.registerCustomer(customerDetails)
 
-    def setUpWidgets(self):
+    def _setUpWidgets(self):
         # TODO eliminate dob entry overlapping
         self.__titleLabel = Label(self._mainFrame, text="Customer Management")
         self.__titleLabel.pack(side=TOP, pady=(35,0))
@@ -92,7 +92,7 @@ class CustomerManagementUI(AbstractUseCaseUI):
 
     def __submitActionCallback(self, opt):
         if opt == 1: # FIND CUSTOMERS
-            customers = self.__useCaseController.findCustomers(self.getWidgetData("customerDetails"))
+            customers = self.__useCaseController.findCustomers(self._getWidgetData("customerDetails"))
             if customers:
                 if self.__dataGrid: # remove previous data grid
                     # self.__dataGrid.destruct()
@@ -100,10 +100,10 @@ class CustomerManagementUI(AbstractUseCaseUI):
                     return
                 self.__titleLabel.pack_forget()
                 self.__inputFrame.place(rely=0.45, anchor=S)
-                self.__dataGrid = DataGrid(self._mainFrame, self.height * 0.5).setDataSet(customers)
+                self.__dataGrid = DataGrid(self._mainFrame, self._height * 0.5).setDataSet(customers)
                 self.__dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)
                 self.__dataGrid.pack(BOTTOM)
         elif opt == 2: # REGISTER CUSTOMERS
-            self.__useCaseController.registerCustomer(self.getWidgetData("customerDetails"))
+            self.__useCaseController.registerCustomer(self._getWidgetData("customerDetails"))
         else:
             GUI_NotificationHandler.raiseWarningMessg("Warning", "Option not selected")

@@ -30,20 +30,20 @@ class VerticalScrolledFrame(Frame):
                                            anchor=NW)
 
         self.__canvas.config(height=height)
-        # track changes to the self.__canvas and _mainFrame width and sync them,
+        # track changes to the self.__canvas and _mainFrame _width and sync them,
         # also updating the scrollbar
         def _configure_interior(event):
             # update the scrollbars to match the size of the inner _mainFrame
             size = (interior.winfo_reqwidth(), interior.winfo_reqheight())
             self.__canvas.config(scrollregion="0 0 %s %s" % size)
             if interior.winfo_reqwidth() != self.__canvas.winfo_width():
-                # update the self.__canvas's width to fit the inner _mainFrame
+                # update the self.__canvas's _width to fit the inner _mainFrame
                 self.__canvas.config(width=interior.winfo_reqwidth())
         interior.bind('<Configure>', _configure_interior)
 
         def _configure_canvas(event):
             if interior.winfo_reqwidth() != self.__canvas.winfo_width():
-                # update the inner _mainFrame's width to fill the self.__canvas
+                # update the inner _mainFrame's _width to fill the self.__canvas
                 self.__canvas.itemconfigure(interior_id, width=self.__canvas.winfo_width())
         self.__canvas.bind('<Configure>', _configure_canvas)
         

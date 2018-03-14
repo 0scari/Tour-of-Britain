@@ -6,53 +6,52 @@ from tkinter import *
 
 class AbstractUseCaseUI(ABC):
     @abstractmethod
-    def __init__(self, dutyController, window = None):
-        self.dataWidgets = {}
+    def __init__(self, useCaseController, window = None):
+        self._dataWidgets = {}
         self._mainFrame = None
-        self._useCaseController = dutyController
+        self._useCaseController = useCaseController
 
     @abstractmethod
-    def setUpWidgets(self, ):
+    def _setUpWidgets(self, ):
         pass
 
     # TODO candidate for unittests
     def _addDataWidget(self, name, key, widget):
         """Polymorphic method"""
-        if key not in self.dataWidgets:
+        if key not in self._dataWidgets:
             raise ValueError
         else:
-            self.dataWidgets[key][name] = widget
+            self._dataWidgets[key][name] = widget
 
     def getDutyName(self):
         return self.__class__.__name__[:-2]
 
-    def hide(self, ):
+    def hide(self):
         self._mainFrame.pack_forget()
 
     def _createDataWidgetKey(self, key):
-        """Polymorphic method"""
-        if key in self.dataWidgets:
+        if key in self._dataWidgets:
             raise ValueError
         else:
-            self.dataWidgets[key] = {}
+            self._dataWidgets[key] = {}
 
     def appear(self, pos):
         self._mainFrame.pack_propagate(False)
         self._mainFrame.pack(side=pos)
 
     def close(self, ):
-        pass
+        self.hide()
 
     def replicate(self, window):
         return self._useCaseController.initDutyUI(window)
 
-    def getWidgetData(self, key):
-        if key not in self.dataWidgets:
+    def _getWidgetData(self, key):
+        if key not in self._dataWidgets:
             raise ValueError
         outputData = {}
-        print(len(self.dataWidgets))
-        print(len(self.dataWidgets[key]))
-        for fieldName, dataWidget in self.dataWidgets[key].items():
+        print(len(self._dataWidgets))
+        print(len(self._dataWidgets[key]))
+        for fieldName, dataWidget in self._dataWidgets[key].items():
             outputData[fieldName] = dataWidget.get()
         return outputData
 
