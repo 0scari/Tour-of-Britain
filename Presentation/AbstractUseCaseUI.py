@@ -56,3 +56,13 @@ class AbstractUseCaseUI(ABC):
             outputData[fieldName] = dataWidget.get()
         return outputData
 
+    def _setUpCloseBttn(self):
+        # set up label with picture
+        photo = PhotoImage(file=r"closeBttn.gif")
+        label = Label(self._mainFrame, image=photo, width=15, height=15, )
+        label.pack(side=TOP, anchor=W, padx=7, pady=7)
+        label.config(bg='systemTransparent')
+        label.image = photo  # keep a reference!
+        #  set up on-click event
+        # label.bind("<Button-1>", lambda event: self.__addDutyUI_Tab())
+

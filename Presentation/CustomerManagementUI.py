@@ -18,6 +18,7 @@ class CustomerManagementUI(AbstractUseCaseUI):
         self.__inputFrame.place(relx=0.5, rely=0.5, anchor=CENTER)
         self.__dataGrid = None
         self.__titleLabel = None
+        self._setUpCloseBttn()
         self.setUpWidgets()
 
     def registerCustomer(self, ):
@@ -27,6 +28,7 @@ class CustomerManagementUI(AbstractUseCaseUI):
     def setUpWidgets(self):
         # TODO eliminate dob entry overlapping
         self.__titleLabel = Label(self._mainFrame, text="Customer Management")
+
         self.__titleLabel.pack(side=TOP, pady=(35,0))
         self.__titleLabel.config(font=("Courier", 40))
         refLabel = Label(self.__inputFrame, text="Reference nr.")
