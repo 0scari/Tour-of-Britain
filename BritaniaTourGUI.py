@@ -51,6 +51,12 @@ class BritaniaTourGUI(Frame):
         self.menuFrame = Frame(self.window, bg="#F0F0F0", height=self.__height, width=self.__width * 0.2)
         self.menuFrame.pack_propagate(False)
         self.menuFrame.pack(side=LEFT)
+        # set up label with picture
+        photo = PhotoImage(file=r"menuText200x55.gif")
+        label = Label(self.menuFrame, image=photo, width=200, height=38)
+        label.pack(side=TOP, fill=X, pady=0)
+        label.config(bg='systemTransparent')
+        label.image = photo  # keep a reference!
 
     def __setUpTabFrame(self):
         self.tabFrame = Frame(self.window, bg="#DEDEDE", height=self.__height * 0.05, width=self.__width * 0.8)
@@ -66,12 +72,7 @@ class BritaniaTourGUI(Frame):
         label.bind("<Button-1>", lambda event: self.__addDutyUI_Tab())
 
     def displayMenuOptions(self, duties):
-        # set up label with picture
-        photo = PhotoImage(file=r"menuText200x55.gif")
-        label = Label(self.menuFrame, image=photo, width=200, height=55,)
-        label.pack(side=TOP, fill=X, pady=0)
-        label.config(bg='systemTransparent')
-        label.image = photo  # keep a reference!
+
         for i in range(len(duties["cntrlr"])):
             Button(self.menuFrame, background='green', text = duties["labels"][i], \
                    command=lambda cntrlr = duties["cntrlr"][i]: \

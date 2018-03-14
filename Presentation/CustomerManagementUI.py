@@ -28,7 +28,6 @@ class CustomerManagementUI(AbstractUseCaseUI):
     def setUpWidgets(self):
         # TODO eliminate dob entry overlapping
         self.__titleLabel = Label(self._mainFrame, text="Customer Management")
-
         self.__titleLabel.pack(side=TOP, pady=(35,0))
         self.__titleLabel.config(font=("Courier", 40))
         refLabel = Label(self.__inputFrame, text="Reference nr.")
@@ -55,22 +54,22 @@ class CustomerManagementUI(AbstractUseCaseUI):
         dataWidget = Entry(self.__inputFrame)
         dataWidget.grid(row=2, column=1)
         self._addDataWidget("surname", "customerDetails", dataWidget)
-
+        # //// DoB Frame ////
         dobFrame = Frame(self.__inputFrame)
-        dobFrame.grid(row=3, column=1, columnspan=1, sticky=N+S+E+W)
         dobFrame.grid_propagate(False)
         dataWidget = Entry(dobFrame)
-        dataWidget.grid(row=0, column=0, pady=(1,0))
+        dataWidget.grid(row=0, column=0)
         self._addDataWidget("dobDD", "customerDetails", dataWidget)
         dataWidget = Entry(dobFrame)
-        dataWidget.grid(row=0, column=1, pady=(0,0))
+        dataWidget.grid(row=0, column=1)
         self._addDataWidget("dobMM", "customerDetails", dataWidget)
         dataWidget = Entry(dobFrame)
-        dataWidget.grid(row=0, column=2, pady=(0,0))
+        dataWidget.grid(row=0, column=2)
         self._addDataWidget("dobYYYY", "customerDetails", dataWidget)
         dobFrame.grid_columnconfigure(0, weight=1)
         dobFrame.grid_columnconfigure(1, weight=1)
         dobFrame.grid_columnconfigure(2, weight=1)
+        dobFrame.grid(row=3, column=1, columnspan=1, sticky=N+S+E+W)
 
         dataWidget = Entry(self.__inputFrame)
         dataWidget.grid(row=4, column=1)
@@ -88,18 +87,16 @@ class CustomerManagementUI(AbstractUseCaseUI):
         Radiobutton(self.__inputFrame, text="Register customer", variable=var, value=2, \
                     command=lambda: [refLabel.config(state=DISABLED),
                                      refEntry.config(state=DISABLED)]).grid(row=8, column=1, sticky=W)
-
         Button(self.__inputFrame, text="Submit",
                command=lambda : self.__submitActionCallback(var.get())).grid(row=9, column=1)
-
 
     def __submitActionCallback(self, opt):
         if opt == 1: # FIND CUSTOMERS
             customers = self.__useCaseController.findCustomers(self.getWidgetData("customerDetails"))
             if customers:
                 if self.__dataGrid: # remove previous data grid
-                    self.__dataGrid.destruct()
-                    self.__dataGrid = None
+                    # self.__dataGrid.destruct()
+                    # self.__dataGrid = None
                     return
                 self.__titleLabel.pack_forget()
                 self.__inputFrame.place(rely=0.45, anchor=S)

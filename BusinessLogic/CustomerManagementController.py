@@ -11,14 +11,14 @@ import re as regex
 class CustomerManagementController(AbstractUseCaseController):
     def __init__(self, repository):
         super().__init__()
-        self.repository = repository
+        self._repository = repository
 
     def registerCustomer(self, customerDetails):
         if not self._validateInput(customerDetails):
             return
         customer = self._constructDataModel(customerDetails)
         customer.setCreatedBy(SystemController.getUserId())
-        self.repository.write(customer)
+        self._repository.write(customer)
 
     def updateCustomer(self, customerDetails):
         splitDob = dict(zip(["dobDD", "dobMM", "dobYYYY"], customerDetails["dob"].split("/")))
@@ -28,7 +28,7 @@ class CustomerManagementController(AbstractUseCaseController):
         if not self._validateInput(customerDetails, False):
             return
         customer = self._constructDataModel(customerDetails)
-        if self.repository.update(customer):
+        if self._repository.update(customer):
             GUI_NotificationHandler.raiseInfoMessg("Success", "Customer was updated successfully")
 
     def _constructDataModel(self, data):
@@ -63,7 +63,7 @@ class CustomerManagementController(AbstractUseCaseController):
         if not self._validateInput(customerDetails, False):
             return None
         customerModel = self._constructDataModel(customerDetails)
-        customers = self.repository.readCustomers(customerModel.getData())
+        customers = self._repository.readCustomers(customerModel.getData())
         customerModels = []
         for customer in customers:
             customerModels.append(self._constructDataModel(customer))
@@ -72,9 +72,6 @@ class CustomerManagementController(AbstractUseCaseController):
         else:
             GUI_NotificationHandler.raiseWarningMessg("Warning", "No customer matches the search criteria")
             return None
-
-    def storeCustomer(self, customerDetails):
-        pass
 
     def _validateInput(self, customerDetails, fullValidation = True):
         try:
@@ -110,9 +107,9 @@ class CustomerManagementController(AbstractUseCaseController):
 
         if "dobDD" in input or "dobMM" in input or "dobYYYY" in input:
             try:
-                if self.__is_int(input["dobDD"]) \
-                 and self.__is_int(input["dobMM"]) \
-                 and self.__is_int(input["dobYYYY"]):
+                if self.__isInt(input["dobDD"]) \
+                 and self.__isInt(input["dobMM"]) \
+                 and self.__isInt(input["dobYYYY"]):
                     if int(input["dobYYYY"]) not in range(1900, 2018):
                         raise DataValidationException("Invalid year")
                     try:
@@ -138,7 +135,7 @@ class CustomerManagementController(AbstractUseCaseController):
 
         return True
 
-    def __is_int(self, input):
+    def __isInt(self, input):
         try:
             num = int(input)
         except ValueError:
