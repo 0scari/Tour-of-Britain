@@ -89,8 +89,7 @@ class BritaniaTourGUI(Frame):
         self.tabFrame.destroy()
         self.__setUpTabFrame()
         for i in range(len(self.__useCaseUIs[dutyControllerName])):
-            ttk.Button(self.tabFrame, text=str(i), \
-                   command=lambda uiIndx=i:
+            ttk.Button(self.tabFrame, command=lambda uiIndx=i:
                     self.__setActiveUseCaseUI(self.__useCaseUIs[dutyControllerName][uiIndx])).\
                 pack(side=LEFT)
 
@@ -114,10 +113,9 @@ class BritaniaTourGUI(Frame):
 
     def __addDutyUI_Tab(self):
         dutyName = self.activeDutyUI.getDutyName()
-        print("Duty name", dutyName)
         newDutyUI = self.activeDutyUI.replicate(self.window)
         self.__useCaseUIs[dutyName].append(newDutyUI)
-        ttk.Button(self.tabFrame, text=str(len(self.__useCaseUIs[dutyName]) - 1), \
+        b = ttk.Button(self.tabFrame, \
                command=lambda dutyUI = newDutyUI:
                 self.__setActiveUseCaseUI(dutyUI)). \
             pack(side=LEFT)

@@ -26,7 +26,6 @@ class CustomerManagementUI(AbstractUseCaseUI):
         self.__useCaseController.registerCustomer(customerDetails)
 
     def _setUpWidgets(self):
-        # TODO eliminate dob entry overlapping
         self.__titleLabel = Label(self._mainFrame, text="Customer Management")
         self.__titleLabel.pack(side=TOP, pady=(35,0))
         self.__titleLabel.config(font=("Courier", 40))
@@ -44,51 +43,45 @@ class CustomerManagementUI(AbstractUseCaseUI):
         self._createDataWidgetKey("customerDetails")
 
         refEntry = Entry(self.__inputFrame)
-        refEntry.grid(row=0, column=1)
+        refEntry.grid(row=0, column=1, columnspan=3, sticky=E+W)
         self._addDataWidget("ref", "customerDetails", refEntry)
 
         dataWidget = Entry(self.__inputFrame)
-        dataWidget.grid(row=1, column=1)
+        dataWidget.grid(row=1, column=1,columnspan=3, sticky=E+W)
         self._addDataWidget("name","customerDetails", dataWidget)
 
         dataWidget = Entry(self.__inputFrame)
-        dataWidget.grid(row=2, column=1)
+        dataWidget.grid(row=2, column=1,columnspan=3, sticky=E+W)
         self._addDataWidget("surname", "customerDetails", dataWidget)
-        # //// DoB Frame ////
-        dobFrame = Frame(self.__inputFrame)
-        dobFrame.grid_propagate(False)
-        dataWidget = Entry(dobFrame)
-        dataWidget.grid(row=0, column=0)
+
+        dataWidget = Entry(self.__inputFrame, width=7)
+        dataWidget.grid(row=3, column=1)
         self._addDataWidget("dobDD", "customerDetails", dataWidget)
-        dataWidget = Entry(dobFrame)
-        dataWidget.grid(row=0, column=1)
+        dataWidget = Entry(self.__inputFrame, width=7)
+        dataWidget.grid(row=3, column=2)
         self._addDataWidget("dobMM", "customerDetails", dataWidget)
-        dataWidget = Entry(dobFrame)
-        dataWidget.grid(row=0, column=2)
+        dataWidget = Entry(self.__inputFrame, width=7)
+        dataWidget.grid(row=3, column=3)
         self._addDataWidget("dobYYYY", "customerDetails", dataWidget)
-        dobFrame.grid_columnconfigure(0, weight=1)
-        dobFrame.grid_columnconfigure(1, weight=1)
-        dobFrame.grid_columnconfigure(2, weight=1)
-        dobFrame.grid(row=3, column=1, columnspan=1, sticky=N+S+E+W)
 
         dataWidget = Entry(self.__inputFrame)
-        dataWidget.grid(row=4, column=1)
+        dataWidget.grid(row=4, column=1, columnspan=3, sticky=N+S+E+W)
         self._addDataWidget("email", "customerDetails", dataWidget)
 
         dataWidget = Entry(self.__inputFrame)
-        dataWidget.grid(row=5, column=1)
+        dataWidget.grid(row=5, column=1, columnspan=3, sticky=E+W)
         self._addDataWidget("address", "customerDetails", dataWidget)
 
         var = IntVar()
         var.set(0)
         Radiobutton(self.__inputFrame, text="Find customer", variable=var, value=1, \
                     command=lambda: [refLabel.config(state=NORMAL),
-                                     refEntry.config(state=NORMAL)]).grid(row=7, column=1, sticky=W)
+                                     refEntry.config(state=NORMAL)]).grid(columnspan=3, row=7, column=1, sticky=W)
         Radiobutton(self.__inputFrame, text="Register customer", variable=var, value=2, \
                     command=lambda: [refLabel.config(state=DISABLED),
-                                     refEntry.config(state=DISABLED)]).grid(row=8, column=1, sticky=W)
+                                     refEntry.config(state=DISABLED)]).grid(columnspan=3, row=8, column=1, sticky=W)
         Button(self.__inputFrame, text="Submit",
-               command=lambda : self.__submitActionCallback(var.get())).grid(row=9, column=1)
+               command=lambda : self.__submitActionCallback(var.get())).grid(columnspan=3, row=9, column=1)
 
     def __submitActionCallback(self, opt):
         if opt == 1: # FIND CUSTOMERS
