@@ -3,12 +3,18 @@
 from tkinter import *
 from tkinter import messagebox
 from GUI_NotificationHandler import GUI_NotificationHandler
+from tkinter import ttk
 
 
-class BritaniaTourGUI:
+class BritaniaTourGUI(Frame):
     def __init__(self, sysController, duties):
-        self.__useCaseUIs = {}
+
         self.window = Tk()
+        self.window.update()
+        Frame.__init__(self, self.window)
+        self.style =ttk.Style()
+        self.style.theme_use("default")
+
         self.tabFrame = None
         self.menuFrame = None
         self.activeDutyUI = None
@@ -16,13 +22,12 @@ class BritaniaTourGUI:
         self.__width  = 1000
         self.__newTabButton = None
         self.sysController = sysController
+        self.__useCaseUIs = {}
 
         self.__setUpWindow()
-
         self.__setUpMenuFrame()
         self.__setUpTabFrame()
         self.displayMenuOptions(duties)
-
         self.__setDutyUIs(duties)
 
     def __del__(self):
@@ -81,9 +86,7 @@ class BritaniaTourGUI:
                 self.__useCaseUIs[useCaseControllerName].append(self.activeDutyUI)
                 self.refreshTabPanel(useCaseControllerName)
         else: # Else, pick the first one
-            # TODO set as the active tab
             self.__setActiveUseCaseUI(self.__useCaseUIs[useCaseControllerName][0])
-
 
     def refreshTabPanel(self, dutyControllerName):
         self.tabFrame.destroy()

@@ -13,19 +13,22 @@ class CustomerManagementUI(AbstractUseCaseUI):
         self.height = window.winfo_height() * 0.95
         self.width  = window.winfo_width() * 0.8
         self._mainFrame = Frame(window, height=self.height, width=self.width)
-        print(type(self._mainFrame))
         self.appear(BOTTOM)
         self.__inputFrame = Frame(self._mainFrame)
         self.__inputFrame.place(relx=0.5, rely=0.5, anchor=CENTER)
-        self.setUpWidgets()
         self.__dataGrid = None
+        self.__titleLabel = None
+        self.setUpWidgets()
 
     def registerCustomer(self, ):
         customerDetails = self.getWidgetData("customerDetails")
         self.__useCaseController.registerCustomer(customerDetails)
 
     def setUpWidgets(self):
-
+        # TODO eliminate dob entry overlapping
+        self.__titleLabel = Label(self._mainFrame, text="Customer Management")
+        self.__titleLabel.pack(side=TOP, pady=(35,0))
+        self.__titleLabel.config(font=("Courier", 40))
         refLabel = Label(self.__inputFrame, text="Reference nr.")
         refLabel.grid(row=0, column=0, sticky=W)
         Label(self.__inputFrame, text="First name").grid(row=1, column=0, sticky=W)
@@ -87,29 +90,16 @@ class CustomerManagementUI(AbstractUseCaseUI):
         Button(self.__inputFrame, text="Submit",
                command=lambda : self.__submitActionCallback(var.get())).grid(row=9, column=1)
 
-        print(str(var))
 
-
-    def __submitActionCallback(self, opt, ):
+    def __submitActionCallback(self, opt):
         if opt == 1: # FIND CUSTOMERS
             customers = self.__useCaseController.findCustomers(self.getWidgetData("customerDetails"))
-            # data = [{"Reference nr." : "Hue",
-            #     "First name": "Bob",
-            #     "Second name": "Bob",
-            #     "Date of birth": "Bob",
-            #     "Email": "Bob",
-            #     "Address": "Bob",
-            #     "Created by:": "Bob"}, {"Reference nr." : "Susan",
-            #     "First name": "Susan",
-            #     "Second name": "Susan",
-            #     "Date of birth": "Susan",
-            #     "Email": "Susan",
-            #     "Address": "Susan",
-            #     "Created by:": "Susan"}]
             if customers:
-                if self.__dataGrid:
+                if self.__dataGrid: # remove previous data grid
                     self.__dataGrid.destruct()
+                    self.__dataGrid = None
                     return
+                self.__titleLabel.pack_forget()
                 self.__inputFrame.place(rely=0.45, anchor=S)
                 self.__dataGrid = DataGrid(self._mainFrame, self.height * 0.5).setDataSet(customers)
                 self.__dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)

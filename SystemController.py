@@ -6,7 +6,6 @@ from GUI_NotificationHandler import GUI_NotificationHandler
 import sqlite3 as sqlite
 
 class SystemController:
-    # TODO is it ok to do it static???
     __user = None
     conn = None # Temporary hack
 
