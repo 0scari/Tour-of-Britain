@@ -27,15 +27,11 @@ class BritaniaTourGUI(Frame):
         self.__setUpWindow()
         self.__setUpMenuFrame()
         self.__setUpTabFrame()
-        self.displayMenuOptions(duties)
+        self.__displayMenuOptions(duties)
         self.__setDutyUIs(duties)
 
     def __del__(self):
         GUI_NotificationHandler.unsetGUI()
-
-    def returnSelf(self):
-        print("dbg")
-        return self
 
     def __setDutyUIs(self, duties):
         for i in range(len(duties["cntrlr"])):
@@ -71,10 +67,10 @@ class BritaniaTourGUI(Frame):
         # set up on-click event
         label.bind("<Button-1>", lambda event: self.__addDutyUI_Tab())
 
-    def displayMenuOptions(self, duties):
+    def __displayMenuOptions(self, duties):
 
         for i in range(len(duties["cntrlr"])):
-            Button(self.menuFrame, background='green', text = duties["labels"][i], \
+            ttk.Button(self.menuFrame, text = duties["labels"][i], \
                    command=lambda cntrlr = duties["cntrlr"][i]: \
                        self.__displayUseCaseUIs(cntrlr)).pack(fill=X, side=TOP, padx=5, pady=3)
 
@@ -85,15 +81,15 @@ class BritaniaTourGUI(Frame):
             if dutyContrlr:
                 self.activeDutyUI = dutyContrlr.initDutyUI(self.window)
                 self.__useCaseUIs[useCaseControllerName].append(self.activeDutyUI)
-                self.refreshTabPanel(useCaseControllerName)
+                self.__refreshTabPanel(useCaseControllerName)
         else: # Else, pick the first one
             self.__setActiveUseCaseUI(self.__useCaseUIs[useCaseControllerName][0])
 
-    def refreshTabPanel(self, dutyControllerName):
+    def __refreshTabPanel(self, dutyControllerName):
         self.tabFrame.destroy()
         self.__setUpTabFrame()
         for i in range(len(self.__useCaseUIs[dutyControllerName])):
-            Button(self.tabFrame, text=str(i), \
+            ttk.Button(self.tabFrame, text=str(i), \
                    command=lambda uiIndx=i:
                     self.__setActiveUseCaseUI(self.__useCaseUIs[dutyControllerName][uiIndx])).\
                 pack(side=LEFT)
@@ -102,6 +98,9 @@ class BritaniaTourGUI(Frame):
         self.activeDutyUI.hide()
         self.activeDutyUI = dutyUI
         self.activeDutyUI.appear(BOTTOM)
+
+    def startGui(self):
+        self.window.mainloop()
 
     def raiseErrorMessg(self, header, body):
         messagebox.showerror(header, body)
@@ -112,15 +111,13 @@ class BritaniaTourGUI(Frame):
     def raiseInfoMessg(self, header, body):
         messagebox.showinfo(header, body)
 
-    def startGui(self):
-        self.window.mainloop()
 
     def __addDutyUI_Tab(self):
         dutyName = self.activeDutyUI.getDutyName()
         print("Duty name", dutyName)
         newDutyUI = self.activeDutyUI.replicate(self.window)
         self.__useCaseUIs[dutyName].append(newDutyUI)
-        Button(self.tabFrame, text=str(len(self.__useCaseUIs[dutyName]) - 1), \
+        ttk.Button(self.tabFrame, text=str(len(self.__useCaseUIs[dutyName]) - 1), \
                command=lambda dutyUI = newDutyUI:
                 self.__setActiveUseCaseUI(dutyUI)). \
             pack(side=LEFT)

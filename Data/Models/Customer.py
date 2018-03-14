@@ -1,7 +1,8 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
+from Data.Models.AbstractBaseDataModel import AbsttractBaseDataModel
 
-class Customer():
+class Customer(AbsttractBaseDataModel):
 
     def __init__(self):
         self.id = None

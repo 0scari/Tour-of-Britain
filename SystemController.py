@@ -15,6 +15,7 @@ class SystemController:
         GUI_NotificationHandler.setGui(self.gui)
         self.gui.startGui()
 
+
     def setGui(self, ):
         employeeDuties = {"cntrlr": ["CustomerManagement", "MembershipManagement", "BookingReservation"],
                           "labels": ["Customer Management", "Membership Management", "Bookings and Reservations"]}
