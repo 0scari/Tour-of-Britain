@@ -50,6 +50,8 @@ class BritaniaTourGUI(Frame):
         label.pack(side=TOP, fill=X, pady=0)
         label.config(bg='systemTransparent')
         label.image = photo  # keep a reference!
+        #  set up on-click event
+        label.bind("<Button-1>", lambda event: self.__activeDutyUI.hide())
 
     def __setUpTabFrame(self):
         self.__tabFrame = Frame(self.__window, bg="#DEDEDE", height=self.__height * 0.05, width=self.__width * 0.8)
@@ -103,6 +105,7 @@ class BritaniaTourGUI(Frame):
         self.label.pack(pady=(50,0))
         self.label.config(bg='systemTransparent')
         self.label.image = photo  # keep a reference!
+        print(" PAck slaves", self.__menuFrame.pack_slaves())
         self.__window.mainloop()
 
     def raiseErrorMessg(self, header, body):

@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
 
-class AbstractCustomerManagementRepository:
+class AbstractCustomerManagementRepository(ABC):
     @abstractmethod
     def __init__(self, connection):
         self._connection = connection

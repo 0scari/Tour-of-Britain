@@ -87,14 +87,14 @@ class CustomerManagementUI(AbstractUseCaseUI):
         if opt == 1: # FIND CUSTOMERS
             customers = self.__useCaseController.findCustomers(self._getWidgetData("customerDetails"))
             if customers:
-                if self.__dataGrid: # remove previous data grid
-                    # self.__dataGrid.destruct()
-                    # self.__dataGrid = None
+                if self.__dataGrid: # refresh previous grid
+                    self.__dataGrid.refresh(customers)
                     return
                 self.__titleLabel.pack_forget()
                 self.__inputFrame.place(rely=0.48, anchor=S)
                 self.__dataGrid = DataGrid(self._mainFrame, self._height * 0.5).setDataSet(customers)
                 self.__dataGrid.setUpdateCallback(self.__useCaseController.updateCustomer)
+                self.__dataGrid.setDeletionCallback(self.__useCaseController.deleteCustomer)
                 self.__dataGrid.pack(BOTTOM)
         elif opt == 2: # REGISTER CUSTOMERS
             self.__useCaseController.registerCustomer(self._getWidgetData("customerDetails"))

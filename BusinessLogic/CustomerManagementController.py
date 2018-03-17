@@ -65,7 +65,7 @@ class CustomerManagementController(AbstractUseCaseController):
         if not self._validateInput(customerDetails, False):
             return None
         customerModel = self._constructDataModel(customerDetails)
-        customers = self._repository.readCustomers(customerModel.getData())
+        customers = self._repository.read(customerModel.getData())
         customerModels = []
         for customer in customers:
             customerModels.append(self._constructDataModel(customer))
@@ -137,8 +137,15 @@ class CustomerManagementController(AbstractUseCaseController):
 
         return True
 
-    def deleteCustomer(self):
-        pass
+    def deleteCustomer(self, id):
+        confirmation = GUI_NotificationHandler.raiseDialog("Delete", "Are You Sure?")
+        if confirmation:
+            if self._repository.delete(id):
+                GUI_NotificationHandler.raiseInfoMessg("Success", "Customer was deleted")
+                return True
+            else:
+                GUI_NotificationHandler.raiseWarningMessg("Failure", "Unable to delete customer")
+                return False
 
     def __isInt(self, input):
         try:

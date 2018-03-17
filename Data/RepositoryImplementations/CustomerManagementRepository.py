@@ -21,7 +21,7 @@ class CustomerManagementRepository(AbstractCustomerManagementRepository):
                   customer.getAddress(),
                   customer.getCreatedBy()))
 
-            ref = self.readCustomers({"email": customer.getEmail()})[0]["id"]
+            ref = self.read({"email": customer.getEmail()})[0]["id"]
 
             SystemController.conn.commit()  # Save (commit) the changes
             GUI_NotificationHandler.raiseInfoMessg(
@@ -35,7 +35,7 @@ class CustomerManagementRepository(AbstractCustomerManagementRepository):
                 "Operation Failed", "Customer with the specified details already exists")
             return False
 
-    def readCustomers(self, conditions):
+    def read(self, conditions):
         conds = []
         for cond in conditions:
             conds.append(cond + "=" + "?")
@@ -71,8 +71,20 @@ class CustomerManagementRepository(AbstractCustomerManagementRepository):
             SystemController.conn.commit()  # Save (commit) the changes
             return True
         except ValueError as err:
-            GUI_NotificationHandler.raiseWarningMessg("DB connection failure", err)
+            print("DB error while updating:\n", err) # error to programmer
             return False
         except sqlite3.IntegrityError:
             GUI_NotificationHandler.raiseWarningMessg("Operation Failed",
                                                       "Customer with the specified details already exists")
+
+
+    def delete(self, id):
+        print(type(id))
+        try:
+            self._connection.execute('''
+            DELETE FROM Customers WHERE id=?;''', (id,))
+            SystemController.conn.commit()  # Save (commit) the changes
+            return True
+        except ValueError as err:
+            print("DB error while deleting:\n", err) # error to programmer
+            return False

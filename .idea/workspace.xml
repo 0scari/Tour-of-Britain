@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a7800e3-03f7-43b1-bd8c-d71d3be25d2e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin.gif" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8baefa60-d316-4f14-8232-5f03410a0eed.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8baefa60-d316-4f14-8232-5f03410a0eed.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/BritaniaTourGUI.py" afterPath="$PROJECT_DIR$/BritaniaTourGUI.py" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" afterPath="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
-      <change beforePath="$PROJECT_DIR$/GUI_NotificationHandler.py" afterPath="$PROJECT_DIR$/GUI_NotificationHandler.py" />
+      <change beforePath="$PROJECT_DIR$/Data/Repositories/AbstractCustomerManagementRepository.py" afterPath="$PROJECT_DIR$/Data/Repositories/AbstractCustomerManagementRepository.py" />
+      <change beforePath="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py" afterPath="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py" />
       <change beforePath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" afterPath="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
       <change beforePath="$PROJECT_DIR$/Presentation/DataGrid.py" afterPath="$PROJECT_DIR$/Presentation/DataGrid.py" />
       <change beforePath="$PROJECT_DIR$/database" afterPath="$PROJECT_DIR$/database" />
@@ -35,6 +34,17 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="database" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="database" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="database" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -42,56 +52,43 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="BritaniaTourGUI.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="BritaniaTourGUI.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="555">
-                  <caret line="117" column="52" lean-forward="false" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
+                <state relative-caret-position="411">
+                  <caret line="53" column="73" lean-forward="false" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
                   <folding>
                     <element signature="n#!!doc" expanded="false" />
                     <element signature="e#41#62#0" expanded="true" />
-                    <element signature="e#265#871#0" expanded="false" />
                     <element signature="e#904#938#0" expanded="false" />
-                    <element signature="e#984#1078#0" expanded="false" />
                     <element signature="e#1117#1330#0" expanded="false" />
-                    <element signature="e#1372#1866#0" expanded="false" />
-                    <element signature="e#1907#2488#0" expanded="false" />
-                    <element signature="e#2543#2818#0" expanded="false" />
-                    <element signature="e#2594#2818#0" expanded="false" />
-                    <element signature="e#2886#3531#0" expanded="false" />
-                    <element signature="e#3080#3407#0" expanded="false" />
-                    <element signature="e#3201#3407#0" expanded="false" />
-                    <element signature="e#3594#3928#0" expanded="false" />
-                    <element signature="e#3731#3928#0" expanded="false" />
-                    <element signature="e#3982#4088#0" expanded="false" />
-                    <element signature="e#4122#4447#0" expanded="false" />
-                    <element signature="e#4502#4536#0" expanded="false" />
-                    <element signature="e#4593#4629#0" expanded="false" />
-                    <element signature="e#4683#4716#0" expanded="false" />
-                    <element signature="e#4960#5297#0" expanded="false" />
+                    <element signature="e#2015#2596#0" expanded="false" />
+                    <element signature="e#2651#2926#0" expanded="false" />
+                    <element signature="e#2702#2926#0" expanded="false" />
+                    <element signature="e#2994#3639#0" expanded="false" />
+                    <element signature="e#3188#3515#0" expanded="false" />
+                    <element signature="e#3309#3515#0" expanded="false" />
+                    <element signature="e#3702#4036#0" expanded="false" />
+                    <element signature="e#3839#4036#0" expanded="false" />
+                    <element signature="e#4090#4196#0" expanded="false" />
+                    <element signature="e#4230#4617#0" expanded="false" />
+                    <element signature="e#4672#4706#0" expanded="false" />
+                    <element signature="e#4763#4799#0" expanded="false" />
+                    <element signature="e#4853#4886#0" expanded="false" />
+                    <element signature="e#5130#5467#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="325">
-                  <caret line="44" column="43" lean-forward="true" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DataGrid.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DataGrid.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Presentation/DataGrid.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="717">
-                  <caret line="78" column="7" lean-forward="false" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+                <state relative-caret-position="275">
+                  <caret line="88" column="87" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="88" selection-end-column="87" />
                   <folding>
                     <element signature="e#0#21#0" expanded="true" />
-                    <element signature="e#2538#2645#0" expanded="false" />
+                    <element signature="e#3014#3121#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -118,12 +115,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="CustomerManagementUI.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="325">
-                  <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
-                  <folding />
+                <state relative-caret-position="838">
+                  <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
+                  <folding>
+                    <element signature="e#4279#5259#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -131,16 +130,34 @@
           <file leaf-file-name="CustomerManagementController.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="140" column="12" lean-forward="false" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
+                <state relative-caret-position="732">
+                  <caret line="147" column="28" lean-forward="false" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="28" />
                   <folding>
                     <element signature="e#42#119#0" expanded="true" />
+                    <element signature="e#1529#2447#0" expanded="false" />
+                    <element signature="e#3803#6001#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GUI_NotificationHandler.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CustomerManagementRepository.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="454">
+                  <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+                  <folding>
+                    <marker date="1521301899534" expanded="true" signature="512:622" ph="INSERT INTO Customers... " />
+                    <marker date="1521301899534" expanded="true" signature="1742:1772" ph="SELECT * FRO... Customers" />
+                    <marker date="1521301899534" expanded="true" signature="2250:2338" ph="UPDATE Customers... " />
+                    <marker date="1521301899534" expanded="true" signature="3140:3172" ph="DELETE FROM Customers... " />
+                    <marker date="1521301899534" expanded="true" signature="3151:3172" ph="UPDATE Customers... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GUI_NotificationHandler.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/GUI_NotificationHandler.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="555">
@@ -172,6 +189,8 @@
       <find>blue</find>
       <find>lambda</find>
       <find>&quot;__</find>
+      <find>pro</find>
+      <find>grid</find>
     </findStrings>
     <replaceStrings>
       <replace>self.__inputFrame</replace>
@@ -218,21 +237,21 @@
         <option value="src:table:/cc521df2/8baefa60-d316-4f14-8232-5f03410a0eed/main.Customers" />
         <option value="$PROJECT_DIR$/Data/Repositories/ICustomerManagementRepository.py" />
         <option value="$PROJECT_DIR$/Presentation/VerticalScrollableFrame.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8baefa60-d316-4f14-8232-5f03410a0eed/console_1.sql" />
         <option value="$PROJECT_DIR$/Data/SQL/CreateCustomersTable.sql" />
         <option value="$PROJECT_DIR$/BusinessLogic/AbstractUseCaseController.py" />
         <option value="$PROJECT_DIR$/BritaniaTour.py" />
         <option value="$PROJECT_DIR$/Presentation/AbstractUseCaseUI.py" />
         <option value="$PROJECT_DIR$/Data/Models/AbstractBaseDataModel.py" />
         <option value="$PROJECT_DIR$/SystemController.py" />
-        <option value="$PROJECT_DIR$/Data/Repositories/AbstractCustomerManagementRepository.py" />
         <option value="$PROJECT_DIR$/Data/Models/Customer.py" />
-        <option value="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py" />
-        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
-        <option value="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
         <option value="$PROJECT_DIR$/GUI_NotificationHandler.py" />
-        <option value="$PROJECT_DIR$/BritaniaTourGUI.py" />
+        <option value="$PROJECT_DIR$/Data/Repositories/AbstractCustomerManagementRepository.py" />
+        <option value="$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8baefa60-d316-4f14-8232-5f03410a0eed/console_1.sql" />
+        <option value="$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py" />
         <option value="$PROJECT_DIR$/Presentation/DataGrid.py" />
+        <option value="$PROJECT_DIR$/Presentation/CustomerManagementUI.py" />
+        <option value="$PROJECT_DIR$/BritaniaTourGUI.py" />
       </list>
     </option>
   </component>
@@ -416,13 +435,15 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326713" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17080437" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17080437" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18210863" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17609046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17571884" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32571995" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39821252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -431,9 +452,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32571995" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -476,12 +495,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Presentation/DataGrid.py</url>
-          <line>62</line>
+          <line>73</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/BritaniaTourGUI.py</url>
-          <line>89</line>
+          <line>91</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -516,25 +535,22 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#41#62#0" expanded="true" />
-            <element signature="e#265#871#0" expanded="false" />
             <element signature="e#904#938#0" expanded="false" />
-            <element signature="e#984#1078#0" expanded="false" />
             <element signature="e#1117#1330#0" expanded="false" />
-            <element signature="e#1372#1866#0" expanded="false" />
-            <element signature="e#1907#2488#0" expanded="false" />
-            <element signature="e#2543#2818#0" expanded="false" />
-            <element signature="e#2594#2818#0" expanded="false" />
-            <element signature="e#2886#3531#0" expanded="false" />
-            <element signature="e#3080#3407#0" expanded="false" />
-            <element signature="e#3201#3407#0" expanded="false" />
-            <element signature="e#3594#3928#0" expanded="false" />
-            <element signature="e#3731#3928#0" expanded="false" />
-            <element signature="e#3982#4088#0" expanded="false" />
-            <element signature="e#4122#4447#0" expanded="false" />
-            <element signature="e#4502#4536#0" expanded="false" />
-            <element signature="e#4593#4629#0" expanded="false" />
-            <element signature="e#4683#4716#0" expanded="false" />
-            <element signature="e#4960#5297#0" expanded="false" />
+            <element signature="e#2015#2596#0" expanded="false" />
+            <element signature="e#2651#2926#0" expanded="false" />
+            <element signature="e#2702#2926#0" expanded="false" />
+            <element signature="e#2994#3639#0" expanded="false" />
+            <element signature="e#3188#3515#0" expanded="false" />
+            <element signature="e#3309#3515#0" expanded="false" />
+            <element signature="e#3702#4036#0" expanded="false" />
+            <element signature="e#3839#4036#0" expanded="false" />
+            <element signature="e#4090#4196#0" expanded="false" />
+            <element signature="e#4230#4617#0" expanded="false" />
+            <element signature="e#4672#4706#0" expanded="false" />
+            <element signature="e#4763#4799#0" expanded="false" />
+            <element signature="e#4853#4886#0" expanded="false" />
+            <element signature="e#5130#5467#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -546,25 +562,22 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#41#62#0" expanded="true" />
-            <element signature="e#265#871#0" expanded="false" />
             <element signature="e#904#938#0" expanded="false" />
-            <element signature="e#984#1078#0" expanded="false" />
             <element signature="e#1117#1330#0" expanded="false" />
-            <element signature="e#1372#1866#0" expanded="false" />
-            <element signature="e#1907#2488#0" expanded="false" />
-            <element signature="e#2543#2818#0" expanded="false" />
-            <element signature="e#2594#2818#0" expanded="false" />
-            <element signature="e#2886#3531#0" expanded="false" />
-            <element signature="e#3080#3407#0" expanded="false" />
-            <element signature="e#3201#3407#0" expanded="false" />
-            <element signature="e#3594#3928#0" expanded="false" />
-            <element signature="e#3731#3928#0" expanded="false" />
-            <element signature="e#3982#4088#0" expanded="false" />
-            <element signature="e#4122#4447#0" expanded="false" />
-            <element signature="e#4502#4536#0" expanded="false" />
-            <element signature="e#4593#4629#0" expanded="false" />
-            <element signature="e#4683#4716#0" expanded="false" />
-            <element signature="e#4960#5297#0" expanded="false" />
+            <element signature="e#2015#2596#0" expanded="false" />
+            <element signature="e#2651#2926#0" expanded="false" />
+            <element signature="e#2702#2926#0" expanded="false" />
+            <element signature="e#2994#3639#0" expanded="false" />
+            <element signature="e#3188#3515#0" expanded="false" />
+            <element signature="e#3309#3515#0" expanded="false" />
+            <element signature="e#3702#4036#0" expanded="false" />
+            <element signature="e#3839#4036#0" expanded="false" />
+            <element signature="e#4090#4196#0" expanded="false" />
+            <element signature="e#4230#4617#0" expanded="false" />
+            <element signature="e#4672#4706#0" expanded="false" />
+            <element signature="e#4763#4799#0" expanded="false" />
+            <element signature="e#4853#4886#0" expanded="false" />
+            <element signature="e#5130#5467#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -642,25 +655,22 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#41#62#0" expanded="true" />
-            <element signature="e#265#871#0" expanded="false" />
             <element signature="e#904#938#0" expanded="false" />
-            <element signature="e#984#1078#0" expanded="false" />
             <element signature="e#1117#1330#0" expanded="false" />
-            <element signature="e#1372#1866#0" expanded="false" />
-            <element signature="e#1907#2488#0" expanded="false" />
-            <element signature="e#2543#2818#0" expanded="false" />
-            <element signature="e#2594#2818#0" expanded="false" />
-            <element signature="e#2886#3531#0" expanded="false" />
-            <element signature="e#3080#3407#0" expanded="false" />
-            <element signature="e#3201#3407#0" expanded="false" />
-            <element signature="e#3594#3928#0" expanded="false" />
-            <element signature="e#3731#3928#0" expanded="false" />
-            <element signature="e#3982#4088#0" expanded="false" />
-            <element signature="e#4122#4447#0" expanded="false" />
-            <element signature="e#4502#4536#0" expanded="false" />
-            <element signature="e#4593#4629#0" expanded="false" />
-            <element signature="e#4683#4716#0" expanded="false" />
-            <element signature="e#4960#5297#0" expanded="false" />
+            <element signature="e#2015#2596#0" expanded="false" />
+            <element signature="e#2651#2926#0" expanded="false" />
+            <element signature="e#2702#2926#0" expanded="false" />
+            <element signature="e#2994#3639#0" expanded="false" />
+            <element signature="e#3188#3515#0" expanded="false" />
+            <element signature="e#3309#3515#0" expanded="false" />
+            <element signature="e#3702#4036#0" expanded="false" />
+            <element signature="e#3839#4036#0" expanded="false" />
+            <element signature="e#4090#4196#0" expanded="false" />
+            <element signature="e#4230#4617#0" expanded="false" />
+            <element signature="e#4672#4706#0" expanded="false" />
+            <element signature="e#4763#4799#0" expanded="false" />
+            <element signature="e#4853#4886#0" expanded="false" />
+            <element signature="e#5130#5467#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -703,24 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8baefa60-d316-4f14-8232-5f03410a0eed/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="21" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/SQL/CreateCustomersTable.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cc521df2/8baefa60-d316-4f14-8232-5f03410a0eed/main.Customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -823,85 +819,15 @@
         <state relative-caret-position="135">
           <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding>
-            <element signature="e#41#84#0" expanded="true" />
+            <element signature="e#41#84#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CustomerRegistrationController.py" />
-    <entry file="file://$PROJECT_DIR$/Data/Models/Customer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Repositories/AbstractCustomerManagementRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="53" column="67" lean-forward="false" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/closeBttn.gif">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="44" column="43" lean-forward="true" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="140" column="12" lean-forward="false" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
-          <folding>
-            <element signature="e#42#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="117" column="52" lean-forward="false" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#41#62#0" expanded="true" />
-            <element signature="e#265#871#0" expanded="false" />
-            <element signature="e#904#938#0" expanded="false" />
-            <element signature="e#984#1078#0" expanded="false" />
-            <element signature="e#1117#1330#0" expanded="false" />
-            <element signature="e#1372#1866#0" expanded="false" />
-            <element signature="e#1907#2488#0" expanded="false" />
-            <element signature="e#2543#2818#0" expanded="false" />
-            <element signature="e#2594#2818#0" expanded="false" />
-            <element signature="e#2886#3531#0" expanded="false" />
-            <element signature="e#3080#3407#0" expanded="false" />
-            <element signature="e#3201#3407#0" expanded="false" />
-            <element signature="e#3594#3928#0" expanded="false" />
-            <element signature="e#3731#3928#0" expanded="false" />
-            <element signature="e#3982#4088#0" expanded="false" />
-            <element signature="e#4122#4447#0" expanded="false" />
-            <element signature="e#4502#4536#0" expanded="false" />
-            <element signature="e#4593#4629#0" expanded="false" />
-            <element signature="e#4683#4716#0" expanded="false" />
-            <element signature="e#4960#5297#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI_NotificationHandler.py">
@@ -920,13 +846,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Models/Customer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Repositories/AbstractCustomerManagementRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BusinessLogic/CustomerManagementController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="147" column="28" lean-forward="false" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="28" />
+          <folding>
+            <element signature="e#42#119#0" expanded="true" />
+            <element signature="e#1529#2447#0" expanded="false" />
+            <element signature="e#3803#6001#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/cc521df2/8baefa60-d316-4f14-8232-5f03410a0eed/main.Customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8baefa60-d316-4f14-8232-5f03410a0eed/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/RepositoryImplementations/CustomerManagementRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <marker date="1521301899534" expanded="true" signature="512:622" ph="INSERT INTO Customers... " />
+            <marker date="1521301899534" expanded="true" signature="1742:1772" ph="SELECT * FRO... Customers" />
+            <marker date="1521301899534" expanded="true" signature="2250:2338" ph="UPDATE Customers... " />
+            <marker date="1521301899534" expanded="true" signature="3140:3172" ph="DELETE FROM Customers... " />
+            <marker date="1521301899534" expanded="true" signature="3151:3172" ph="UPDATE Customers... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentation/CustomerManagementUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
+          <folding>
+            <element signature="e#4279#5259#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Presentation/DataGrid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="78" column="7" lean-forward="false" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+        <state relative-caret-position="275">
+          <caret line="88" column="87" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="88" selection-end-column="87" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#2538#2645#0" expanded="false" />
+            <element signature="e#3014#3121#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BritaniaTourGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="53" column="73" lean-forward="false" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#41#62#0" expanded="true" />
+            <element signature="e#904#938#0" expanded="false" />
+            <element signature="e#1117#1330#0" expanded="false" />
+            <element signature="e#2015#2596#0" expanded="false" />
+            <element signature="e#2651#2926#0" expanded="false" />
+            <element signature="e#2702#2926#0" expanded="false" />
+            <element signature="e#2994#3639#0" expanded="false" />
+            <element signature="e#3188#3515#0" expanded="false" />
+            <element signature="e#3309#3515#0" expanded="false" />
+            <element signature="e#3702#4036#0" expanded="false" />
+            <element signature="e#3839#4036#0" expanded="false" />
+            <element signature="e#4090#4196#0" expanded="false" />
+            <element signature="e#4230#4617#0" expanded="false" />
+            <element signature="e#4672#4706#0" expanded="false" />
+            <element signature="e#4763#4799#0" expanded="false" />
+            <element signature="e#4853#4886#0" expanded="false" />
+            <element signature="e#5130#5467#0" expanded="false" />
           </folding>
         </state>
       </provider>
