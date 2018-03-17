@@ -44,24 +44,44 @@ class DataGrid:
                 entries[field].grid(row=i+1, column=columnNr)
                 self.__frame.interior.grid_columnconfigure(columnNr, weight=1)
                 columnNr += 1
-            bttn = Button(self.__frame.interior, text="edit")
-            bttn.bind('<Button-1>', (lambda event, entries = entries, buttn = bttn: \
-                                         self.__editRecordCallback(event, buttn, entries)))
-            bttn.grid(row=i+1, column=len(data) + 1)
+            editBttn = Button(self.__frame.interior, text="edit")
+            editBttn.grid(row=i+1, column=len(data) + 1)
+            delBttn  = self.__prepDeleteButton()
+            delBttn.grid(row=i+1, column=len(data) + 2)
+            editBttn.bind('<Button-1>', (
+                lambda event, entries=entries, buttn1=editBttn, row=i+1, col=len(data)+2, buttn2=delBttn:
+                    [self.__editRecordCallback(event, buttn1, entries),
+                     self.__switchDeletionButtonState(delBttn, col, row)]))
 
     def __editRecordCallback(self, event,  button, entries):
         if button["text"] == "edit":
             button.config(text="done")
-            for key in entries:
-                if key != "id" and key != "createdBy":
-                    entries[key].config(state=NORMAL)
+            for fieldKey in entries:
+                if fieldKey != "id" and fieldKey != "createdBy":
+                    entries[fieldKey].config(state=NORMAL)
         else:
             button.config(text="edit")
             data = {}
-            for key in entries:
-                data[key] = entries[key].get()
-                entries[key].config(state=DISABLED)
+            for fieldKey in entries:
+                data[fieldKey] = entries[fieldKey].get()
+                entries[fieldKey].config(state=DISABLED)
             self.__updateRecordCallback(data)
+
+    def __prepDeleteButton(self):
+        # set up label with picture
+        photo = PhotoImage(file=r"bin.gif")
+        label = Label(self.__frame.interior, image=photo, width=20, height=20, )
+        label.config(bg='systemTransparent')
+        label.image = photo  # keep a reference!
+        #  set up on-click event
+        # label.bind("<Button-1>", lambda event: self.__addDutyUI_Tab())
+        return label
+
+    def __switchDeletionButtonState(self, button, col, row):
+        if button.winfo_ismapped():
+            button.grid_forget()
+        else:
+            button.grid(row=row, column=col, columnspan=1)
 
     def destruct(self):
         self.__frame.destruct()

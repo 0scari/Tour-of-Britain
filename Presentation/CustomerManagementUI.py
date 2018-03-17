@@ -33,7 +33,7 @@ class CustomerManagementUI(AbstractUseCaseUI):
         refLabel.grid(row=0, column=0, sticky=W)
         Label(self.__inputFrame, text="First name").grid(row=1, column=0, sticky=W)
         Label(self.__inputFrame, text="Second name").grid(row=2, column=0, sticky=W)
-        Label(self.__inputFrame, text="Date of birth").grid(row=3, column=0, sticky=W)
+        Label(self.__inputFrame, text="Date of birth (D:M:Y)").grid(row=3, column=0, sticky=W)
         Label(self.__inputFrame, text="Email").grid(row=4, column=0, sticky=W)
         Label(self.__inputFrame, text="Address").grid(row=5, column=0, sticky=W)
         Label(self.__inputFrame, text="Please choose an option:").grid(row=7, column=0, sticky=W)
