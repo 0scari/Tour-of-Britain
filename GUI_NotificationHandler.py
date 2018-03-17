@@ -27,5 +27,12 @@ class GUI_NotificationHandler:
             raise Exception("GUI not set")
 
     @staticmethod
+    def raiseDialog(header, body):
+        if GUI_NotificationHandler.__gui:
+            return GUI_NotificationHandler.__gui.raiseDialog(header, body)
+        else:
+            raise Exception("GUI not set")
+
+    @staticmethod
     def unsetGUI():
         GUI_NotificationHandler.__gui = None

@@ -114,6 +114,13 @@ class BritaniaTourGUI(Frame):
     def raiseInfoMessg(self, header, body):
         messagebox.showinfo(header, body)
 
+    def raiseDialog(self, header, body):
+        result = messagebox.askquestion(header, body, icon='warning')
+        if result == 'yes':
+            return True
+        else:
+            return False
+
     def __addDutyUI_Tab(self):
         dutyName = self.__activeDutyUI.getDutyName()
         newDutyUI = self.__activeDutyUI.replicate(self.__window)

@@ -137,6 +137,9 @@ class CustomerManagementController(AbstractUseCaseController):
 
         return True
 
+    def deleteCustomer(self):
+        pass
+
     def __isInt(self, input):
         try:
             num = int(input)

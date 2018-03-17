@@ -1,5 +1,6 @@
 from tkinter import *
 from Presentation.VerticalScrollableFrame import VerticalScrolledFrame
+from GUI_NotificationHandler import GUI_NotificationHandler
 
 
 class DataGrid:
@@ -74,7 +75,8 @@ class DataGrid:
         label.config(bg='systemTransparent')
         label.image = photo  # keep a reference!
         #  set up on-click event
-        # label.bind("<Button-1>", lambda event: self.__addDutyUI_Tab())
+        label.bind("<Button-1>", lambda event: GUI_NotificationHandler.raiseDialog("Delete", "Are You Sure?"))
+       
         return label
 
     def __switchDeletionButtonState(self, button, col, row):
