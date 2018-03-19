@@ -26,6 +26,7 @@ class BritaniaTourGUI(Frame):
         self.__setUpTabFrame()
         self.__displayMenuOptions(duties)
         self.__setDutyUIs(duties)
+        GUI_NotificationHandler.setGui(self)
 
     def __del__(self):
         GUI_NotificationHandler.unsetGUI()
@@ -105,7 +106,6 @@ class BritaniaTourGUI(Frame):
         self.label.pack(pady=(50,0))
         self.label.config(bg='systemTransparent')
         self.label.image = photo  # keep a reference!
-        print(" PAck slaves", self.__menuFrame.pack_slaves())
         self.__window.mainloop()
 
     def raiseErrorMessg(self, header, body):

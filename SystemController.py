@@ -10,18 +10,11 @@ class SystemController:
 
     def __init__(self, user):
         SystemController.__user = user
-        self.gui = self.setGui()
-        GUI_NotificationHandler.setGui(self.gui)
+        self.gui = self.__setGui()
         self.gui.startGui()
 
-
-    def setGui(self, ):
-        employeeDuties = {"cntrlr": ["CustomerManagement", "MembershipManagement", "BookingReservation"],
-                          "labels": ["Customer Management", "Membership Management", "Bookings and Reservations"]}
-        return BritaniaTourGUI(self, employeeDuties)
-
-    def getEmployeeDuties(self, ):
-        pass
+    def __setGui(self, ):
+        return BritaniaTourGUI(self, SystemController.__user.getRoleDuties())
 
     @staticmethod
     def getUserId():
@@ -29,7 +22,6 @@ class SystemController:
             return SystemController.__user.getId()
         else:
             GUI_NotificationHandler.raiseErrorMessg("Error", "User data corrupt")
-
 
     def initDutyController(self, dutyName):
         try:

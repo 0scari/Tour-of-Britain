@@ -50,7 +50,10 @@ class DataGrid:
             columnNr = 0
             # print(data)
             for field in data:
-                entries[field] = Entry(self.__frame.interior)
+                if field == "id" or field == "createdBy":
+                    entries[field] = Entry(self.__frame.interior, width=10)
+                else:
+                    entries[field] = Entry(self.__frame.interior)
                 entries[field].insert(END, data[field])
                 entries[field].config(state=DISABLED)
                 entries[field].grid(row=i + 1, column=columnNr)

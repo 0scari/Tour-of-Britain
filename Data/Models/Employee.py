@@ -11,7 +11,8 @@ class Employee:
         self.role = role
 
     def getRoleDuties(self, ):
-        pass
+        return {"cntrlr": ["CustomerManagement", "MembershipManagement", "BookingReservation"],
+                "labels": ["Customer Management", "Membership Management", "Bookings and Reservations"]}
 
     def getId(self):
         return self.id

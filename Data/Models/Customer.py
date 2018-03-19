@@ -77,11 +77,11 @@ class Customer(AbsttractBaseDataModel):
         return output
 
     def dataToDict(self):
-        return {"Reference nr." : self.__id,
+        return {"Ref." : self.__id,
                 "First name": self.__name,
                 "Second name": self.__surname,
                 "Date of birth": self.__dob,
                 "Email": self.__email,
                 "Address": self.__email,
-                "Created by:": self.__createdBy}
+                "Creator": self.__createdBy}
 
