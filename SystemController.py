@@ -23,16 +23,16 @@ class SystemController:
         else:
             GUI_NotificationHandler.raiseErrorMessg("Error", "User data corrupt")
 
-    def initDutyController(self, dutyName):
+    def initUseCaseController(self, name):
         try:
             # Repository
             dbConn = sqlite.connect("database")
             dbCursor = dbConn.cursor()
-            repoModule = importlib.import_module('Data.RepositoryImplementations.' + dutyName + "Repository")
-            repoClass = getattr(repoModule, dutyName + "Repository")
+            repoModule = importlib.import_module('Data.RepositoryImplementations.' + name + "Repository")
+            repoClass = getattr(repoModule, name + "Repository")
             repo = repoClass(dbConn, dbCursor)
             # Controller
-            dutyControllerName = dutyName + "Controller"
+            dutyControllerName = name + "Controller"
             cntrlrModule = importlib.import_module('BusinessLogic.'+dutyControllerName)
             cntrlrClass  = getattr(cntrlrModule, dutyControllerName)
             return cntrlrClass(repo)

@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
 from tkinter import *
+from Exceptions.UiNotFoundException import UiNotFoundException
 
 
 class AbstractUseCaseUI(ABC):
@@ -15,7 +16,20 @@ class AbstractUseCaseUI(ABC):
     def _setUpWidgets(self, ):
         pass
 
-    # TODO candidate for unittests
+    @classmethod
+    def factory(cls, type):
+        if type == "CustomerManagement":
+            from Presentation.CustomerManagementUI import CustomerManagementUI
+            return CustomerManagementUI
+        elif type == "MembershipManagement":
+            from Presentation.MembershipManagementUI import MembershipManagementUI
+            return MembershipManagementUI
+        elif type == "BookingReservation":
+            from Presentation.BookingReservation import BookingReservation
+            return BookingReservation
+        else:
+            raise UiNotFoundException("Use case UI: " + type + " not found")
+
     def _addDataWidget(self, name, key, widget):
         """Polymorphic method"""
         if key not in self._dataWidgets:
@@ -43,7 +57,7 @@ class AbstractUseCaseUI(ABC):
         self.hide()
 
     def replicate(self, window):
-        return self._useCaseController.initDutyUI(window)
+        return self._useCaseController.initUseCaseUI(window)
 
     def _getWidgetData(self, key):
         if key not in self._dataWidgets:

@@ -78,9 +78,9 @@ class BritaniaTourGUI(Frame):
         self.label.pack_forget()
         # if an entry in the list of the Use Case UIs with the given controller __name exists
         if len(self.__useCaseUIs[useCaseControllerName]) == 0:
-            dutyContrlr = self.__sysController.initDutyController(useCaseControllerName)
+            dutyContrlr = self.__sysController.initUseCaseController(useCaseControllerName)
             if dutyContrlr:
-                self.__activeDutyUI = dutyContrlr.initDutyUI(self.__window)
+                self.__activeDutyUI = dutyContrlr.initUseCaseUI(self.__window)
                 self.__useCaseUIs[useCaseControllerName].append(self.__activeDutyUI)
                 self.__refreshTabPanel(useCaseControllerName)
         else: # Else, pick the first one
