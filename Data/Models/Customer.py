@@ -33,9 +33,9 @@ class Customer(AbsttractBaseDataModel):
 
     def setDob(self, dd, mm = False, yyyy = False):
         if mm and yyyy:
-            self.__dob = dd + '/' + mm + '/' + yyyy
+            self.__dob = str(dd) + '/' + str(mm) + '/' + str(yyyy)
         else:
-            self.__dob = dd
+            self.__dob = str(dd)
 
     def getDob(self, ):
         return  self.__dob

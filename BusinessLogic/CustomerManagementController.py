@@ -15,21 +15,25 @@ class CustomerManagementController(AbstractUseCaseController):
 
     def registerCustomer(self, customerDetails):
         if not self._validateInput(customerDetails):
-            return
+            return False
         customer = self._constructDataModel(customerDetails)
         customer.setCreatedBy(SystemController.getUserId())
-        self._repository.write(customer)
+        ref = self._repository.write(customer)
+        if ref:
+            GUI_NotificationHandler.raiseInfoMessg(
+                "Registration Success", "Customer reference: " + str(ref))
+            return True
 
     def updateCustomer(self, customerDetails):
         splitDob = dict(zip(["dobDD", "dobMM", "dobYYYY"], customerDetails["dob"].split("/")))
         del customerDetails["dob"] # delete atomic __dob element
         customerDetails = {**splitDob, **customerDetails} # merge dictionaries
-        print(customerDetails)
-        if not self._validateInput(customerDetails, False):
-            return
+        if not self._validateInput(customerDetails):
+            return False
         customer = self._constructDataModel(customerDetails)
         if self._repository.update(customer):
             GUI_NotificationHandler.raiseInfoMessg("Success", "Customer was updated successfully")
+            return True
 
     def _constructDataModel(self, data):
         customer = Customer()
@@ -153,4 +157,3 @@ class CustomerManagementController(AbstractUseCaseController):
         except ValueError:
             return False
         return True
-

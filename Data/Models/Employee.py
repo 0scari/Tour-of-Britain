@@ -10,6 +10,9 @@ class Employee:
     def setRole(self, role):
         self.role = role
 
+    def setId(self, id):
+        self.id = id
+
     def getRoleDuties(self, ):
         return {"cntrlr": ["CustomerManagement", "MembershipManagement", "BookingReservation"],
                 "labels": ["Customer Management", "Membership Management", "Bookings and Reservations"]}

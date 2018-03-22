@@ -21,12 +21,10 @@ class CustomerManagementRepository(AbstractCustomerManagementRepository):
                   customer.getAddress(),
                   customer.getCreatedBy()))
 
-            ref = self.read({"email": customer.getEmail()})[0]["id"]
 
             self._connection.commit()  # Save (commit) the changes
-            GUI_NotificationHandler.raiseInfoMessg(
-                "Registration Success", "Customer reference: " + str(ref))    # return the __id
-            return True
+            ref = self.read({"email": customer.getEmail()})[0]["id"]
+            return ref # return the __id
         except ValueError as err:
             GUI_NotificationHandler.raiseWarningMessg("DB connection failure", err)
             return False
