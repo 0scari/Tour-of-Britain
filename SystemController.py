@@ -10,10 +10,10 @@ class SystemController:
 
     def __init__(self, user):
         SystemController.__user = user
-        self.gui = self.__setGui()
+        self.gui = self.__createSystemGui()
         self.gui.startGui()
 
-    def __setGui(self, ):
+    def __createSystemGui(self, ):
         return BritaniaTourGUI(self, SystemController.__user.getRoleDuties())
 
     @staticmethod

@@ -7,11 +7,11 @@ from Presentation.AbstractUseCaseUI import AbstractUseCaseUI
 
 class AbstractUseCaseController(ABC):
     @abstractmethod
-    def _validateInput(self, input, fullValidation = True):
+    def _validateInput(self, input):
         pass
 
     @abstractmethod
-    def _inputValidation(self, input, fullValidation):
+    def _inputValidation(self, input):
         pass
 
     @abstractmethod

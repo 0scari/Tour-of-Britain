@@ -62,7 +62,7 @@ class CustomerManagementController(AbstractUseCaseController):
         if not len(customerDetails):
             GUI_NotificationHandler.raiseWarningMessg("Warning", "No search criteria was given")
             return None
-        if not self._validateInput(customerDetails, False):
+        if not self._validateInput(customerDetails):
             return None
         customerModel = self._constructDataModel(customerDetails)
         customers = self._repository.read(customerModel.getData())
@@ -75,18 +75,18 @@ class CustomerManagementController(AbstractUseCaseController):
             GUI_NotificationHandler.raiseWarningMessg("Warning", "No customer matches the search criteria")
             return None
 
-    def _validateInput(self, customerDetails, fullValidation = True):
+    def _validateInput(self, customerDetails):
         try:
-            self._inputValidation(customerDetails, fullValidation)
+            self._inputValidation(customerDetails)
             return True
         except DataValidationException as err:
-            GUI_NotificationHandler.raiseErrorMessg("Validation Error", err)
+            GUI_NotificationHandler.raiseErrorMessg("Validation Error", str(err))
         except InternalErrorException as err:
-            GUI_NotificationHandler.raiseErrorMessg("Internal Error", err)
+            GUI_NotificationHandler.raiseErrorMessg("Internal Error", str(err))
 
         return False
 
-    def _inputValidation(self, input, fullValidation):
+    def _inputValidation(self, input):
         import datetime
         validFieldNames = ["ref", "name", "surname", "dobDD", "createdBy",
                            "email", "address", "dobMM", "dobYYYY", "id"]
